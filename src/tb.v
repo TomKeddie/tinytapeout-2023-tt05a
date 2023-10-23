@@ -3,23 +3,23 @@
 
 module tb (
            // testbench is controlled by test.py
-	   input  clk,
-	   input  rst,
-	   output r0,
-	   output r1,
-	   output r2,
-	   output r3,
-	   output g0,
-	   output g1,
-	   output g2,
-	   output g3,
-	   output b0,
-	   output b1,
-	   output b2,
-	   output b3,
-	   output hs,
-	   output vs
-   );
+	       input  clk,
+	       input  rst,
+	       output r0,
+	       output r1,
+	       output r2,
+	       output r3,
+	       output g0,
+	       output g1,
+	       output g2,
+	       output g3,
+	       output b0,
+	       output b1,
+	       output b2,
+	       output b3,
+	       output hs,
+	       outpu t vs
+           );
 
   // this part dumps the trace to a vcd file that can be viewed with GTKWave
   initial begin
@@ -36,21 +36,21 @@ module tb (
     #1;
   end
 
-   // instantiate the DUT
-   vga vga(.clk(clk), 
-	   .rst(rst),
-	   .r0(r0),
-	   .r1(r1),
-	   .r2(r2),
-	   .r3(r3),
-	   .b0(b0),
-	   .b1(b1),
-	   .b2(b2),
-	   .b3(b3),
-	   .g0(g0),
-	   .g1(g1),
-	   .g2(g2),
-	   .g3(g3),
-	   .hs(hs),
-	   .vs(vs));
+  // instantiate the DUT
+  vga vga(.clk(clk), 
+	      .rst(rst),
+	      .r0(r0),
+	      .r1(r1),
+	      .r2(r2),
+	      .r3(r3),
+	      .b0(b0),
+	      .b1(b1),
+	      .b2(b2),
+	      .b3(b3),
+	      .g0(g0),
+	      .g1(g1),
+	      .g2(g2),
+	      .g3(g3),
+	      .hs(hs),
+	      .vs(vs));
 endmodule
