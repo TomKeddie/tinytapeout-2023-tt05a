@@ -104,7 +104,6 @@ Top module:  \top
 
 3.3.2. Executing AST frontend in derive mode using pre-parsed AST for module `\vga'.
 Generating RTLIL representation for module `\vga'.
-vga.v:68: Warning: Range [15:0] select out of bounds on signal `\count_h': Setting 6 MSB bits to undef.
 
 3.3.3. Analyzing design hierarchy..
 Top module:  \top
@@ -265,8 +264,8 @@ Creating decoders for process `\SB_DFFE.$proc$/home/tom/bin/oss-cad-suite/lib/..
 Creating decoders for process `\SB_DFF.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$170'.
 Creating decoders for process `\SB_DFF.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:271$169'.
 Creating decoders for process `\vga.$proc$vga.v:59$386'.
-     1/9: $2$mem2bits$\fb$vga.v:68$385[15:0]$390
-     2/9: $1$mem2bits$\fb$vga.v:68$385[15:0]$388
+     1/9: $2$mem2bits$\fb$vga.v:68$385[3:0]$390
+     2/9: $1$mem2bits$\fb$vga.v:68$385[3:0]$388
      3/9: $0\vs_out[0:0]
      4/9: $0\hs_out[0:0]
      5/9: $0\blu[0:0]
@@ -621,7 +620,7 @@ Optimizing module top.
 3.13.23. Finished OPT passes. (There is nothing left to do.)
 
 3.14. Executing WREDUCE pass (reducing word size of cells).
-Removed top 12 address bits (of 16) from memory read port top.$flatten\vga.$memrd$\fb$vga.v:68$392 (vga.fb).
+Removed top 2 address bits (of 4) from memory read port top.$flatten\vga.$memrd$\fb$vga.v:68$392 (vga.fb).
 Removed top 31 bits (of 32) from port B of cell top.$sub$top_icebreaker.v:57$383 ($sub).
 Removed top 22 bits (of 32) from port Y of cell top.$sub$top_icebreaker.v:57$383 ($sub).
 Removed top 17 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:108$406 ($lt).
@@ -766,18 +765,6 @@ top.vga.fb: removing const-x lane 0
 top.vga.fb: removing const-x lane 1
 top.vga.fb: removing const-x lane 2
 top.vga.fb: removing const-x lane 3
-top.vga.fb: removing const-x lane 4
-top.vga.fb: removing const-x lane 5
-top.vga.fb: removing const-x lane 6
-top.vga.fb: removing const-x lane 7
-top.vga.fb: removing const-x lane 8
-top.vga.fb: removing const-x lane 9
-top.vga.fb: removing const-x lane 10
-top.vga.fb: removing const-x lane 11
-top.vga.fb: removing const-x lane 12
-top.vga.fb: removing const-x lane 13
-top.vga.fb: removing const-x lane 14
-top.vga.fb: removing const-x lane 15
 Performed a total of 1 transformations.
 
 3.23.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
@@ -958,7 +945,7 @@ Using template $paramod$484d51534650924b7ed4c69e46eed3a56904771f\_80_ice40_alu f
 Using template $paramod$dbcdc7e8aa1a4080cea2deda6fdc8772064f4d90\_80_ice40_alu for cells of type $alu.
 Using extmapper simplemap for cells of type $ne.
 Using template $paramod$78e969f2586efcf3a5b0b0440bcca0db83d5cca2\_80_ice40_alu for cells of type $alu.
-Using template $paramod$constmap:f61e7c4e9f82fe83f4686eece0f0f09918011d1a$paramod$9dec4d2be5e43ae62245e418482bf0cbf8efc6e4\_90_shift_shiftx for cells of type $shiftx.
+Using template $paramod$constmap:29a454ebc9d7af04c852253db826b5c49b8901e8$paramod$b87537da49a17489784672efe7aacfb58296f8f7\_90_shift_shiftx for cells of type $shiftx.
 Using template $paramod$1eb759649286d7485bd82f4dfc30385bade4b4b3\_80_ice40_alu for cells of type $alu.
 Using template $paramod$091610cd349a68bd5539cffd7126f0d76e9bca00\_80_ice40_alu for cells of type $alu.
 Using extmapper simplemap for cells of type $pos.
@@ -1323,7 +1310,6 @@ Found and reported 0 problems.
 
 3.50. Executing JSON backend.
 
-Warnings: 1 unique messages, 1 total
-End of script. Logfile hash: 3fe4062a59, CPU: user 0.64s system 0.00s, MEM: 24.66 MB peak
+End of script. Logfile hash: 378173e375, CPU: user 0.55s system 0.00s, MEM: 24.63 MB peak
 Yosys 0.27+22 (git sha1 53c0a6b78, clang 10.0.0-4ubuntu1 -fPIC -Os)
-Time spent: 47% 15x read_verilog (0 sec), 13% 1x abc (0 sec), ...
+Time spent: 44% 15x read_verilog (0 sec), 18% 1x abc (0 sec), ...

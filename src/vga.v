@@ -39,7 +39,7 @@ module vga(
   reg             hs_out;
   reg             vs_out;
 
-  reg [15:0] fb[11:0];
+  reg [3:0] fb[3:0];
 
   assign r0 = red;
   assign r1 = red;
@@ -65,7 +65,7 @@ module vga(
     end else if (count_h < h_visible) begin
       count_h <= count_h + 1;
 	  // horizontal visible
-	  red <= fb[count_h[15:0]][count_v[11:0]];
+	  red <= fb[count_h[3:0]][count_v[3:0]];
 	  grn <= 1'b1;
 	  blu <= 1'b1;
     end else if (count_h < h_frontporch) begin
