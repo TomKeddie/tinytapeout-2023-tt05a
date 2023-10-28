@@ -18,9 +18,9 @@ module vga(
 	       );
 
   localparam	  h_visible    = 640;
-  localparam	  h_frontporch = 640 + 24;
-  localparam	  h_sync       = 640 + 24 + 95;
-  localparam	  h_backporch  = 640 + 24 + 95 + 48;
+  localparam	  h_frontporch = 640 + 16;
+  localparam	  h_sync       = 640 + 16 + 96;
+  localparam	  h_backporch  = 640 + 16 + 96 + 48;
 
   // while h_sync is being sent, vertical counts h_sync pulses, for
   // porch and sync, it counts clocks
@@ -53,8 +53,8 @@ module vga(
   assign g1 = grn;
   assign g2 = grn;
   assign g3 = grn;
-  assign hs = hs_out;
-  assign vs = vs_out;
+  assign hs = !hs_out;
+  assign vs = !vs_out;
 
   always @ (posedge clk) begin
     hs_out <= 1'b0;
@@ -65,7 +65,7 @@ module vga(
     end else if (count_h < h_visible) begin
       count_h <= count_h + 1;
 	  // horizontal visible
-	  red <= fb[count_h[3:0]][count_v[3:0]];
+	  red <= 1'b1;
 	  grn <= 1'b1;
 	  blu <= 1'b1;
     end else if (count_h < h_frontporch) begin
@@ -91,7 +91,7 @@ module vga(
       if (count_v < v_visible) begin
         count_v <= count_v + 1;
 	    // vertical visible
-        count_h <= 0;
+        count_h <= 1;
       end else if (count_v < v_frontporch) begin
         count_v <= count_v + 1;
 	    // vertical front porch

@@ -14,7 +14,8 @@ module top
    output P1B3,
    output P1B4,
    output P1B7,
-   output P1B8
+   output P1B8,
+   output P1B9
    );
 
   reg [0:9] rst_counter = 10'b11_1111_1111;
@@ -23,6 +24,8 @@ module top
 
   wire      locked;
   wire      clk_25_125;
+  assign    P1B9 = clk_25_125;
+  assign    P1B10 = locked;
 
   // icepll -o 25.175 -m -p
   /*

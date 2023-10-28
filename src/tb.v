@@ -18,7 +18,7 @@ module tb (
 	       output b2,
 	       output b3,
 	       output hs,
-	       outpu t vs
+	       output vs
            );
 
   // this part dumps the trace to a vcd file that can be viewed with GTKWave
