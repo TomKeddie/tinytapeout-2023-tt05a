@@ -20,26 +20,33 @@ module vga(
   localparam	  h_visible    = 640;
   localparam	  h_frontporch = 640 + 16;
   localparam	  h_sync       = 640 + 16 + 96;
-  localparam	  h_backporch  = 640 + 16 + 96 + 48;
+  localparam	  h_backporch  = 640 + 16 + 96 + 47;
 
   // while h_sync is being sent, vertical counts h_sync pulses, for
   // porch and sync, it counts clocks
   localparam	  v_visible    = 480;
-  localparam	  v_frontporch = 480 + 13847;
-  localparam	  v_sync       = 480 + 13847 + 1612;
-  localparam	  v_backporch  = 480 + 13847 + 1612 + 504;
+  localparam	  v_frontporch = 480 + 22;
+  localparam	  v_sync       = 480 + 22 + 3;
+  localparam	  v_backporch  = 480 + 22 + 3 + 1;
+
+  wire            blank;
+  reg             blank_h;
+  reg             blank_v;
+
+  assign blank = (blank_h | blank_v);
 
   // 2^10  = 1024
   reg [9:0]       count_h;
   // 2^15 = 32768
   reg [14:0]      count_v;
+
   reg             red;
   reg             grn;
   reg             blu;
   reg             hs_out;
   reg             vs_out;
 
-  reg [3:0] fb[3:0];
+  reg [3:0]       fb[3:0];
 
   assign r0 = red;
   assign r1 = red;
@@ -56,66 +63,58 @@ module vga(
   assign hs = !hs_out;
   assign vs = !vs_out;
 
+  always @ (blank) begin
+    red <= (blank) ? 1'b0 : 1'b0;
+    grn <= (blank) ? 1'b0 : 1'b0;
+    blu <= (blank) ? 1'b0 : 1'b1;
+  end
+
   always @ (posedge clk) begin
     hs_out <= 1'b0;
-    vs_out <= 1'b0;
     if (rst) begin
-      count_h <= 10'b1;
-	  count_v <= 9'b1;
+      count_h <= 10'b11_1111_1111;
+      blank_h <= 1'b1;
     end else if (count_h < h_visible) begin
-      count_h <= count_h + 1;
 	  // horizontal visible
-	  red <= 1'b1;
-	  grn <= 1'b1;
-	  blu <= 1'b1;
+      count_h <= count_h + 1;
     end else if (count_h < h_frontporch) begin
-      count_h <= count_h + 1;
 	  // horizontal front porch
-	  red <= 1'b0;
-	  grn <= 1'b0;
-	  blu <= 1'b0;
+      count_h <= count_h + 1;
+      blank_h <= 1'b1;
     end else if (count_h < h_sync) begin
-      count_h <= count_h + 1;
 	  // horizontal sync
-	  hs_out <= 1'b1;
-	  red <= 1'b0;
-	  grn <= 1'b0;
-	  blu <= 1'b0;
-    end else if (count_h < h_backporch-1) begin
       count_h <= count_h + 1;
+	  hs_out <= 1'b1;
+    end else if (count_h < h_backporch) begin
 	  // horizontal back porch
-	  red <= 1'b0;
-	  grn <= 1'b0;
-	  blu <= 1'b0;
+      count_h <= count_h + 1;
     end else begin
-      if (count_v < v_visible) begin
-        count_v <= count_v + 1;
-	    // vertical visible
-        count_h <= 1;
-      end else if (count_v < v_frontporch) begin
-        count_v <= count_v + 1;
-	    // vertical front porch
-	    red <= 1'b0;
-	    grn <= 1'b0;
-	    blu <= 1'b0;
-      end else if (count_v < v_sync) begin
-        count_v <= count_v + 1;
-	    // vertical sync
-	    vs_out <= 1'b1;
-	    red <= 1'b0;
-	    grn <= 1'b0;
-	    blu <= 1'b0;
-	  end else if (count_v < v_backporch-1) begin
-        count_v <= count_v + 1;
-	    // vertical back porch
-	    red <= 1'b0;
-	    grn <= 1'b0;
-	    blu <= 1'b0;
-	  end else begin
-        count_v <= 0;
-      end
+      count_h <= 1;
+      blank_h <= 1'b0;
     end
   end
 
-
+  always @ (posedge clk) begin
+    if (rst) begin
+      count_v <= 15'b111_1111_1111_1111;
+      blank_v <= 1'b1;
+      vs_out  <= 1'b0;
+    end else if (count_h >= h_backporch) begin
+      if (count_v < v_visible) begin
+        count_v <= count_v + 1;
+      end else if (count_v < v_backporch) begin
+        count_v <= count_v + 1;
+        blank_v <= 1'b1;
+        if (count_v > v_frontporch && count_v < v_sync) begin
+          vs_out <= 1'b1;
+        end else begin
+          vs_out <= 1'b0;
+        end
+      end else begin
+        count_v <= 1;
+        blank_v <= 1'b0;
+      end
+    end
+  end
+  
 endmodule

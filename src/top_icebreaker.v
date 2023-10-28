@@ -15,7 +15,8 @@ module top
    output P1B4,
    output P1B7,
    output P1B8,
-   output P1B9
+   output P1B9,
+   output P1B10
    );
 
   reg [0:9] rst_counter = 10'b11_1111_1111;

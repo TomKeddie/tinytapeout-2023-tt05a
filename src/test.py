@@ -16,4 +16,4 @@ async def top(dut):
 
     await ClockCycles(dut.clk, 500)
 
-    await ClockCycles(dut.clk, 350000)
+    await ClockCycles(dut.clk, 450000)
