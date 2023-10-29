@@ -29,8 +29,10 @@ module tb (
     $dumpvars (0, tb.r0);
     $dumpvars (0, tb.g0);
     $dumpvars (0, tb.b0);
+    $dumpvars (0, tb.vga.wht);
     $dumpvars (0, tb.hs);
     $dumpvars (0, tb.vs);
+    $dumpvars (0, tb.vga.blank);
     $dumpvars (0, tb.vga.count_h);
     $dumpvars (0, tb.vga.blank_h);
     $dumpvars (0, tb.vga.count_v);

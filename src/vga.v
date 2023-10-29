@@ -322,8 +322,8 @@ module vga(
 
   wire            red;
   wire            grn;
-  reg             blu;
-  reg             wht;
+  wire            blu;
+  wire            wht;
   reg             hs_out;
   reg             vs_out;
 
@@ -347,128 +347,242 @@ module vga(
   assign red = wht;
   assign grn = wht;
 
-  always @ (blank) begin
-    if (blank) begin
-      blu <= 1'b0;
-      wht <= 1'b0;
-    end else begin
-      blu <= 1'b1;
-      if (count_v > 99 && count_v < 212 && count_h > 79 && count_h < 139) begin
-        case(count_v-99)
-          1 : wht <= smile001[138-count_h];
-          2 : wht <= smile002[138-count_h];
-          3 : wht <= smile003[138-count_h];
-          4 : wht <= smile004[138-count_h];
-          5 : wht <= smile005[138-count_h];
-          6 : wht <= smile006[138-count_h];
-          7 : wht <= smile007[138-count_h];
-          8 : wht <= smile008[138-count_h];
-          9 : wht <= smile009[138-count_h];
-          10 : wht <= smile010[138-count_h];
-          11 : wht <= smile011[138-count_h];
-          12 : wht <= smile012[138-count_h];
-          13 : wht <= smile013[138-count_h];
-          14 : wht <= smile014[138-count_h];
-          15 : wht <= smile015[138-count_h];
-          16 : wht <= smile016[138-count_h];
-          17 : wht <= smile017[138-count_h];
-          18 : wht <= smile018[138-count_h];
-          19 : wht <= smile019[138-count_h];
-          20 : wht <= smile020[138-count_h];
-          21 : wht <= smile021[138-count_h];
-          22 : wht <= smile022[138-count_h];
-          23 : wht <= smile023[138-count_h];
-          24 : wht <= smile024[138-count_h];
-          25 : wht <= smile025[138-count_h];
-          26 : wht <= smile026[138-count_h];
-          27 : wht <= smile027[138-count_h];
-          28 : wht <= smile028[138-count_h];
-          29 : wht <= smile029[138-count_h];
-          30 : wht <= smile030[138-count_h];
-          31 : wht <= smile031[138-count_h];
-          32 : wht <= smile032[138-count_h];
-          33 : wht <= smile033[138-count_h];
-          34 : wht <= smile034[138-count_h];
-          35 : wht <= smile035[138-count_h];
-          36 : wht <= smile036[138-count_h];
-          37 : wht <= smile037[138-count_h];
-          38 : wht <= smile038[138-count_h];
-          39 : wht <= smile039[138-count_h];
-          40 : wht <= smile040[138-count_h];
-          41 : wht <= smile041[138-count_h];
-          42 : wht <= smile042[138-count_h];
-          43 : wht <= smile043[138-count_h];
-          44 : wht <= smile044[138-count_h];
-          45 : wht <= smile045[138-count_h];
-          46 : wht <= smile046[138-count_h];
-          47 : wht <= smile047[138-count_h];
-          48 : wht <= smile048[138-count_h];
-          49 : wht <= smile049[138-count_h];
-          50 : wht <= smile050[138-count_h];
-          51 : wht <= smile051[138-count_h];
-          52 : wht <= smile052[138-count_h];
-          53 : wht <= smile053[138-count_h];
-          54 : wht <= smile054[138-count_h];
-          55 : wht <= smile055[138-count_h];
-          56 : wht <= smile056[138-count_h];
-          57 : wht <= smile057[138-count_h];
-          58 : wht <= smile058[138-count_h];
-          59 : wht <= smile059[138-count_h];
-          60 : wht <= smile060[138-count_h];
-          61 : wht <= smile061[138-count_h];
-          62 : wht <= smile062[138-count_h];
-          63 : wht <= smile063[138-count_h];
-          64 : wht <= smile064[138-count_h];
-          65 : wht <= smile065[138-count_h];
-          66 : wht <= smile066[138-count_h];
-          67 : wht <= smile067[138-count_h];
-          68 : wht <= smile068[138-count_h];
-          69 : wht <= smile069[138-count_h];
-          70 : wht <= smile070[138-count_h];
-          71 : wht <= smile071[138-count_h];
-          72 : wht <= smile072[138-count_h];
-          73 : wht <= smile073[138-count_h];
-          74 : wht <= smile074[138-count_h];
-          75 : wht <= smile075[138-count_h];
-          76 : wht <= smile076[138-count_h];
-          77 : wht <= smile077[138-count_h];
-          78 : wht <= smile078[138-count_h];
-          79 : wht <= smile079[138-count_h];
-          80 : wht <= smile080[138-count_h];
-          81 : wht <= smile081[138-count_h];
-          82 : wht <= smile082[138-count_h];
-          83 : wht <= smile083[138-count_h];
-          84 : wht <= smile084[138-count_h];
-          85 : wht <= smile085[138-count_h];
-          86 : wht <= smile086[138-count_h];
-          87 : wht <= smile087[138-count_h];
-          88 : wht <= smile088[138-count_h];
-          89 : wht <= smile089[138-count_h];
-          90 : wht <= smile090[138-count_h];
-          91 : wht <= smile091[138-count_h];
-          92 : wht <= smile092[138-count_h];
-          93 : wht <= smile093[138-count_h];
-          94 : wht <= smile094[138-count_h];
-          95 : wht <= smile095[138-count_h];
-          96 : wht <= smile096[138-count_h];
-          97 : wht <= smile097[138-count_h];
-          98 : wht <= smile098[138-count_h];
-          99 : wht <= smile099[138-count_h];
-          100 : wht <= smile100[138-count_h];
-          101 : wht <= smile101[138-count_h];
-          102 : wht <= smile102[138-count_h];
-          103 : wht <= smile103[138-count_h];
-          104 : wht <= smile104[138-count_h];
-          105 : wht <= smile105[138-count_h];
-          106 : wht <= smile106[138-count_h];
-          107 : wht <= smile107[138-count_h];
-          108 : wht <= smile108[138-count_h];
-          109 : wht <= smile109[138-count_h];
-          110 : wht <= smile110[138-count_h];
-          111 : wht <= smile111[138-count_h];
-          112 : wht <= smile112[138-count_h];
-          default: wht <= 1'b0;
-        endcase
+  assign blu = (blank) ? 1'b0 : 1'b1;
+
+  assign wht = (count_v < 100 || count_v > 211 || count_h < 80 || count_h > 138) ? 1'b0 :
+               (count_v == 100) ? smile001[138-count_h] :
+               (count_v == 101) ? smile002[138-count_h] :
+               (count_v == 102) ? smile003[138-count_h] :
+               (count_v == 103) ? smile004[138-count_h] :
+               (count_v == 104) ? smile005[138-count_h] :
+               (count_v == 105) ? smile006[138-count_h] :
+               (count_v == 106) ? smile007[138-count_h] :
+               (count_v == 107) ? smile008[138-count_h] :
+               (count_v == 108) ? smile009[138-count_h] :
+               (count_v == 109) ? smile010[138-count_h] :
+               (count_v == 110) ? smile011[138-count_h] :
+               (count_v == 111) ? smile012[138-count_h] :
+               (count_v == 112) ? smile013[138-count_h] :
+               (count_v == 113) ? smile014[138-count_h] :
+               (count_v == 114) ? smile015[138-count_h] :
+               (count_v == 115) ? smile016[138-count_h] :
+               (count_v == 116) ? smile017[138-count_h] :
+               (count_v == 117) ? smile018[138-count_h] :
+               (count_v == 118) ? smile019[138-count_h] :
+               (count_v == 119) ? smile020[138-count_h] :
+               (count_v == 120) ? smile021[138-count_h] :
+               (count_v == 121) ? smile022[138-count_h] :
+               (count_v == 122) ? smile023[138-count_h] :
+               (count_v == 123) ? smile024[138-count_h] :
+               (count_v == 124) ? smile025[138-count_h] :
+               (count_v == 125) ? smile026[138-count_h] :
+               (count_v == 126) ? smile027[138-count_h] :
+               (count_v == 127) ? smile028[138-count_h] :
+               (count_v == 128) ? smile029[138-count_h] :
+               (count_v == 129) ? smile030[138-count_h] :
+               (count_v == 130) ? smile031[138-count_h] :
+               (count_v == 131) ? smile032[138-count_h] :
+               (count_v == 132) ? smile033[138-count_h] :
+               (count_v == 133) ? smile034[138-count_h] :
+               (count_v == 134) ? smile035[138-count_h] :
+               (count_v == 135) ? smile036[138-count_h] :
+               (count_v == 136) ? smile037[138-count_h] :
+               (count_v == 137) ? smile038[138-count_h] :
+               (count_v == 138) ? smile039[138-count_h] :
+               (count_v == 139) ? smile040[138-count_h] :
+               (count_v == 140) ? smile041[138-count_h] :
+               (count_v == 141) ? smile042[138-count_h] :
+               (count_v == 142) ? smile043[138-count_h] :
+               (count_v == 143) ? smile044[138-count_h] :
+               (count_v == 144) ? smile045[138-count_h] :
+               (count_v == 145) ? smile046[138-count_h] :
+               (count_v == 146) ? smile047[138-count_h] :
+               (count_v == 147) ? smile048[138-count_h] :
+               (count_v == 148) ? smile049[138-count_h] :
+               (count_v == 149) ? smile050[138-count_h] :
+               (count_v == 150) ? smile051[138-count_h] :
+               (count_v == 151) ? smile052[138-count_h] :
+               (count_v == 152) ? smile053[138-count_h] :
+               (count_v == 153) ? smile054[138-count_h] :
+               (count_v == 154) ? smile055[138-count_h] :
+               (count_v == 155) ? smile056[138-count_h] :
+               (count_v == 156) ? smile057[138-count_h] :
+               (count_v == 157) ? smile058[138-count_h] :
+               (count_v == 158) ? smile059[138-count_h] :
+               (count_v == 159) ? smile060[138-count_h] :
+               (count_v == 160) ? smile061[138-count_h] :
+               (count_v == 161) ? smile062[138-count_h] :
+               (count_v == 162) ? smile063[138-count_h] :
+               (count_v == 163) ? smile064[138-count_h] :
+               (count_v == 164) ? smile065[138-count_h] :
+               (count_v == 165) ? smile066[138-count_h] :
+               (count_v == 166) ? smile067[138-count_h] :
+               (count_v == 167) ? smile068[138-count_h] :
+               (count_v == 168) ? smile069[138-count_h] :
+               (count_v == 169) ? smile070[138-count_h] :
+               (count_v == 170) ? smile071[138-count_h] :
+               (count_v == 171) ? smile072[138-count_h] :
+               (count_v == 172) ? smile073[138-count_h] :
+               (count_v == 173) ? smile074[138-count_h] :
+               (count_v == 174) ? smile075[138-count_h] :
+               (count_v == 175) ? smile076[138-count_h] :
+               (count_v == 176) ? smile077[138-count_h] :
+               (count_v == 177) ? smile078[138-count_h] :
+               (count_v == 178) ? smile079[138-count_h] :
+               (count_v == 179) ? smile080[138-count_h] :
+               (count_v == 180) ? smile081[138-count_h] :
+               (count_v == 181) ? smile082[138-count_h] :
+               (count_v == 182) ? smile083[138-count_h] :
+               (count_v == 183) ? smile084[138-count_h] :
+               (count_v == 184) ? smile085[138-count_h] :
+               (count_v == 185) ? smile086[138-count_h] :
+               (count_v == 186) ? smile087[138-count_h] :
+               (count_v == 187) ? smile088[138-count_h] :
+               (count_v == 188) ? smile089[138-count_h] :
+               (count_v == 189) ? smile090[138-count_h] :
+               (count_v == 190) ? smile091[138-count_h] :
+               (count_v == 191) ? smile092[138-count_h] :
+               (count_v == 192) ? smile093[138-count_h] :
+               (count_v == 193) ? smile094[138-count_h] :
+               (count_v == 194) ? smile095[138-count_h] :
+               (count_v == 195) ? smile096[138-count_h] :
+               (count_v == 196) ? smile097[138-count_h] :
+               (count_v == 197) ? smile098[138-count_h] :
+               (count_v == 198) ? smile099[138-count_h] :
+               (count_v == 199) ? smile100[138-count_h] :
+               (count_v == 200) ? smile101[138-count_h] :
+               (count_v == 201) ? smile102[138-count_h] :
+               (count_v == 202) ? smile103[138-count_h] :
+               (count_v == 203) ? smile104[138-count_h] :
+               (count_v == 204) ? smile105[138-count_h] :
+               (count_v == 205) ? smile106[138-count_h] :
+               (count_v == 206) ? smile107[138-count_h] :
+               (count_v == 207) ? smile108[138-count_h] :
+               (count_v == 208) ? smile109[138-count_h] :
+               (count_v == 209) ? smile110[138-count_h] :
+               (count_v == 210) ? smile111[138-count_h] :
+               (count_v == 211) ? smile112[138-count_h] :
+               1'b0;
+//   always @ (blank) begin
+//     if (blank) begin
+//       wht <= 1'b0;
+//     end else begin
+//       if (count_v > 99 && count_v < 212 && count_h > 79 && count_h < 139) begin
+//         case(count_v-99)
+//           1 : wht <= smile001[138-count_h];
+//           2 : wht <= smile002[138-count_h];
+//           3 : wht <= smile003[138-count_h];
+//           4 : wht <= smile004[138-count_h];
+//           5 : wht <= smile005[138-count_h];
+//           6 : wht <= smile006[138-count_h];
+//           7 : wht <= smile007[138-count_h];
+//           8 : wht <= smile008[138-count_h];
+//           9 : wht <= smile009[138-count_h];
+//           10 : wht <= smile010[138-count_h];
+//           11 : wht <= smile011[138-count_h];
+//           12 : wht <= smile012[138-count_h];
+//           13 : wht <= smile013[138-count_h];
+//           14 : wht <= smile014[138-count_h];
+//           15 : wht <= smile015[138-count_h];
+//           16 : wht <= smile016[138-count_h];
+//           17 : wht <= smile017[138-count_h];
+//           18 : wht <= smile018[138-count_h];
+//           19 : wht <= smile019[138-count_h];
+//           20 : wht <= smile020[138-count_h];
+//           21 : wht <= smile021[138-count_h];
+//           22 : wht <= smile022[138-count_h];
+//           23 : wht <= smile023[138-count_h];
+//           24 : wht <= smile024[138-count_h];
+//           25 : wht <= smile025[138-count_h];
+//           26 : wht <= smile026[138-count_h];
+//           27 : wht <= smile027[138-count_h];
+//           28 : wht <= smile028[138-count_h];
+//           29 : wht <= smile029[138-count_h];
+//           30 : wht <= smile030[138-count_h];
+//           31 : wht <= smile031[138-count_h];
+//           32 : wht <= smile032[138-count_h];
+//           33 : wht <= smile033[138-count_h];
+//           34 : wht <= smile034[138-count_h];
+//           35 : wht <= smile035[138-count_h];
+//           36 : wht <= smile036[138-count_h];
+//           37 : wht <= smile037[138-count_h];
+//           38 : wht <= smile038[138-count_h];
+//           39 : wht <= smile039[138-count_h];
+//           40 : wht <= smile040[138-count_h];
+//           41 : wht <= smile041[138-count_h];
+//           42 : wht <= smile042[138-count_h];
+//           43 : wht <= smile043[138-count_h];
+//           44 : wht <= smile044[138-count_h];
+//           45 : wht <= smile045[138-count_h];
+//           46 : wht <= smile046[138-count_h];
+//           47 : wht <= smile047[138-count_h];
+//           48 : wht <= smile048[138-count_h];
+//           49 : wht <= smile049[138-count_h];
+//           50 : wht <= smile050[138-count_h];
+//           51 : wht <= smile051[138-count_h];
+//           52 : wht <= smile052[138-count_h];
+//           53 : wht <= smile053[138-count_h];
+//           54 : wht <= smile054[138-count_h];
+//           55 : wht <= smile055[138-count_h];
+//           56 : wht <= smile056[138-count_h];
+//           57 : wht <= smile057[138-count_h];
+//           58 : wht <= smile058[138-count_h];
+//           59 : wht <= smile059[138-count_h];
+//           60 : wht <= smile060[138-count_h];
+//           61 : wht <= smile061[138-count_h];
+//           62 : wht <= smile062[138-count_h];
+//           63 : wht <= smile063[138-count_h];
+//           64 : wht <= smile064[138-count_h];
+//           65 : wht <= smile065[138-count_h];
+//           66 : wht <= smile066[138-count_h];
+//           67 : wht <= smile067[138-count_h];
+//           68 : wht <= smile068[138-count_h];
+//           69 : wht <= smile069[138-count_h];
+//           70 : wht <= smile070[138-count_h];
+//           71 : wht <= smile071[138-count_h];
+//           72 : wht <= smile072[138-count_h];
+//           73 : wht <= smile073[138-count_h];
+//           74 : wht <= smile074[138-count_h];
+//           75 : wht <= smile075[138-count_h];
+//           76 : wht <= smile076[138-count_h];
+//           77 : wht <= smile077[138-count_h];
+//           78 : wht <= smile078[138-count_h];
+//           79 : wht <= smile079[138-count_h];
+//           80 : wht <= smile080[138-count_h];
+//           81 : wht <= smile081[138-count_h];
+//           82 : wht <= smile082[138-count_h];
+//           83 : wht <= smile083[138-count_h];
+//           84 : wht <= smile084[138-count_h];
+//           85 : wht <= smile085[138-count_h];
+//           86 : wht <= smile086[138-count_h];
+//           87 : wht <= smile087[138-count_h];
+//           88 : wht <= smile088[138-count_h];
+//           89 : wht <= smile089[138-count_h];
+//           90 : wht <= smile090[138-count_h];
+//           91 : wht <= smile091[138-count_h];
+//           92 : wht <= smile092[138-count_h];
+//           93 : wht <= smile093[138-count_h];
+//           94 : wht <= smile094[138-count_h];
+//           95 : wht <= smile095[138-count_h];
+//           96 : wht <= smile096[138-count_h];
+//           97 : wht <= smile097[138-count_h];
+//           98 : wht <= smile098[138-count_h];
+//           99 : wht <= smile099[138-count_h];
+//           100 : wht <= smile100[138-count_h];
+//           101 : wht <= smile101[138-count_h];
+//           102 : wht <= smile102[138-count_h];
+//           103 : wht <= smile103[138-count_h];
+//           104 : wht <= smile104[138-count_h];
+//           105 : wht <= smile105[138-count_h];
+//           106 : wht <= smile106[138-count_h];
+//           107 : wht <= smile107[138-count_h];
+//           108 : wht <= smile108[138-count_h];
+//           109 : wht <= smile109[138-count_h];
+//           110 : wht <= smile110[138-count_h];
+//           111 : wht <= smile111[138-count_h];
+//           112 : wht <= smile112[138-count_h];
+//           default: wht <= 1'b0;
+//         endcase
 //       end else if (count_v > 299 && count_v < 354 && count_h > 14 && count_h < 602) begin
 //         case(count_v-299)
 //           1 : wht  <= words01[602-count_h];
@@ -527,11 +641,11 @@ module vga(
 //           54 : wht <= words54[602-count_h];
 //           default: wht <= 1'b0;
 //         endcase
-      end else begin
-        wht <= 1'b0;
-      end
-    end
-  end
+//       end else begin
+//         wht <= 1'b0;
+//       end
+//     end
+//   end
 
   always @ (posedge clk) begin
     hs_out <= 1'b0;
