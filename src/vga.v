@@ -1,3 +1,4 @@
+
 module vga(
 	       input  clk,
 	       input  rst,
@@ -320,14 +321,18 @@ module vga(
   // 2^15 = 32768
   reg [14:0]      count_v;
 
-  wire            red;
-  wire            grn;
+  
+
+  reg             red;
+  reg             grn;
   wire            blu;
   wire            wht;
   reg             hs_out;
   reg             vs_out;
 
   reg [3:0]       fb[3:0];
+
+  reg [53:0]     row;
 
   assign r0 = red;
   assign r1 = red;
@@ -344,179 +349,189 @@ module vga(
   assign hs = !hs_out;
   assign vs = !vs_out;
 
-  assign red = wht;
-  assign grn = wht;
+  always @ (posedge clk) begin
+    if (rst) begin
+      red <= 1'b0;
+      grn <= 1'b0;
+    end else begin
+      red <= wht;
+      grn <= wht;
+    end
+  end
+
+  //   assign red = wht;
+  //   assign grn = wht;
 
   assign blu = (blank) ? 1'b0 : 1'b1;
 
-  assign wht = (count_h < 20 || count_h > 607) ? 1'b0 :
-               (count_v == 100 && count_h < 79) ? smile001[78-count_h] :
-               (count_v == 101 && count_h < 79) ? smile002[78-count_h] :
-               (count_v == 102 && count_h < 79) ? smile003[78-count_h] :
-               (count_v == 103 && count_h < 79) ? smile004[78-count_h] :
-               (count_v == 104 && count_h < 79) ? smile005[78-count_h] :
-               (count_v == 105 && count_h < 79) ? smile006[78-count_h] :
-               (count_v == 106 && count_h < 79) ? smile007[78-count_h] :
-               (count_v == 107 && count_h < 79) ? smile008[78-count_h] :
-               (count_v == 108 && count_h < 79) ? smile009[78-count_h] :
-               (count_v == 109 && count_h < 79) ? smile010[78-count_h] :
-               (count_v == 110 && count_h < 79) ? smile011[78-count_h] :
-               (count_v == 111 && count_h < 79) ? smile012[78-count_h] :
-               (count_v == 112 && count_h < 79) ? smile013[78-count_h] :
-               (count_v == 113 && count_h < 79) ? smile014[78-count_h] :
-               (count_v == 114 && count_h < 79) ? smile015[78-count_h] :
-               (count_v == 115 && count_h < 79) ? smile016[78-count_h] :
-               (count_v == 116 && count_h < 79) ? smile017[78-count_h] :
-               (count_v == 117 && count_h < 79) ? smile018[78-count_h] :
-               (count_v == 118 && count_h < 79) ? smile019[78-count_h] :
-               (count_v == 119 && count_h < 79) ? smile020[78-count_h] :
-               (count_v == 120 && count_h < 79) ? smile021[78-count_h] :
-               (count_v == 121 && count_h < 79) ? smile022[78-count_h] :
-               (count_v == 122 && count_h < 79) ? smile023[78-count_h] :
-               (count_v == 123 && count_h < 79) ? smile024[78-count_h] :
-               (count_v == 124 && count_h < 79) ? smile025[78-count_h] :
-               (count_v == 125 && count_h < 79) ? smile026[78-count_h] :
-               (count_v == 126 && count_h < 79) ? smile027[78-count_h] :
-               (count_v == 127 && count_h < 79) ? smile028[78-count_h] :
-               (count_v == 128 && count_h < 79) ? smile029[78-count_h] :
-               (count_v == 129 && count_h < 79) ? smile030[78-count_h] :
-               (count_v == 130 && count_h < 79) ? smile031[78-count_h] :
-               (count_v == 131 && count_h < 79) ? smile032[78-count_h] :
-               (count_v == 132 && count_h < 79) ? smile033[78-count_h] :
-               (count_v == 133 && count_h < 79) ? smile034[78-count_h] :
-               (count_v == 134 && count_h < 79) ? smile035[78-count_h] :
-               (count_v == 135 && count_h < 79) ? smile036[78-count_h] :
-               (count_v == 136 && count_h < 79) ? smile037[78-count_h] :
-               (count_v == 137 && count_h < 79) ? smile038[78-count_h] :
-               (count_v == 138 && count_h < 79) ? smile039[78-count_h] :
-               (count_v == 139 && count_h < 79) ? smile040[78-count_h] :
-               (count_v == 140 && count_h < 79) ? smile041[78-count_h] :
-               (count_v == 141 && count_h < 79) ? smile042[78-count_h] :
-               (count_v == 142 && count_h < 79) ? smile043[78-count_h] :
-               (count_v == 143 && count_h < 79) ? smile044[78-count_h] :
-               (count_v == 144 && count_h < 79) ? smile045[78-count_h] :
-               (count_v == 145 && count_h < 79) ? smile046[78-count_h] :
-               (count_v == 146 && count_h < 79) ? smile047[78-count_h] :
-               (count_v == 147 && count_h < 79) ? smile048[78-count_h] :
-               (count_v == 148 && count_h < 79) ? smile049[78-count_h] :
-               (count_v == 149 && count_h < 79) ? smile050[78-count_h] :
-               (count_v == 150 && count_h < 79) ? smile051[78-count_h] :
-               (count_v == 151 && count_h < 79) ? smile052[78-count_h] :
-               (count_v == 152 && count_h < 79) ? smile053[78-count_h] :
-               (count_v == 153 && count_h < 79) ? smile054[78-count_h] :
-               (count_v == 154 && count_h < 79) ? smile055[78-count_h] :
-               (count_v == 155 && count_h < 79) ? smile056[78-count_h] :
-               (count_v == 156 && count_h < 79) ? smile057[78-count_h] :
-               (count_v == 157 && count_h < 79) ? smile058[78-count_h] :
-               (count_v == 158 && count_h < 79) ? smile059[78-count_h] :
-               (count_v == 159 && count_h < 79) ? smile060[78-count_h] :
-               (count_v == 160 && count_h < 79) ? smile061[78-count_h] :
-               (count_v == 161 && count_h < 79) ? smile062[78-count_h] :
-               (count_v == 162 && count_h < 79) ? smile063[78-count_h] :
-               (count_v == 163 && count_h < 79) ? smile064[78-count_h] :
-               (count_v == 164 && count_h < 79) ? smile065[78-count_h] :
-               (count_v == 165 && count_h < 79) ? smile066[78-count_h] :
-               (count_v == 166 && count_h < 79) ? smile067[78-count_h] :
-               (count_v == 167 && count_h < 79) ? smile068[78-count_h] :
-               (count_v == 168 && count_h < 79) ? smile069[78-count_h] :
-               (count_v == 169 && count_h < 79) ? smile070[78-count_h] :
-               (count_v == 170 && count_h < 79) ? smile071[78-count_h] :
-               (count_v == 171 && count_h < 79) ? smile072[78-count_h] :
-               (count_v == 172 && count_h < 79) ? smile073[78-count_h] :
-               (count_v == 173 && count_h < 79) ? smile074[78-count_h] :
-               (count_v == 174 && count_h < 79) ? smile075[78-count_h] :
-               (count_v == 175 && count_h < 79) ? smile076[78-count_h] :
-               (count_v == 176 && count_h < 79) ? smile077[78-count_h] :
-               (count_v == 177 && count_h < 79) ? smile078[78-count_h] :
-               (count_v == 178 && count_h < 79) ? smile079[78-count_h] :
-               (count_v == 179 && count_h < 79) ? smile080[78-count_h] :
-               (count_v == 180 && count_h < 79) ? smile081[78-count_h] :
-               (count_v == 181 && count_h < 79) ? smile082[78-count_h] :
-               (count_v == 182 && count_h < 79) ? smile083[78-count_h] :
-               (count_v == 183 && count_h < 79) ? smile084[78-count_h] :
-               (count_v == 184 && count_h < 79) ? smile085[78-count_h] :
-               (count_v == 185 && count_h < 79) ? smile086[78-count_h] :
-               (count_v == 186 && count_h < 79) ? smile087[78-count_h] :
-               (count_v == 187 && count_h < 79) ? smile088[78-count_h] :
-               (count_v == 188 && count_h < 79) ? smile089[78-count_h] :
-               (count_v == 189 && count_h < 79) ? smile090[78-count_h] :
-               (count_v == 190 && count_h < 79) ? smile091[78-count_h] :
-               (count_v == 191 && count_h < 79) ? smile092[78-count_h] :
-               (count_v == 192 && count_h < 79) ? smile093[78-count_h] :
-               (count_v == 193 && count_h < 79) ? smile094[78-count_h] :
-               (count_v == 194 && count_h < 79) ? smile095[78-count_h] :
-               (count_v == 195 && count_h < 79) ? smile096[78-count_h] :
-               (count_v == 196 && count_h < 79) ? smile097[78-count_h] :
-               (count_v == 197 && count_h < 79) ? smile098[78-count_h] :
-               (count_v == 198 && count_h < 79) ? smile099[78-count_h] :
-               (count_v == 199 && count_h < 79) ? smile100[78-count_h] :
-               (count_v == 200 && count_h < 79) ? smile101[78-count_h] :
-               (count_v == 201 && count_h < 79) ? smile102[78-count_h] :
-               (count_v == 202 && count_h < 79) ? smile103[78-count_h] :
-               (count_v == 203 && count_h < 79) ? smile104[78-count_h] :
-               (count_v == 204 && count_h < 79) ? smile105[78-count_h] :
-               (count_v == 205 && count_h < 79) ? smile106[78-count_h] :
-               (count_v == 206 && count_h < 79) ? smile107[78-count_h] :
-               (count_v == 207 && count_h < 79) ? smile108[78-count_h] :
-               (count_v == 208 && count_h < 79) ? smile109[78-count_h] :
-               (count_v == 209 && count_h < 79) ? smile110[78-count_h] :
-               (count_v == 210 && count_h < 79) ? smile111[78-count_h] :
-               (count_v == 211 && count_h < 79) ? smile112[78-count_h] :
-               (count_v == 300) ? words01[607-count_h] :
-               (count_v == 301) ? words02[607-count_h] :
-               (count_v == 302) ? words03[607-count_h] :
-               (count_v == 303) ? words04[607-count_h] :
-               (count_v == 304) ? words05[607-count_h] :
-               (count_v == 305) ? words06[607-count_h] :
-               (count_v == 306) ? words07[607-count_h] :
-               (count_v == 307) ? words08[607-count_h] :
-               (count_v == 308) ? words09[607-count_h] :
-               (count_v == 309) ? words10[607-count_h] :
-               (count_v == 310) ? words11[607-count_h] :
-               (count_v == 311) ? words12[607-count_h] :
-               (count_v == 312) ? words13[607-count_h] :
-               (count_v == 313) ? words14[607-count_h] :
-               (count_v == 314) ? words15[607-count_h] :
-               (count_v == 315) ? words16[607-count_h] :
-               (count_v == 316) ? words17[607-count_h] :
-               (count_v == 317) ? words18[607-count_h] :
-               (count_v == 318) ? words19[607-count_h] :
-               (count_v == 319) ? words20[607-count_h] :
-               (count_v == 320) ? words21[607-count_h] :
-               (count_v == 321) ? words22[607-count_h] :
-               (count_v == 322) ? words23[607-count_h] :
-               (count_v == 323) ? words24[607-count_h] :
-               (count_v == 324) ? words25[607-count_h] :
-               (count_v == 325) ? words26[607-count_h] :
-               (count_v == 326) ? words27[607-count_h] :
-               (count_v == 327) ? words28[607-count_h] :
-               (count_v == 328) ? words29[607-count_h] :
-               (count_v == 329) ? words30[607-count_h] :
-               (count_v == 330) ? words31[607-count_h] :
-               (count_v == 331) ? words32[607-count_h] :
-               (count_v == 332) ? words33[607-count_h] :
-               (count_v == 333) ? words34[607-count_h] :
-               (count_v == 334) ? words35[607-count_h] :
-               (count_v == 335) ? words36[607-count_h] :
-               (count_v == 336) ? words37[607-count_h] :
-               (count_v == 337) ? words38[607-count_h] :
-               (count_v == 338) ? words39[607-count_h] :
-               (count_v == 339) ? words40[607-count_h] :
-               (count_v == 340) ? words41[607-count_h] :
-               (count_v == 341) ? words42[607-count_h] :
-               (count_v == 342) ? words43[607-count_h] :
-               (count_v == 343) ? words44[607-count_h] :
-               (count_v == 344) ? words45[607-count_h] :
-               (count_v == 345) ? words46[607-count_h] :
-               (count_v == 346) ? words47[607-count_h] :
-               (count_v == 347) ? words48[607-count_h] :
-               (count_v == 348) ? words49[607-count_h] :
-               (count_v == 349) ? words50[607-count_h] :
-               (count_v == 350) ? words51[607-count_h] :
-               (count_v == 351) ? words52[607-count_h] :
-               (count_v == 352) ? words53[607-count_h] :
-               (count_v == 353) ? words54[607-count_h] :
-               1'b0;
+  assign wht            = (count_h < 20 || count_h > 607) ? 1'b0 :
+//                           (count_v == 100 && count_h < 79) ? smile001[78-count_h] :
+//                           (count_v == 101 && count_h < 79) ? smile002[78-count_h] :
+//                           (count_v == 102 && count_h < 79) ? smile003[78-count_h] :
+//                           (count_v == 103 && count_h < 79) ? smile004[78-count_h] :
+//                           (count_v == 104 && count_h < 79) ? smile005[78-count_h] :
+//                           (count_v == 105 && count_h < 79) ? smile006[78-count_h] :
+//                           (count_v == 106 && count_h < 79) ? smile007[78-count_h] :
+//                           (count_v == 107 && count_h < 79) ? smile008[78-count_h] :
+//                           (count_v == 108 && count_h < 79) ? smile009[78-count_h] :
+//                           (count_v == 109 && count_h < 79) ? smile010[78-count_h] :
+//                           (count_v == 110 && count_h < 79) ? smile011[78-count_h] :
+//                           (count_v == 111 && count_h < 79) ? smile012[78-count_h] :
+//                           (count_v == 112 && count_h < 79) ? smile013[78-count_h] :
+//                           (count_v == 113 && count_h < 79) ? smile014[78-count_h] :
+//                           (count_v == 114 && count_h < 79) ? smile015[78-count_h] :
+//                           (count_v == 115 && count_h < 79) ? smile016[78-count_h] :
+//                           (count_v == 116 && count_h < 79) ? smile017[78-count_h] :
+//                           (count_v == 117 && count_h < 79) ? smile018[78-count_h] :
+//                           (count_v == 118 && count_h < 79) ? smile019[78-count_h] :
+//                           (count_v == 119 && count_h < 79) ? smile020[78-count_h] :
+//                           (count_v == 120 && count_h < 79) ? smile021[78-count_h] :
+//                           (count_v == 121 && count_h < 79) ? smile022[78-count_h] :
+//                           (count_v == 122 && count_h < 79) ? smile023[78-count_h] :
+//                           (count_v == 123 && count_h < 79) ? smile024[78-count_h] :
+//                           (count_v == 124 && count_h < 79) ? smile025[78-count_h] :
+//                           (count_v == 125 && count_h < 79) ? smile026[78-count_h] :
+//                           (count_v == 126 && count_h < 79) ? smile027[78-count_h] :
+//                           (count_v == 127 && count_h < 79) ? smile028[78-count_h] :
+//                           (count_v == 128 && count_h < 79) ? smile029[78-count_h] :
+//                           (count_v == 129 && count_h < 79) ? smile030[78-count_h] :
+//                           (count_v == 130 && count_h < 79) ? smile031[78-count_h] :
+//                           (count_v == 131 && count_h < 79) ? smile032[78-count_h] :
+//                           (count_v == 132 && count_h < 79) ? smile033[78-count_h] :
+//                           (count_v == 133 && count_h < 79) ? smile034[78-count_h] :
+//                           (count_v == 134 && count_h < 79) ? smile035[78-count_h] :
+//                           (count_v == 135 && count_h < 79) ? smile036[78-count_h] :
+//                           (count_v == 136 && count_h < 79) ? smile037[78-count_h] :
+//                           (count_v == 137 && count_h < 79) ? smile038[78-count_h] :
+//                           (count_v == 138 && count_h < 79) ? smile039[78-count_h] :
+//                           (count_v == 139 && count_h < 79) ? smile040[78-count_h] :
+//                           (count_v == 140 && count_h < 79) ? smile041[78-count_h] :
+//                           (count_v == 141 && count_h < 79) ? smile042[78-count_h] :
+//                           (count_v == 142 && count_h < 79) ? smile043[78-count_h] :
+//                           (count_v == 143 && count_h < 79) ? smile044[78-count_h] :
+//                           (count_v == 144 && count_h < 79) ? smile045[78-count_h] :
+//                           (count_v == 145 && count_h < 79) ? smile046[78-count_h] :
+//                           (count_v == 146 && count_h < 79) ? smile047[78-count_h] :
+//                           (count_v == 147 && count_h < 79) ? smile048[78-count_h] :
+//                           (count_v == 148 && count_h < 79) ? smile049[78-count_h] :
+//                           (count_v == 149 && count_h < 79) ? smile050[78-count_h] :
+//                           (count_v == 150 && count_h < 79) ? smile051[78-count_h] :
+//                           (count_v == 151 && count_h < 79) ? smile052[78-count_h] :
+//                           (count_v == 152 && count_h < 79) ? smile053[78-count_h] :
+//                           (count_v == 153 && count_h < 79) ? smile054[78-count_h] :
+//                           (count_v == 154 && count_h < 79) ? smile055[78-count_h] :
+//                           (count_v == 155 && count_h < 79) ? smile056[78-count_h] :
+//                           (count_v == 156 && count_h < 79) ? smile057[78-count_h] :
+//                           (count_v == 157 && count_h < 79) ? smile058[78-count_h] :
+//                           (count_v == 158 && count_h < 79) ? smile059[78-count_h] :
+//                           (count_v == 159 && count_h < 79) ? smile060[78-count_h] :
+//                           (count_v == 160 && count_h < 79) ? smile061[78-count_h] :
+//                           (count_v == 161 && count_h < 79) ? smile062[78-count_h] :
+//                           (count_v == 162 && count_h < 79) ? smile063[78-count_h] :
+//                           (count_v == 163 && count_h < 79) ? smile064[78-count_h] :
+//                           (count_v == 164 && count_h < 79) ? smile065[78-count_h] :
+//                           (count_v == 165 && count_h < 79) ? smile066[78-count_h] :
+//                           (count_v == 166 && count_h < 79) ? smile067[78-count_h] :
+//                           (count_v == 167 && count_h < 79) ? smile068[78-count_h] :
+//                           (count_v == 168 && count_h < 79) ? smile069[78-count_h] :
+//                           (count_v == 169 && count_h < 79) ? smile070[78-count_h] :
+//                           (count_v == 170 && count_h < 79) ? smile071[78-count_h] :
+//                           (count_v == 171 && count_h < 79) ? smile072[78-count_h] :
+//                           (count_v == 172 && count_h < 79) ? smile073[78-count_h] :
+//                           (count_v == 173 && count_h < 79) ? smile074[78-count_h] :
+//                           (count_v == 174 && count_h < 79) ? smile075[78-count_h] :
+//                           (count_v == 175 && count_h < 79) ? smile076[78-count_h] :
+//                           (count_v == 176 && count_h < 79) ? smile077[78-count_h] :
+//                           (count_v == 177 && count_h < 79) ? smile078[78-count_h] :
+//                           (count_v == 178 && count_h < 79) ? smile079[78-count_h] :
+//                           (count_v == 179 && count_h < 79) ? smile080[78-count_h] :
+//                           (count_v == 180 && count_h < 79) ? smile081[78-count_h] :
+//                           (count_v == 181 && count_h < 79) ? smile082[78-count_h] :
+//                           (count_v == 182 && count_h < 79) ? smile083[78-count_h] :
+//                           (count_v == 183 && count_h < 79) ? smile084[78-count_h] :
+//                           (count_v == 184 && count_h < 79) ? smile085[78-count_h] :
+//                           (count_v == 185 && count_h < 79) ? smile086[78-count_h] :
+//                           (count_v == 186 && count_h < 79) ? smile087[78-count_h] :
+//                           (count_v == 187 && count_h < 79) ? smile088[78-count_h] :
+//                           (count_v == 188 && count_h < 79) ? smile089[78-count_h] :
+//                           (count_v == 189 && count_h < 79) ? smile090[78-count_h] :
+//                           (count_v == 190 && count_h < 79) ? smile091[78-count_h] :
+//                           (count_v == 191 && count_h < 79) ? smile092[78-count_h] :
+//                           (count_v == 192 && count_h < 79) ? smile093[78-count_h] :
+//                           (count_v == 193 && count_h < 79) ? smile094[78-count_h] :
+//                           (count_v == 194 && count_h < 79) ? smile095[78-count_h] :
+//                           (count_v == 195 && count_h < 79) ? smile096[78-count_h] :
+//                           (count_v == 196 && count_h < 79) ? smile097[78-count_h] :
+//                           (count_v == 197 && count_h < 79) ? smile098[78-count_h] :
+//                           (count_v == 198 && count_h < 79) ? smile099[78-count_h] :
+//                           (count_v == 199 && count_h < 79) ? smile100[78-count_h] :
+//                           (count_v == 200 && count_h < 79) ? smile101[78-count_h] :
+//                           (count_v == 201 && count_h < 79) ? smile102[78-count_h] :
+//                           (count_v == 202 && count_h < 79) ? smile103[78-count_h] :
+//                           (count_v == 203 && count_h < 79) ? smile104[78-count_h] :
+//                           (count_v == 204 && count_h < 79) ? smile105[78-count_h] :
+//                           (count_v == 205 && count_h < 79) ? smile106[78-count_h] :
+//                           (count_v == 206 && count_h < 79) ? smile107[78-count_h] :
+//                           (count_v == 207 && count_h < 79) ? smile108[78-count_h] :
+//                           (count_v == 208 && count_h < 79) ? smile109[78-count_h] :
+//                           (count_v == 209 && count_h < 79) ? smile110[78-count_h] :
+//                           (count_v == 210 && count_h < 79) ? smile111[78-count_h] :
+//                           (count_v == 211 && count_h < 79) ? smile112[78-count_h] :
+                          (row[0] == 1'b1) ? words01[607-count_h] :
+                          (row[1] == 1'b1) ? words02[607-count_h] :
+                          (row[2] == 1'b1) ? words03[607-count_h] :
+                          (row[3] == 1'b1) ? words04[607-count_h] :
+                          (row[4] == 1'b1) ? words05[607-count_h] :
+                          (row[5] == 1'b1) ? words06[607-count_h] :
+                          (row[6] == 1'b1) ? words07[607-count_h] :
+                          (row[7] == 1'b1) ? words08[607-count_h] :
+                          (row[8] == 1'b1) ? words09[607-count_h] :
+                          (row[9] == 1'b1) ? words10[607-count_h] :
+                          (row[10] == 1'b1) ? words11[607-count_h] :
+                          (row[11] == 1'b1) ? words12[607-count_h] :
+                          (row[12] == 1'b1) ? words13[607-count_h] :
+                          (row[13] == 1'b1) ? words14[607-count_h] :
+                          (row[14] == 1'b1) ? words15[607-count_h] :
+                          (row[15] == 1'b1) ? words16[607-count_h] :
+                          (row[16] == 1'b1) ? words17[607-count_h] :
+                          (row[17] == 1'b1) ? words18[607-count_h] :
+                          (row[18] == 1'b1) ? words19[607-count_h] :
+                          (row[19] == 1'b1) ? words20[607-count_h] :
+                          (row[20] == 1'b1) ? words21[607-count_h] :
+                          (row[21] == 1'b1) ? words22[607-count_h] :
+                          (row[22] == 1'b1) ? words23[607-count_h] :
+                          (row[23] == 1'b1) ? words24[607-count_h] :
+                          (row[24] == 1'b1) ? words25[607-count_h] :
+                          (row[25] == 1'b1) ? words26[607-count_h] :
+                          (row[26] == 1'b1) ? words27[607-count_h] :
+                          (row[27] == 1'b1) ? words28[607-count_h] :
+                          (row[28] == 1'b1) ? words29[607-count_h] :
+                          (row[29] == 1'b1) ? words30[607-count_h] :
+                          (row[30] == 1'b1) ? words31[607-count_h] :
+                          (row[31] == 1'b1) ? words32[607-count_h] :
+                          (row[32] == 1'b1) ? words33[607-count_h] :
+                          (row[33] == 1'b1) ? words34[607-count_h] :
+                          (row[34] == 1'b1) ? words35[607-count_h] :
+                          (row[35] == 1'b1) ? words36[607-count_h] :
+                          (row[36] == 1'b1) ? words37[607-count_h] :
+                          (row[37] == 1'b1) ? words38[607-count_h] :
+                          (row[38] == 1'b1) ? words39[607-count_h] :
+                          (row[39] == 1'b1) ? words40[607-count_h] :
+                          (row[40] == 1'b1) ? words41[607-count_h] :
+                          (row[41] == 1'b1) ? words42[607-count_h] :
+                          (row[42] == 1'b1) ? words43[607-count_h] :
+                          (row[43] == 1'b1) ? words44[607-count_h] :
+                          (row[44] == 1'b1) ? words45[607-count_h] :
+                          (row[45] == 1'b1) ? words46[607-count_h] :
+                          (row[46] == 1'b1) ? words47[607-count_h] :
+                          (row[47] == 1'b1) ? words48[607-count_h] :
+                          (row[48] == 1'b1) ? words49[607-count_h] :
+                          (row[49] == 1'b1) ? words50[607-count_h] :
+                          (row[50] == 1'b1) ? words51[607-count_h] :
+                          (row[51] == 1'b1) ? words52[607-count_h] :
+                          (row[52] == 1'b1) ? words53[607-count_h] :
+                          (row[53] == 1'b1) ? words54[607-count_h] :
+                          1'b0;
 
   always @ (posedge clk) begin
     hs_out <= 1'b0;
@@ -545,12 +560,19 @@ module vga(
 
   always @ (posedge clk) begin
     if (rst) begin
-      count_v <= 15'b111_1111_1111_1111;
-      blank_v <= 1'b1;
-      vs_out  <= 1'b0;
-    end else if (count_h >= h_backporch) begin
+      count_v              <= 15'b111_1111_1111_1111;
+      blank_v              <= 1'b1;
+      vs_out               <= 1'b0;
+      row                  <= 0;
+      end else if (count_h >= h_backporch) begin
       if (count_v < v_visible) begin
         count_v <= count_v + 1;
+        if (count_v > 299 && count_v < 354) begin
+          row    <= row << 1;
+          row[0] <= 1'b0;
+        end else begin
+          row[0] <= 1'b1;
+        end
       end else if (count_v < v_backporch) begin
         count_v <= count_v + 1;
         blank_v <= 1'b1;
