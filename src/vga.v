@@ -61,6 +61,14 @@ module vga(
   reg             left_down_1d;
   reg             right_up_1d;
   reg             right_down_1d;
+
+  reg             left_up_pressed;
+  reg             left_down_pressed;
+  reg             right_up_pressed;
+  reg             right_down_pressed;
+  reg [23:0]      debounce_counter;
+
+  reg             debug;
   
   assign r0 = red;
   assign r1 = red;
@@ -148,32 +156,57 @@ module vga(
     end
   end
 
+  // debounce
+  always @ (posedge clk) begin
+    if (rst) begin
+      debounce_counter <= 0;
+    end else begin
+      left_up_pressed    <= 1'b0;
+      left_down_pressed  <= 1'b0;
+      right_up_pressed   <= 1'b0;
+      right_down_pressed <= 1'b0;
+      // 20ms debounce
+      if (debounce_counter != 25175000/100) begin
+        debounce_counter <= debounce_counter + 1;
+      end else begin
+        debounce_counter <= 0;
+        left_up_1d       <= left_up;
+        left_down_1d     <= left_down;
+        right_up_1d      <= right_up;
+        right_down_1d    <= right_down;
+        if (left_up && left_up_1d) begin
+          left_up_pressed <= 1'b1;
+        end
+        if (left_down && left_down_1d) begin
+          left_down_pressed <= 1'b1;
+        end
+        if (right_up && right_up_1d) begin
+          right_up_pressed <= 1'b1;
+        end
+        if (right_down && right_down_1d) begin
+          right_down_pressed <= 1'b1;
+        end
+      end
+    end
+  end
+
   // Paddles
   always @ (posedge clk) begin
     if (rst) begin
       pos_l <= v_visible/2;
       pos_r <= v_visible/2;
     end else begin
-      left_up_1d    <= left_up;
-      left_down_1d  <= left_down;
-      right_up_1d   <= right_up;  
-      right_down_1d <= right_down;      
-      if (left_up == 1'b1 && left_up_1d == 1'b0) begin
-        if (pos_l > paddle_size/2) begin
+      if (left_up_pressed && pos_l > paddle_size/2) begin
           pos_l <= pos_l - 1;
-        end
-      end else if (left_down == 1'b1 && left_down_1d == 1'b0) begin
-        if (pos_l < v_visible - paddle_size/2) begin
+      end
+      if (left_down_pressed && pos_l < v_visible - paddle_size/2) begin
           pos_l <= pos_l + 1;
-        end
-      end else if (right_up == 1'b1 && right_up_1d == 1'b0) begin
-        if (pos_r > paddle_size/2) begin
+      end
+      if (right_up_pressed && pos_r > paddle_size/2) begin
           pos_r <= pos_r - 1;
-        end
-      end else if (right_down == 1'b1 && right_down_1d == 1'b0) begin
-        if (pos_r < v_visible - paddle_size/2) begin
+      end
+      if (right_down_pressed && pos_r < v_visible - paddle_size/2) begin
           pos_r <= pos_r + 1;
-        end
       end
     end
   end
