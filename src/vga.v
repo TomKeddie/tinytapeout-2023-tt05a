@@ -30,6 +30,8 @@ module vga(
   localparam	  v_sync       = 480 + 22 + 3;
   localparam	  v_backporch = 480 + 22 + 3 + 1;
 
+  localparam      paddle_size = 40;
+
   wire            blank;
   reg             blank_h;
   reg             blank_v;
@@ -38,10 +40,11 @@ module vga(
 
   // 2^10  = 1024
   reg [9:0]       count_h;
-  // 2^15 = 32768
-  reg [14:0]      count_v;
+  // 2^9 = 512
+  reg [8:0]       count_v;
 
-  
+  reg [8:0]       pos_l;
+  reg [8:0]       pos_r;
 
   reg             red;
   reg             grn;
@@ -78,9 +81,15 @@ module vga(
   assign blu = (blank) ? 1'b0 : 1'b1;
 
   assign wht = (blank) ? 1'b0 :
+               // dashed net down the centre
                (count_h > 317 && count_h < 323 && count_v[4] == 1'b0) ? 1'b1 :
+               // left paddle
+               (count_h > 10 && count_h < 16 && count_v > (pos_l-paddle_size/2) && count_v < (pos_l+paddle_size/2)) ? 1'b1 :
+               // right paddle
+               (count_h > 624 && count_h < 630 && count_v > (pos_r-paddle_size/2) && count_v < (pos_r+paddle_size/2)) ? 1'b1 :
                1'b0;
 
+  // Horizontal
   always @ (posedge clk) begin
     hs_out <= 1'b0;
     if (rst) begin
@@ -106,12 +115,13 @@ module vga(
     end
   end
 
+  // Vertical
   always @ (posedge clk) begin
     if (rst) begin
       count_v              <= 15'b111_1111_1111_1111;
       blank_v              <= 1'b1;
       vs_out               <= 1'b0;
-      end else if (count_h >= h_backporch) begin
+    end else if (count_h >= h_backporch) begin
       if (count_v < v_visible) begin
         count_v <= count_v + 1;
       end else if (count_v < v_backporch) begin
@@ -128,5 +138,12 @@ module vga(
       end
     end
   end
-  
+
+  // Paddles
+  always @ (posedge clk) begin
+    if (rst) begin
+      pos_l <= v_visible/2;
+      pos_r <= v_visible/2;
+    end
+  end
 endmodule
