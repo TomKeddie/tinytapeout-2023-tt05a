@@ -2,6 +2,10 @@
 module vga(
 	       input  clk,
 	       input  rst,
+           input  left_up,
+           input  left_down,
+           input  right_up,
+           input  right_down,
 	       output r0,
 	       output r1,
 	       output r2,
@@ -53,6 +57,11 @@ module vga(
   reg             hs_out;
   reg             vs_out;
 
+  reg             left_up_1d;
+  reg             left_down_1d;
+  reg             right_up_1d;
+  reg             right_down_1d;
+  
   assign r0 = red;
   assign r1 = red;
   assign r2 = red;
@@ -144,6 +153,28 @@ module vga(
     if (rst) begin
       pos_l <= v_visible/2;
       pos_r <= v_visible/2;
+    end else begin
+      left_up_1d    <= left_up;
+      left_down_1d  <= left_down;
+      right_up_1d   <= right_up;  
+      right_down_1d <= right_down;      
+      if (left_up == 1'b1 && left_up_1d == 1'b0) begin
+        if (pos_l > paddle_size/2) begin
+          pos_l <= pos_l - 1;
+        end
+      end else if (left_down == 1'b1 && left_down_1d == 1'b0) begin
+        if (pos_l < v_visible - paddle_size/2) begin
+          pos_l <= pos_l + 1;
+        end
+      end else if (right_up == 1'b1 && right_up_1d == 1'b0) begin
+        if (pos_r > paddle_size/2) begin
+          pos_r <= pos_r - 1;
+        end
+      end else if (right_down == 1'b1 && right_down_1d == 1'b0) begin
+        if (pos_r < v_visible - paddle_size/2) begin
+          pos_r <= pos_r + 1;
+        end
+      end
     end
   end
 endmodule

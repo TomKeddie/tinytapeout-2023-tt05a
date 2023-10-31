@@ -138,10 +138,11 @@ Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/
 Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$179 in module SB_DFFSS.
 Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$176 in module SB_DFFR.
 Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$173 in module SB_DFFSR.
-Marked 4 switch rules as full_case in process $proc$vga.v:119$426 in module vga.
-Marked 5 switch rules as full_case in process $proc$vga.v:93$417 in module vga.
-Marked 1 switch rules as full_case in process $proc$vga.v:71$388 in module vga.
-Marked 1 switch rules as full_case in process $proc$top_icebreaker.v:57$381 in module top.
+Marked 4 switch rules as full_case in process $proc$vga.v:152$435 in module vga.
+Marked 4 switch rules as full_case in process $proc$vga.v:128$426 in module vga.
+Marked 5 switch rules as full_case in process $proc$vga.v:102$417 in module vga.
+Marked 1 switch rules as full_case in process $proc$vga.v:80$388 in module vga.
+Marked 1 switch rules as full_case in process $proc$top_icebreaker.v:61$381 in module top.
 Removed a total of 0 dead cases.
 
 3.4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -189,7 +190,7 @@ Found init rule in `\SB_DFFE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosy
   Set init value: \Q = 1'0
 Found init rule in `\SB_DFF.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$170'.
   Set init value: \Q = 1'0
-Found init rule in `\top.$proc$top_icebreaker.v:22$384'.
+Found init rule in `\top.$proc$top_icebreaker.v:26$384'.
   Set init value: \rst_counter = 10'1111111111
 
 3.4.5. Executing PROC_ARST pass (detect async resets in processes).
@@ -204,7 +205,7 @@ Found async reset \R in `\SB_DFFR.$proc$/home/tom/bin/oss-cad-suite/lib/../share
 
 3.4.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
-<suppressed ~32 debug messages>
+<suppressed ~40 debug messages>
 
 3.4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
 Creating decoders for process `\SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$244'.
@@ -265,22 +266,26 @@ Creating decoders for process `\SB_DFFE.$proc$/home/tom/bin/oss-cad-suite/lib/..
      1/1: $0\Q[0:0]
 Creating decoders for process `\SB_DFF.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$170'.
 Creating decoders for process `\SB_DFF.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:271$169'.
-Creating decoders for process `\vga.$proc$vga.v:143$435'.
-     1/2: $0\pos_r[8:0]
-     2/2: $0\pos_l[8:0]
-Creating decoders for process `\vga.$proc$vga.v:119$426'.
+Creating decoders for process `\vga.$proc$vga.v:152$435'.
+     1/6: $0\right_down_1d[0:0]
+     2/6: $0\right_up_1d[0:0]
+     3/6: $0\left_down_1d[0:0]
+     4/6: $0\left_up_1d[0:0]
+     5/6: $0\pos_r[8:0]
+     6/6: $0\pos_l[8:0]
+Creating decoders for process `\vga.$proc$vga.v:128$426'.
      1/3: $0\vs_out[0:0]
      2/3: $0\count_v[8:0]
      3/3: $0\blank_v[0:0]
-Creating decoders for process `\vga.$proc$vga.v:93$417'.
+Creating decoders for process `\vga.$proc$vga.v:102$417'.
      1/3: $0\count_h[9:0]
      2/3: $0\hs_out[0:0]
      3/3: $0\blank_h[0:0]
-Creating decoders for process `\vga.$proc$vga.v:71$388'.
+Creating decoders for process `\vga.$proc$vga.v:80$388'.
      1/2: $0\grn[0:0]
      2/2: $0\red[0:0]
-Creating decoders for process `\top.$proc$top_icebreaker.v:22$384'.
-Creating decoders for process `\top.$proc$top_icebreaker.v:57$381'.
+Creating decoders for process `\top.$proc$top_icebreaker.v:26$384'.
+Creating decoders for process `\top.$proc$top_icebreaker.v:61$381'.
      1/2: $0\rst[0:0]
      2/2: $0\rst_counter[9:0]
 
@@ -288,69 +293,77 @@ Creating decoders for process `\top.$proc$top_icebreaker.v:57$381'.
 
 3.4.9. Executing PROC_DFF pass (convert process syncs to FFs).
 Creating register for signal `\SB_DFFNES.\Q' using process `\SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$241'.
-  created $adff cell `$procdff$576' with negative edge clock and positive level reset.
+  created $adff cell `$procdff$635' with negative edge clock and positive level reset.
 Creating register for signal `\SB_DFFNESS.\Q' using process `\SB_DFFNESS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$234'.
-  created $dff cell `$procdff$577' with negative edge clock.
+  created $dff cell `$procdff$636' with negative edge clock.
 Creating register for signal `\SB_DFFNER.\Q' using process `\SB_DFFNER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$230'.
-  created $adff cell `$procdff$578' with negative edge clock and positive level reset.
+  created $adff cell `$procdff$637' with negative edge clock and positive level reset.
 Creating register for signal `\SB_DFFNESR.\Q' using process `\SB_DFFNESR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$223'.
-  created $dff cell `$procdff$579' with negative edge clock.
+  created $dff cell `$procdff$638' with negative edge clock.
 Creating register for signal `\SB_DFFNS.\Q' using process `\SB_DFFNS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$220'.
-  created $adff cell `$procdff$580' with negative edge clock and positive level reset.
+  created $adff cell `$procdff$639' with negative edge clock and positive level reset.
 Creating register for signal `\SB_DFFNSS.\Q' using process `\SB_DFFNSS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$217'.
-  created $dff cell `$procdff$581' with negative edge clock.
+  created $dff cell `$procdff$640' with negative edge clock.
 Creating register for signal `\SB_DFFNR.\Q' using process `\SB_DFFNR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$214'.
-  created $adff cell `$procdff$582' with negative edge clock and positive level reset.
+  created $adff cell `$procdff$641' with negative edge clock and positive level reset.
 Creating register for signal `\SB_DFFNSR.\Q' using process `\SB_DFFNSR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$211'.
-  created $dff cell `$procdff$583' with negative edge clock.
+  created $dff cell `$procdff$642' with negative edge clock.
 Creating register for signal `\SB_DFFNE.\Q' using process `\SB_DFFNE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:922$209'.
-  created $dff cell `$procdff$584' with negative edge clock.
+  created $dff cell `$procdff$643' with negative edge clock.
 Creating register for signal `\SB_DFFN.\Q' using process `\SB_DFFN.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:882$207'.
-  created $dff cell `$procdff$585' with negative edge clock.
+  created $dff cell `$procdff$644' with negative edge clock.
 Creating register for signal `\SB_DFFES.\Q' using process `\SB_DFFES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$203'.
-  created $adff cell `$procdff$586' with positive edge clock and positive level reset.
+  created $adff cell `$procdff$645' with positive edge clock and positive level reset.
 Creating register for signal `\SB_DFFESS.\Q' using process `\SB_DFFESS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$196'.
-  created $dff cell `$procdff$587' with positive edge clock.
+  created $dff cell `$procdff$646' with positive edge clock.
 Creating register for signal `\SB_DFFER.\Q' using process `\SB_DFFER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$192'.
-  created $adff cell `$procdff$588' with positive edge clock and positive level reset.
+  created $adff cell `$procdff$647' with positive edge clock and positive level reset.
 Creating register for signal `\SB_DFFESR.\Q' using process `\SB_DFFESR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$185'.
-  created $dff cell `$procdff$589' with positive edge clock.
+  created $dff cell `$procdff$648' with positive edge clock.
 Creating register for signal `\SB_DFFS.\Q' using process `\SB_DFFS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$182'.
-  created $adff cell `$procdff$590' with positive edge clock and positive level reset.
+  created $adff cell `$procdff$649' with positive edge clock and positive level reset.
 Creating register for signal `\SB_DFFSS.\Q' using process `\SB_DFFSS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$179'.
-  created $dff cell `$procdff$591' with positive edge clock.
+  created $dff cell `$procdff$650' with positive edge clock.
 Creating register for signal `\SB_DFFR.\Q' using process `\SB_DFFR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$176'.
-  created $adff cell `$procdff$592' with positive edge clock and positive level reset.
+  created $adff cell `$procdff$651' with positive edge clock and positive level reset.
 Creating register for signal `\SB_DFFSR.\Q' using process `\SB_DFFSR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$173'.
-  created $dff cell `$procdff$593' with positive edge clock.
+  created $dff cell `$procdff$652' with positive edge clock.
 Creating register for signal `\SB_DFFE.\Q' using process `\SB_DFFE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$171'.
-  created $dff cell `$procdff$594' with positive edge clock.
+  created $dff cell `$procdff$653' with positive edge clock.
 Creating register for signal `\SB_DFF.\Q' using process `\SB_DFF.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:271$169'.
-  created $dff cell `$procdff$595' with positive edge clock.
-Creating register for signal `\vga.\pos_l' using process `\vga.$proc$vga.v:143$435'.
-  created $dff cell `$procdff$596' with positive edge clock.
-Creating register for signal `\vga.\pos_r' using process `\vga.$proc$vga.v:143$435'.
-  created $dff cell `$procdff$597' with positive edge clock.
-Creating register for signal `\vga.\blank_v' using process `\vga.$proc$vga.v:119$426'.
-  created $dff cell `$procdff$598' with positive edge clock.
-Creating register for signal `\vga.\count_v' using process `\vga.$proc$vga.v:119$426'.
-  created $dff cell `$procdff$599' with positive edge clock.
-Creating register for signal `\vga.\vs_out' using process `\vga.$proc$vga.v:119$426'.
-  created $dff cell `$procdff$600' with positive edge clock.
-Creating register for signal `\vga.\blank_h' using process `\vga.$proc$vga.v:93$417'.
-  created $dff cell `$procdff$601' with positive edge clock.
-Creating register for signal `\vga.\count_h' using process `\vga.$proc$vga.v:93$417'.
-  created $dff cell `$procdff$602' with positive edge clock.
-Creating register for signal `\vga.\hs_out' using process `\vga.$proc$vga.v:93$417'.
-  created $dff cell `$procdff$603' with positive edge clock.
-Creating register for signal `\vga.\red' using process `\vga.$proc$vga.v:71$388'.
-  created $dff cell `$procdff$604' with positive edge clock.
-Creating register for signal `\vga.\grn' using process `\vga.$proc$vga.v:71$388'.
-  created $dff cell `$procdff$605' with positive edge clock.
-Creating register for signal `\top.\rst_counter' using process `\top.$proc$top_icebreaker.v:57$381'.
-  created $dff cell `$procdff$606' with positive edge clock.
-Creating register for signal `\top.\rst' using process `\top.$proc$top_icebreaker.v:57$381'.
-  created $dff cell `$procdff$607' with positive edge clock.
+  created $dff cell `$procdff$654' with positive edge clock.
+Creating register for signal `\vga.\pos_l' using process `\vga.$proc$vga.v:152$435'.
+  created $dff cell `$procdff$655' with positive edge clock.
+Creating register for signal `\vga.\pos_r' using process `\vga.$proc$vga.v:152$435'.
+  created $dff cell `$procdff$656' with positive edge clock.
+Creating register for signal `\vga.\left_up_1d' using process `\vga.$proc$vga.v:152$435'.
+  created $dff cell `$procdff$657' with positive edge clock.
+Creating register for signal `\vga.\left_down_1d' using process `\vga.$proc$vga.v:152$435'.
+  created $dff cell `$procdff$658' with positive edge clock.
+Creating register for signal `\vga.\right_up_1d' using process `\vga.$proc$vga.v:152$435'.
+  created $dff cell `$procdff$659' with positive edge clock.
+Creating register for signal `\vga.\right_down_1d' using process `\vga.$proc$vga.v:152$435'.
+  created $dff cell `$procdff$660' with positive edge clock.
+Creating register for signal `\vga.\blank_v' using process `\vga.$proc$vga.v:128$426'.
+  created $dff cell `$procdff$661' with positive edge clock.
+Creating register for signal `\vga.\count_v' using process `\vga.$proc$vga.v:128$426'.
+  created $dff cell `$procdff$662' with positive edge clock.
+Creating register for signal `\vga.\vs_out' using process `\vga.$proc$vga.v:128$426'.
+  created $dff cell `$procdff$663' with positive edge clock.
+Creating register for signal `\vga.\blank_h' using process `\vga.$proc$vga.v:102$417'.
+  created $dff cell `$procdff$664' with positive edge clock.
+Creating register for signal `\vga.\count_h' using process `\vga.$proc$vga.v:102$417'.
+  created $dff cell `$procdff$665' with positive edge clock.
+Creating register for signal `\vga.\hs_out' using process `\vga.$proc$vga.v:102$417'.
+  created $dff cell `$procdff$666' with positive edge clock.
+Creating register for signal `\vga.\red' using process `\vga.$proc$vga.v:80$388'.
+  created $dff cell `$procdff$667' with positive edge clock.
+Creating register for signal `\vga.\grn' using process `\vga.$proc$vga.v:80$388'.
+  created $dff cell `$procdff$668' with positive edge clock.
+Creating register for signal `\top.\rst_counter' using process `\top.$proc$top_icebreaker.v:61$381'.
+  created $dff cell `$procdff$669' with positive edge clock.
+Creating register for signal `\top.\rst' using process `\top.$proc$top_icebreaker.v:61$381'.
+  created $dff cell `$procdff$670' with positive edge clock.
 
 3.4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
@@ -409,22 +422,22 @@ Found and cleaned up 1 empty switch in `\SB_DFFE.$proc$/home/tom/bin/oss-cad-sui
 Removing empty process `SB_DFFE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$171'.
 Removing empty process `SB_DFF.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$170'.
 Removing empty process `SB_DFF.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:271$169'.
-Found and cleaned up 1 empty switch in `\vga.$proc$vga.v:143$435'.
-Removing empty process `vga.$proc$vga.v:143$435'.
-Found and cleaned up 5 empty switches in `\vga.$proc$vga.v:119$426'.
-Removing empty process `vga.$proc$vga.v:119$426'.
-Found and cleaned up 5 empty switches in `\vga.$proc$vga.v:93$417'.
-Removing empty process `vga.$proc$vga.v:93$417'.
-Found and cleaned up 1 empty switch in `\vga.$proc$vga.v:71$388'.
-Removing empty process `vga.$proc$vga.v:71$388'.
-Removing empty process `top.$proc$top_icebreaker.v:22$384'.
-Found and cleaned up 2 empty switches in `\top.$proc$top_icebreaker.v:57$381'.
-Removing empty process `top.$proc$top_icebreaker.v:57$381'.
-Cleaned up 32 empty switches.
+Found and cleaned up 9 empty switches in `\vga.$proc$vga.v:152$435'.
+Removing empty process `vga.$proc$vga.v:152$435'.
+Found and cleaned up 5 empty switches in `\vga.$proc$vga.v:128$426'.
+Removing empty process `vga.$proc$vga.v:128$426'.
+Found and cleaned up 5 empty switches in `\vga.$proc$vga.v:102$417'.
+Removing empty process `vga.$proc$vga.v:102$417'.
+Found and cleaned up 1 empty switch in `\vga.$proc$vga.v:80$388'.
+Removing empty process `vga.$proc$vga.v:80$388'.
+Removing empty process `top.$proc$top_icebreaker.v:26$384'.
+Found and cleaned up 2 empty switches in `\top.$proc$top_icebreaker.v:61$381'.
+Removing empty process `top.$proc$top_icebreaker.v:61$381'.
+Cleaned up 40 empty switches.
 
 3.4.12. Executing OPT_EXPR pass (perform const folding).
 Optimizing module vga.
-<suppressed ~1 debug messages>
+<suppressed ~9 debug messages>
 Optimizing module top.
 <suppressed ~1 debug messages>
 
@@ -441,7 +454,7 @@ Optimizing module top.
 
 3.9. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \top..
-Removed 0 unused cells and 52 unused wires.
+Removed 0 unused cells and 74 unused wires.
 <suppressed ~1 debug messages>
 
 3.10. Executing CHECK pass (checking for obvious problems).
@@ -464,7 +477,7 @@ Running muxtree optimizer on module \top..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~14 debug messages>
+<suppressed ~18 debug messages>
 
 3.11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \top.
@@ -493,7 +506,7 @@ Running muxtree optimizer on module \top..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~12 debug messages>
+<suppressed ~16 debug messages>
 
 3.11.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \top.
@@ -516,24 +529,8 @@ Optimizing module top.
 3.12. Executing FSM pass (extract and optimize FSM).
 
 3.12.1. Executing FSM_DETECT pass (finding FSMs in design).
-Found FSM state register top.vga.pos_l.
-Found FSM state register top.vga.pos_r.
 
 3.12.2. Executing FSM_EXTRACT pass (extracting FSM from design).
-Extracting FSM `\vga.pos_l' from module `\top'.
-  found $dff cell for state register: $flatten\vga.$procdff$596
-  root of input selection tree: $flatten\vga.$0\pos_l[8:0]
-  found reset state: 9'011110000 (guessed from mux tree)
-  found ctrl input: \rst
-  found state code: 9'011110000
-  fsm extraction failed: at least two states are required.
-Extracting FSM `\vga.pos_r' from module `\top'.
-  found $dff cell for state register: $flatten\vga.$procdff$597
-  root of input selection tree: $flatten\vga.$0\pos_r[8:0]
-  found reset state: 9'011110000 (guessed from mux tree)
-  found ctrl input: \rst
-  found state code: 9'011110000
-  fsm extraction failed: at least two states are required.
 
 3.12.3. Executing FSM_OPT pass (simple optimizations of FSMs).
 
@@ -563,7 +560,7 @@ Running muxtree optimizer on module \top..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~12 debug messages>
+<suppressed ~16 debug messages>
 
 3.13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \top.
@@ -574,47 +571,35 @@ Finding identical cells in module `\top'.
 Removed a total of 0 cells.
 
 3.13.6. Executing OPT_DFF pass (perform DFF optimizations).
-Adding EN signal on $procdff$606 ($dff) from module top (D = $sub$top_icebreaker.v:61$383_Y [9:0], Q = \rst_counter).
-Adding SRST signal on $flatten\vga.$procdff$604 ($dff) from module top (D = $flatten\vga.$ternary$vga.v:85$415_Y, Q = \vga.red, rval = 1'0).
-Adding SRST signal on $flatten\vga.$procdff$603 ($dff) from module top (D = $flatten\vga.$procmux$536_Y, Q = \vga.hs_out, rval = 1'0).
-Adding SRST signal on $flatten\vga.$procdff$602 ($dff) from module top (D = $flatten\vga.$procmux$530_Y, Q = \vga.count_h, rval = 10'1111111111).
-Adding SRST signal on $flatten\vga.$procdff$601 ($dff) from module top (D = $flatten\vga.$procmux$557_Y, Q = \vga.blank_h, rval = 1'1).
-Adding EN signal on $auto$ff.cc:266:slice$618 ($sdff) from module top (D = $flatten\vga.$procmux$554_Y, Q = \vga.blank_h).
-Adding SRST signal on $flatten\vga.$procdff$600 ($dff) from module top (D = $flatten\vga.$procmux$493_Y, Q = \vga.vs_out, rval = 1'0).
-Adding EN signal on $auto$ff.cc:266:slice$628 ($sdff) from module top (D = $flatten\vga.$procmux$486_Y, Q = \vga.vs_out).
-Adding SRST signal on $flatten\vga.$procdff$599 ($dff) from module top (D = $flatten\vga.$procmux$504_Y, Q = \vga.count_v, rval = 9'111111111).
-Adding EN signal on $auto$ff.cc:266:slice$634 ($sdff) from module top (D = $flatten\vga.$procmux$502_Y, Q = \vga.count_v).
-Adding SRST signal on $flatten\vga.$procdff$598 ($dff) from module top (D = $flatten\vga.$procmux$515_Y, Q = \vga.blank_v, rval = 1'1).
-Adding EN signal on $auto$ff.cc:266:slice$636 ($sdff) from module top (D = $flatten\vga.$procmux$510_Y, Q = \vga.blank_v).
-Adding EN signal on $flatten\vga.$procdff$597 ($dff) from module top (D = 9'011110000, Q = \vga.pos_r).
-Adding EN signal on $flatten\vga.$procdff$596 ($dff) from module top (D = 9'011110000, Q = \vga.pos_l).
-Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$643 ($dffe) from module top.
-Setting constant 0-bit at position 1 on $auto$ff.cc:266:slice$643 ($dffe) from module top.
-Setting constant 0-bit at position 2 on $auto$ff.cc:266:slice$643 ($dffe) from module top.
-Setting constant 0-bit at position 3 on $auto$ff.cc:266:slice$643 ($dffe) from module top.
-Setting constant 1-bit at position 4 on $auto$ff.cc:266:slice$643 ($dffe) from module top.
-Setting constant 1-bit at position 5 on $auto$ff.cc:266:slice$643 ($dffe) from module top.
-Setting constant 1-bit at position 6 on $auto$ff.cc:266:slice$643 ($dffe) from module top.
-Setting constant 1-bit at position 7 on $auto$ff.cc:266:slice$643 ($dffe) from module top.
-Setting constant 0-bit at position 8 on $auto$ff.cc:266:slice$643 ($dffe) from module top.
-Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$642 ($dffe) from module top.
-Setting constant 0-bit at position 1 on $auto$ff.cc:266:slice$642 ($dffe) from module top.
-Setting constant 0-bit at position 2 on $auto$ff.cc:266:slice$642 ($dffe) from module top.
-Setting constant 0-bit at position 3 on $auto$ff.cc:266:slice$642 ($dffe) from module top.
-Setting constant 1-bit at position 4 on $auto$ff.cc:266:slice$642 ($dffe) from module top.
-Setting constant 1-bit at position 5 on $auto$ff.cc:266:slice$642 ($dffe) from module top.
-Setting constant 1-bit at position 6 on $auto$ff.cc:266:slice$642 ($dffe) from module top.
-Setting constant 1-bit at position 7 on $auto$ff.cc:266:slice$642 ($dffe) from module top.
-Setting constant 0-bit at position 8 on $auto$ff.cc:266:slice$642 ($dffe) from module top.
+Adding EN signal on $procdff$669 ($dff) from module top (D = $sub$top_icebreaker.v:65$383_Y [9:0], Q = \rst_counter).
+Adding SRST signal on $flatten\vga.$procdff$667 ($dff) from module top (D = $flatten\vga.$ternary$vga.v:94$415_Y, Q = \vga.red, rval = 1'0).
+Adding SRST signal on $flatten\vga.$procdff$666 ($dff) from module top (D = $flatten\vga.$procmux$595_Y, Q = \vga.hs_out, rval = 1'0).
+Adding SRST signal on $flatten\vga.$procdff$665 ($dff) from module top (D = $flatten\vga.$procmux$589_Y, Q = \vga.count_h, rval = 10'1111111111).
+Adding SRST signal on $flatten\vga.$procdff$664 ($dff) from module top (D = $flatten\vga.$procmux$616_Y, Q = \vga.blank_h, rval = 1'1).
+Adding EN signal on $auto$ff.cc:266:slice$681 ($sdff) from module top (D = $flatten\vga.$procmux$613_Y, Q = \vga.blank_h).
+Adding SRST signal on $flatten\vga.$procdff$663 ($dff) from module top (D = $flatten\vga.$procmux$552_Y, Q = \vga.vs_out, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$691 ($sdff) from module top (D = $flatten\vga.$procmux$545_Y, Q = \vga.vs_out).
+Adding SRST signal on $flatten\vga.$procdff$662 ($dff) from module top (D = $flatten\vga.$procmux$563_Y, Q = \vga.count_v, rval = 9'111111111).
+Adding EN signal on $auto$ff.cc:266:slice$697 ($sdff) from module top (D = $flatten\vga.$procmux$561_Y, Q = \vga.count_v).
+Adding SRST signal on $flatten\vga.$procdff$661 ($dff) from module top (D = $flatten\vga.$procmux$574_Y, Q = \vga.blank_v, rval = 1'1).
+Adding EN signal on $auto$ff.cc:266:slice$699 ($sdff) from module top (D = $flatten\vga.$procmux$569_Y, Q = \vga.blank_v).
+Adding EN signal on $flatten\vga.$procdff$660 ($dff) from module top (D = \P2_4, Q = \vga.right_down_1d).
+Adding EN signal on $flatten\vga.$procdff$659 ($dff) from module top (D = \P2_3, Q = \vga.right_up_1d).
+Adding EN signal on $flatten\vga.$procdff$658 ($dff) from module top (D = \P2_2, Q = \vga.left_down_1d).
+Adding EN signal on $flatten\vga.$procdff$657 ($dff) from module top (D = \P2_1, Q = \vga.left_up_1d).
+Adding SRST signal on $flatten\vga.$procdff$656 ($dff) from module top (D = $flatten\vga.$procmux$525_Y, Q = \vga.pos_r, rval = 9'011110000).
+Adding EN signal on $auto$ff.cc:266:slice$709 ($sdff) from module top (D = $flatten\vga.$procmux$519_Y, Q = \vga.pos_r).
+Adding SRST signal on $flatten\vga.$procdff$655 ($dff) from module top (D = $flatten\vga.$procmux$538_Y, Q = \vga.pos_l, rval = 9'011110000).
+Adding EN signal on $auto$ff.cc:266:slice$723 ($sdff) from module top (D = $flatten\vga.$procmux$538_Y, Q = \vga.pos_l).
 
 3.13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \top..
-Removed 21 unused cells and 21 unused wires.
-<suppressed ~23 debug messages>
+Removed 27 unused cells and 27 unused wires.
+<suppressed ~29 debug messages>
 
 3.13.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module top.
-<suppressed ~4 debug messages>
+<suppressed ~2 debug messages>
 
 3.13.9. Rerunning OPT passes. (Maybe there is more to do..)
 
@@ -624,7 +609,7 @@ Running muxtree optimizer on module \top..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~9 debug messages>
+<suppressed ~11 debug messages>
 
 3.13.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \top.
@@ -632,14 +617,14 @@ Performed a total of 0 changes.
 
 3.13.12. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\top'.
-<suppressed ~9 debug messages>
-Removed a total of 3 cells.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
 
 3.13.13. Executing OPT_DFF pass (perform DFF optimizations).
 
 3.13.14. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \top..
-Removed 0 unused cells and 7 unused wires.
+Removed 0 unused cells and 1 unused wires.
 <suppressed ~1 debug messages>
 
 3.13.15. Executing OPT_EXPR pass (perform const folding).
@@ -653,7 +638,7 @@ Running muxtree optimizer on module \top..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~9 debug messages>
+<suppressed ~11 debug messages>
 
 3.13.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \top.
@@ -674,40 +659,65 @@ Optimizing module top.
 3.13.23. Finished OPT passes. (There is nothing left to do.)
 
 3.14. Executing WREDUCE pass (reducing word size of cells).
-Removed top 31 bits (of 32) from port B of cell top.$sub$top_icebreaker.v:61$383 ($sub).
-Removed top 22 bits (of 32) from port Y of cell top.$sub$top_icebreaker.v:61$383 ($sub).
-Removed top 23 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:130$433 ($lt).
-Removed top 23 bits (of 32) from port B of cell top.$flatten\vga.$gt$vga.v:130$432 ($gt).
-Removed top 23 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:127$430 ($lt).
-Removed top 31 bits (of 32) from port B of cell top.$flatten\vga.$add$vga.v:126$429 ($add).
-Removed top 23 bits (of 32) from port Y of cell top.$flatten\vga.$add$vga.v:126$429 ($add).
-Removed top 23 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:125$428 ($lt).
-Removed top 22 bits (of 32) from port B of cell top.$flatten\vga.$ge$vga.v:124$427 ($ge).
-Removed top 2 bits (of 3) from port B of cell top.$auto$opt_dff.cc:195:make_patterns_logic$621 ($ne).
-Removed top 22 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:109$424 ($lt).
-Removed top 22 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:105$422 ($lt).
-Removed top 1 bits (of 2) from port B of cell top.$auto$opt_dff.cc:195:make_patterns_logic$623 ($ne).
-Removed top 22 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:101$420 ($lt).
-Removed top 31 bits (of 32) from port B of cell top.$flatten\vga.$add$vga.v:100$419 ($add).
-Removed top 22 bits (of 32) from port Y of cell top.$flatten\vga.$add$vga.v:100$419 ($add).
-Removed top 22 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:98$418 ($lt).
-Removed top 22 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:89$405 ($lt).
-Removed top 22 bits (of 32) from port B of cell top.$flatten\vga.$gt$vga.v:89$404 ($gt).
-Removed top 23 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:87$402 ($lt).
-Removed top 24 bits (of 32) from port B of cell top.$flatten\vga.$gt$vga.v:87$399 ($gt).
-Removed top 27 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:87$396 ($lt).
-Removed top 28 bits (of 32) from port B of cell top.$flatten\vga.$gt$vga.v:87$395 ($gt).
-Removed top 23 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:85$391 ($lt).
-Removed top 23 bits (of 32) from port B of cell top.$flatten\vga.$gt$vga.v:85$390 ($gt).
-Removed top 22 bits (of 32) from wire top.$flatten\vga.$add$vga.v:100$419_Y.
-Removed top 23 bits (of 32) from wire top.$flatten\vga.$add$vga.v:126$429_Y.
-Removed top 22 bits (of 32) from wire top.$sub$top_icebreaker.v:61$383_Y.
+Removed top 31 bits (of 32) from port B of cell top.$sub$top_icebreaker.v:65$383 ($sub).
+Removed top 22 bits (of 32) from port Y of cell top.$sub$top_icebreaker.v:65$383 ($sub).
+Removed top 1 bits (of 3) from port B of cell top.$auto$opt_dff.cc:195:make_patterns_logic$726 ($ne).
+Removed top 1 bits (of 3) from port B of cell top.$auto$opt_dff.cc:195:make_patterns_logic$712 ($ne).
+Removed top 31 bits (of 32) from port B of cell top.$flatten\vga.$add$vga.v:175$455 ($add).
+Removed top 23 bits (of 32) from port Y of cell top.$flatten\vga.$add$vga.v:175$455 ($add).
+Removed top 23 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:174$454 ($lt).
+Removed top 31 bits (of 32) from port B of cell top.$flatten\vga.$sub$vga.v:171$450 ($sub).
+Removed top 23 bits (of 32) from port Y of cell top.$flatten\vga.$sub$vga.v:171$450 ($sub).
+Removed top 27 bits (of 32) from port B of cell top.$flatten\vga.$gt$vga.v:170$449 ($gt).
+Removed top 31 bits (of 32) from port B of cell top.$flatten\vga.$add$vga.v:167$445 ($add).
+Removed top 23 bits (of 32) from port Y of cell top.$flatten\vga.$add$vga.v:167$445 ($add).
+Removed top 23 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:166$444 ($lt).
+Removed top 31 bits (of 32) from port B of cell top.$flatten\vga.$sub$vga.v:163$440 ($sub).
+Removed top 23 bits (of 32) from port Y of cell top.$flatten\vga.$sub$vga.v:163$440 ($sub).
+Removed top 27 bits (of 32) from port B of cell top.$flatten\vga.$gt$vga.v:162$439 ($gt).
+Removed top 23 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:139$433 ($lt).
+Removed top 23 bits (of 32) from port B of cell top.$flatten\vga.$gt$vga.v:139$432 ($gt).
+Removed top 23 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:136$430 ($lt).
+Removed top 31 bits (of 32) from port B of cell top.$flatten\vga.$add$vga.v:135$429 ($add).
+Removed top 23 bits (of 32) from port Y of cell top.$flatten\vga.$add$vga.v:135$429 ($add).
+Removed top 23 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:134$428 ($lt).
+Removed top 22 bits (of 32) from port B of cell top.$flatten\vga.$ge$vga.v:133$427 ($ge).
+Removed top 2 bits (of 3) from port B of cell top.$auto$opt_dff.cc:195:make_patterns_logic$684 ($ne).
+Removed top 22 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:118$424 ($lt).
+Removed top 22 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:114$422 ($lt).
+Removed top 1 bits (of 2) from port B of cell top.$auto$opt_dff.cc:195:make_patterns_logic$686 ($ne).
+Removed top 22 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:110$420 ($lt).
+Removed top 31 bits (of 32) from port B of cell top.$flatten\vga.$add$vga.v:109$419 ($add).
+Removed top 22 bits (of 32) from port Y of cell top.$flatten\vga.$add$vga.v:109$419 ($add).
+Removed top 22 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:107$418 ($lt).
+Removed top 27 bits (of 32) from port B of cell top.$flatten\vga.$add$vga.v:98$410 ($add).
+Removed top 22 bits (of 32) from port Y of cell top.$flatten\vga.$add$vga.v:98$410 ($add).
+Removed top 27 bits (of 32) from port B of cell top.$flatten\vga.$sub$vga.v:98$407 ($sub).
+Removed top 22 bits (of 32) from port Y of cell top.$flatten\vga.$sub$vga.v:98$407 ($sub).
+Removed top 22 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:98$405 ($lt).
+Removed top 22 bits (of 32) from port B of cell top.$flatten\vga.$gt$vga.v:98$404 ($gt).
+Removed top 27 bits (of 32) from port B of cell top.$flatten\vga.$add$vga.v:96$401 ($add).
+Removed top 22 bits (of 32) from port Y of cell top.$flatten\vga.$add$vga.v:96$401 ($add).
+Removed top 27 bits (of 32) from port B of cell top.$flatten\vga.$sub$vga.v:96$398 ($sub).
+Removed top 22 bits (of 32) from port Y of cell top.$flatten\vga.$sub$vga.v:96$398 ($sub).
+Removed top 27 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:96$396 ($lt).
+Removed top 28 bits (of 32) from port B of cell top.$flatten\vga.$gt$vga.v:96$395 ($gt).
+Removed top 23 bits (of 32) from port B of cell top.$flatten\vga.$lt$vga.v:94$391 ($lt).
+Removed top 23 bits (of 32) from port B of cell top.$flatten\vga.$gt$vga.v:94$390 ($gt).
+Removed top 22 bits (of 32) from wire top.$flatten\vga.$add$vga.v:109$419_Y.
+Removed top 23 bits (of 32) from wire top.$flatten\vga.$add$vga.v:135$429_Y.
+Removed top 23 bits (of 32) from wire top.$flatten\vga.$add$vga.v:167$445_Y.
+Removed top 22 bits (of 32) from wire top.$flatten\vga.$add$vga.v:96$401_Y.
+Removed top 22 bits (of 32) from wire top.$flatten\vga.$add$vga.v:98$410_Y.
+Removed top 7 bits (of 9) from wire top.$flatten\vga.$procmux$519_Y.
+Removed top 23 bits (of 32) from wire top.$flatten\vga.$sub$vga.v:163$440_Y.
+Removed top 22 bits (of 32) from wire top.$sub$top_icebreaker.v:65$383_Y.
 
 3.15. Executing PEEPOPT pass (run peephole optimizers).
 
 3.16. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \top..
-Removed 0 unused cells and 3 unused wires.
+Removed 0 unused cells and 8 unused wires.
 <suppressed ~1 debug messages>
 
 3.17. Executing SHARE pass (SAT-based resource sharing).
@@ -721,7 +731,7 @@ Successfully finished Verilog frontend.
 
 3.18.2. Continuing TECHMAP pass.
 No more expansions possible.
-<suppressed ~452 debug messages>
+<suppressed ~504 debug messages>
 
 3.19. Executing OPT_EXPR pass (perform const folding).
 Optimizing module top.
@@ -731,55 +741,91 @@ Finding unused cells or wires in module \top..
 
 3.21. Executing ALUMACC pass (create $alu and $macc cells).
 Extracting $alu and $macc cells in module top:
-  creating $macc model for $flatten\vga.$add$vga.v:100$419 ($add).
-  creating $macc model for $flatten\vga.$add$vga.v:126$429 ($add).
-  creating $macc model for $sub$top_icebreaker.v:61$383 ($sub).
-  creating $alu model for $macc $sub$top_icebreaker.v:61$383.
-  creating $alu model for $macc $flatten\vga.$add$vga.v:126$429.
-  creating $alu model for $macc $flatten\vga.$add$vga.v:100$419.
-  creating $alu model for $flatten\vga.$ge$vga.v:124$427 ($ge): new $alu
-  creating $alu model for $flatten\vga.$gt$vga.v:130$432 ($gt): new $alu
-  creating $alu model for $flatten\vga.$gt$vga.v:85$390 ($gt): new $alu
-  creating $alu model for $flatten\vga.$gt$vga.v:87$395 ($gt): new $alu
-  creating $alu model for $flatten\vga.$gt$vga.v:87$399 ($gt): new $alu
-  creating $alu model for $flatten\vga.$gt$vga.v:89$404 ($gt): new $alu
-  creating $alu model for $flatten\vga.$lt$vga.v:101$420 ($lt): new $alu
-  creating $alu model for $flatten\vga.$lt$vga.v:105$422 ($lt): new $alu
-  creating $alu model for $flatten\vga.$lt$vga.v:109$424 ($lt): merged with $flatten\vga.$ge$vga.v:124$427.
-  creating $alu model for $flatten\vga.$lt$vga.v:125$428 ($lt): new $alu
-  creating $alu model for $flatten\vga.$lt$vga.v:127$430 ($lt): new $alu
-  creating $alu model for $flatten\vga.$lt$vga.v:130$433 ($lt): new $alu
-  creating $alu model for $flatten\vga.$lt$vga.v:85$391 ($lt): new $alu
-  creating $alu model for $flatten\vga.$lt$vga.v:87$396 ($lt): new $alu
-  creating $alu model for $flatten\vga.$lt$vga.v:87$402 ($lt): new $alu
-  creating $alu model for $flatten\vga.$lt$vga.v:89$405 ($lt): new $alu
-  creating $alu model for $flatten\vga.$lt$vga.v:98$418 ($lt): new $alu
-  creating $alu cell for $flatten\vga.$lt$vga.v:98$418: $auto$alumacc.cc:485:replace_alu$664
-  creating $alu cell for $flatten\vga.$lt$vga.v:89$405: $auto$alumacc.cc:485:replace_alu$669
-  creating $alu cell for $flatten\vga.$lt$vga.v:87$402: $auto$alumacc.cc:485:replace_alu$674
-  creating $alu cell for $flatten\vga.$lt$vga.v:87$396: $auto$alumacc.cc:485:replace_alu$679
-  creating $alu cell for $flatten\vga.$lt$vga.v:85$391: $auto$alumacc.cc:485:replace_alu$690
-  creating $alu cell for $flatten\vga.$lt$vga.v:130$433: $auto$alumacc.cc:485:replace_alu$701
-  creating $alu cell for $flatten\vga.$lt$vga.v:127$430: $auto$alumacc.cc:485:replace_alu$706
-  creating $alu cell for $flatten\vga.$lt$vga.v:125$428: $auto$alumacc.cc:485:replace_alu$717
-  creating $alu cell for $flatten\vga.$lt$vga.v:105$422: $auto$alumacc.cc:485:replace_alu$722
-  creating $alu cell for $flatten\vga.$lt$vga.v:101$420: $auto$alumacc.cc:485:replace_alu$727
-  creating $alu cell for $flatten\vga.$gt$vga.v:89$404: $auto$alumacc.cc:485:replace_alu$732
-  creating $alu cell for $flatten\vga.$gt$vga.v:87$399: $auto$alumacc.cc:485:replace_alu$743
-  creating $alu cell for $flatten\vga.$gt$vga.v:87$395: $auto$alumacc.cc:485:replace_alu$748
-  creating $alu cell for $flatten\vga.$gt$vga.v:85$390: $auto$alumacc.cc:485:replace_alu$753
-  creating $alu cell for $flatten\vga.$gt$vga.v:130$432: $auto$alumacc.cc:485:replace_alu$758
-  creating $alu cell for $flatten\vga.$ge$vga.v:124$427, $flatten\vga.$lt$vga.v:109$424: $auto$alumacc.cc:485:replace_alu$769
-  creating $alu cell for $flatten\vga.$add$vga.v:100$419: $auto$alumacc.cc:485:replace_alu$782
-  creating $alu cell for $flatten\vga.$add$vga.v:126$429: $auto$alumacc.cc:485:replace_alu$785
-  creating $alu cell for $sub$top_icebreaker.v:61$383: $auto$alumacc.cc:485:replace_alu$788
-  created 19 $alu and 0 $macc cells.
+  creating $macc model for $flatten\vga.$add$vga.v:109$419 ($add).
+  creating $macc model for $flatten\vga.$add$vga.v:135$429 ($add).
+  creating $macc model for $flatten\vga.$add$vga.v:167$445 ($add).
+  creating $macc model for $flatten\vga.$add$vga.v:175$455 ($add).
+  creating $macc model for $flatten\vga.$add$vga.v:96$401 ($add).
+  creating $macc model for $flatten\vga.$add$vga.v:98$410 ($add).
+  creating $macc model for $flatten\vga.$sub$vga.v:163$440 ($sub).
+  creating $macc model for $flatten\vga.$sub$vga.v:171$450 ($sub).
+  creating $macc model for $flatten\vga.$sub$vga.v:96$398 ($sub).
+  creating $macc model for $flatten\vga.$sub$vga.v:98$407 ($sub).
+  creating $macc model for $sub$top_icebreaker.v:65$383 ($sub).
+  creating $alu model for $macc $sub$top_icebreaker.v:65$383.
+  creating $alu model for $macc $flatten\vga.$sub$vga.v:98$407.
+  creating $alu model for $macc $flatten\vga.$sub$vga.v:96$398.
+  creating $alu model for $macc $flatten\vga.$sub$vga.v:171$450.
+  creating $alu model for $macc $flatten\vga.$sub$vga.v:163$440.
+  creating $alu model for $macc $flatten\vga.$add$vga.v:98$410.
+  creating $alu model for $macc $flatten\vga.$add$vga.v:96$401.
+  creating $alu model for $macc $flatten\vga.$add$vga.v:175$455.
+  creating $alu model for $macc $flatten\vga.$add$vga.v:167$445.
+  creating $alu model for $macc $flatten\vga.$add$vga.v:135$429.
+  creating $alu model for $macc $flatten\vga.$add$vga.v:109$419.
+  creating $alu model for $flatten\vga.$ge$vga.v:133$427 ($ge): new $alu
+  creating $alu model for $flatten\vga.$gt$vga.v:139$432 ($gt): new $alu
+  creating $alu model for $flatten\vga.$gt$vga.v:162$439 ($gt): new $alu
+  creating $alu model for $flatten\vga.$gt$vga.v:170$449 ($gt): new $alu
+  creating $alu model for $flatten\vga.$gt$vga.v:94$390 ($gt): new $alu
+  creating $alu model for $flatten\vga.$gt$vga.v:96$395 ($gt): new $alu
+  creating $alu model for $flatten\vga.$gt$vga.v:96$399 ($gt): new $alu
+  creating $alu model for $flatten\vga.$gt$vga.v:98$404 ($gt): new $alu
+  creating $alu model for $flatten\vga.$gt$vga.v:98$408 ($gt): new $alu
+  creating $alu model for $flatten\vga.$lt$vga.v:107$418 ($lt): new $alu
+  creating $alu model for $flatten\vga.$lt$vga.v:110$420 ($lt): new $alu
+  creating $alu model for $flatten\vga.$lt$vga.v:114$422 ($lt): new $alu
+  creating $alu model for $flatten\vga.$lt$vga.v:118$424 ($lt): merged with $flatten\vga.$ge$vga.v:133$427.
+  creating $alu model for $flatten\vga.$lt$vga.v:134$428 ($lt): new $alu
+  creating $alu model for $flatten\vga.$lt$vga.v:136$430 ($lt): new $alu
+  creating $alu model for $flatten\vga.$lt$vga.v:139$433 ($lt): new $alu
+  creating $alu model for $flatten\vga.$lt$vga.v:166$444 ($lt): new $alu
+  creating $alu model for $flatten\vga.$lt$vga.v:174$454 ($lt): new $alu
+  creating $alu model for $flatten\vga.$lt$vga.v:94$391 ($lt): new $alu
+  creating $alu model for $flatten\vga.$lt$vga.v:96$396 ($lt): new $alu
+  creating $alu model for $flatten\vga.$lt$vga.v:96$402 ($lt): new $alu
+  creating $alu model for $flatten\vga.$lt$vga.v:98$405 ($lt): new $alu
+  creating $alu model for $flatten\vga.$lt$vga.v:98$411 ($lt): new $alu
+  creating $alu cell for $flatten\vga.$lt$vga.v:98$411: $auto$alumacc.cc:485:replace_alu$764
+  creating $alu cell for $flatten\vga.$lt$vga.v:98$405: $auto$alumacc.cc:485:replace_alu$769
+  creating $alu cell for $flatten\vga.$lt$vga.v:96$402: $auto$alumacc.cc:485:replace_alu$774
+  creating $alu cell for $flatten\vga.$lt$vga.v:96$396: $auto$alumacc.cc:485:replace_alu$779
+  creating $alu cell for $flatten\vga.$lt$vga.v:94$391: $auto$alumacc.cc:485:replace_alu$790
+  creating $alu cell for $flatten\vga.$lt$vga.v:174$454: $auto$alumacc.cc:485:replace_alu$801
+  creating $alu cell for $flatten\vga.$lt$vga.v:166$444: $auto$alumacc.cc:485:replace_alu$806
+  creating $alu cell for $flatten\vga.$lt$vga.v:139$433: $auto$alumacc.cc:485:replace_alu$811
+  creating $alu cell for $flatten\vga.$lt$vga.v:136$430: $auto$alumacc.cc:485:replace_alu$816
+  creating $alu cell for $flatten\vga.$lt$vga.v:134$428: $auto$alumacc.cc:485:replace_alu$827
+  creating $alu cell for $flatten\vga.$lt$vga.v:114$422: $auto$alumacc.cc:485:replace_alu$832
+  creating $alu cell for $flatten\vga.$lt$vga.v:110$420: $auto$alumacc.cc:485:replace_alu$837
+  creating $alu cell for $flatten\vga.$lt$vga.v:107$418: $auto$alumacc.cc:485:replace_alu$842
+  creating $alu cell for $flatten\vga.$gt$vga.v:98$408: $auto$alumacc.cc:485:replace_alu$847
+  creating $alu cell for $flatten\vga.$gt$vga.v:98$404: $auto$alumacc.cc:485:replace_alu$858
+  creating $alu cell for $flatten\vga.$gt$vga.v:96$399: $auto$alumacc.cc:485:replace_alu$869
+  creating $alu cell for $flatten\vga.$gt$vga.v:96$395: $auto$alumacc.cc:485:replace_alu$880
+  creating $alu cell for $flatten\vga.$gt$vga.v:94$390: $auto$alumacc.cc:485:replace_alu$885
+  creating $alu cell for $flatten\vga.$gt$vga.v:139$432: $auto$alumacc.cc:485:replace_alu$890
+  creating $alu cell for $flatten\vga.$ge$vga.v:133$427, $flatten\vga.$lt$vga.v:118$424: $auto$alumacc.cc:485:replace_alu$901
+  creating $alu cell for $flatten\vga.$add$vga.v:109$419: $auto$alumacc.cc:485:replace_alu$914
+  creating $alu cell for $flatten\vga.$add$vga.v:135$429: $auto$alumacc.cc:485:replace_alu$917
+  creating $alu cell for $flatten\vga.$add$vga.v:167$445: $auto$alumacc.cc:485:replace_alu$920
+  creating $alu cell for $flatten\vga.$add$vga.v:175$455: $auto$alumacc.cc:485:replace_alu$923
+  creating $alu cell for $flatten\vga.$gt$vga.v:162$439: $auto$alumacc.cc:485:replace_alu$926
+  creating $alu cell for $flatten\vga.$add$vga.v:96$401: $auto$alumacc.cc:485:replace_alu$931
+  creating $alu cell for $flatten\vga.$gt$vga.v:170$449: $auto$alumacc.cc:485:replace_alu$934
+  creating $alu cell for $flatten\vga.$add$vga.v:98$410: $auto$alumacc.cc:485:replace_alu$939
+  creating $alu cell for $flatten\vga.$sub$vga.v:163$440: $auto$alumacc.cc:485:replace_alu$942
+  creating $alu cell for $flatten\vga.$sub$vga.v:171$450: $auto$alumacc.cc:485:replace_alu$945
+  creating $alu cell for $flatten\vga.$sub$vga.v:96$398: $auto$alumacc.cc:485:replace_alu$948
+  creating $alu cell for $flatten\vga.$sub$vga.v:98$407: $auto$alumacc.cc:485:replace_alu$951
+  creating $alu cell for $sub$top_icebreaker.v:65$383: $auto$alumacc.cc:485:replace_alu$954
+  created 33 $alu and 0 $macc cells.
 
 3.22. Executing OPT pass (performing simple optimizations).
 
 3.22.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module top.
-<suppressed ~13 debug messages>
+<suppressed ~17 debug messages>
 
 3.22.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\top'.
@@ -791,7 +837,7 @@ Running muxtree optimizer on module \top..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~9 debug messages>
+<suppressed ~11 debug messages>
 
 3.22.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \top.
@@ -805,7 +851,7 @@ Removed a total of 0 cells.
 
 3.22.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \top..
-Removed 1 unused cells and 20 unused wires.
+Removed 1 unused cells and 26 unused wires.
 <suppressed ~2 debug messages>
 
 3.22.8. Executing OPT_EXPR pass (perform const folding).
@@ -819,7 +865,7 @@ Running muxtree optimizer on module \top..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~9 debug messages>
+<suppressed ~11 debug messages>
 
 3.22.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \top.
@@ -893,19 +939,19 @@ No more expansions possible.
 
 3.28.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module top.
-<suppressed ~16 debug messages>
+<suppressed ~27 debug messages>
 
 3.28.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\top'.
-<suppressed ~75 debug messages>
-Removed a total of 25 cells.
+<suppressed ~81 debug messages>
+Removed a total of 27 cells.
 
 3.28.3. Executing OPT_DFF pass (perform DFF optimizations).
 
 3.28.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \top..
-Removed 6 unused cells and 42 unused wires.
-<suppressed ~7 debug messages>
+Removed 10 unused cells and 54 unused wires.
+<suppressed ~11 debug messages>
 
 3.28.5. Finished fast OPT passes.
 
@@ -926,7 +972,7 @@ Running muxtree optimizer on module \top..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~7 debug messages>
+<suppressed ~9 debug messages>
 
 3.30.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \top.
@@ -991,88 +1037,152 @@ Using extmapper simplemap for cells of type $reduce_bool.
 Using extmapper simplemap for cells of type $reduce_or.
 Using extmapper simplemap for cells of type $sdff.
 Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $ne.
+Using template $paramod$a473f4770a4b60111e9e52de7ee27405c26ecd63\_80_ice40_alu for cells of type $alu.
+Using template $paramod$403d74038787d91c0514bba9bf1032f6fa919203\_80_ice40_alu for cells of type $alu.
 Using extmapper simplemap for cells of type $dffe.
 Using extmapper simplemap for cells of type $sdffe.
 Using extmapper simplemap for cells of type $mux.
+Using template $paramod$04f121e3c8858ac36578330193fd248b9a31e99c\_80_ice40_alu for cells of type $alu.
+Using template $paramod$dbcdc7e8aa1a4080cea2deda6fdc8772064f4d90\_80_ice40_alu for cells of type $alu.
 Using extmapper simplemap for cells of type $logic_and.
+Using template $paramod$8a62ded8d652be76033db56ea9a2bbb5ea1d4453\_80_ice40_alu for cells of type $alu.
+Using template $paramod$53700bbee849b2010ad0b60a61ccd204a10e24ca\_80_ice40_alu for cells of type $alu.
 Using template $paramod$d2fa05d38998afabc6d4f34471305d0af4b8b2df\_80_ice40_alu for cells of type $alu.
+Using template $paramod$6f67705c43e5e94c02b6ebb52209ce5aa5ade4c1\_80_ice40_alu for cells of type $alu.
 Using template $paramod$b18e16801adf491a64caa0542270798e5d4ac6b6\_80_ice40_alu for cells of type $alu.
 Using template $paramod$740b056ede97228d3eae64ea2fdc81f0a33e0fe7\_80_ice40_alu for cells of type $alu.
-Using template $paramod$1eb759649286d7485bd82f4dfc30385bade4b4b3\_80_ice40_alu for cells of type $alu.
 Using template $paramod$00298f3f8094950cb9a5ff2fda48d0d8bde8806c\_80_ice40_alu for cells of type $alu.
-Using extmapper simplemap for cells of type $ne.
 Using template $paramod$754650b284649a026620fc6856e5b6886cbfe794\_80_ice40_alu for cells of type $alu.
-Using template $paramod$53700bbee849b2010ad0b60a61ccd204a10e24ca\_80_ice40_alu for cells of type $alu.
-Using template $paramod$dbcdc7e8aa1a4080cea2deda6fdc8772064f4d90\_80_ice40_alu for cells of type $alu.
-Using template $paramod$78464f9f65d57061f7490f3fe5dd257e4a61e2b7\_80_ice40_alu for cells of type $alu.
-Using template $paramod$d902cfcd8f5bceb817669b134f968d68db216af4\_80_ice40_alu for cells of type $alu.
 Using template $paramod$78e969f2586efcf3a5b0b0440bcca0db83d5cca2\_80_ice40_alu for cells of type $alu.
+Using template $paramod$1eb759649286d7485bd82f4dfc30385bade4b4b3\_80_ice40_alu for cells of type $alu.
+Using template $paramod$d902cfcd8f5bceb817669b134f968d68db216af4\_80_ice40_alu for cells of type $alu.
 Using template $paramod$b016129edba87ad27a7393da6fa50baa1808cfd8\_80_ice40_alu for cells of type $alu.
 Using template $paramod$dfca81329cbbac01700318224209a5f2318c7128\_80_ice40_alu for cells of type $alu.
+Using template $paramod$78464f9f65d57061f7490f3fe5dd257e4a61e2b7\_80_ice40_alu for cells of type $alu.
 Using template $paramod$a1bc51c02ce12ac21eb18988e83292af48ed7d72\_80_ice40_alu for cells of type $alu.
 Using extmapper simplemap for cells of type $logic_not.
 Using extmapper simplemap for cells of type $xor.
 Using extmapper simplemap for cells of type $pos.
 No more expansions possible.
-<suppressed ~535 debug messages>
+<suppressed ~752 debug messages>
 
 3.33. Executing OPT pass (performing simple optimizations).
 
 3.33.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module top.
-<suppressed ~393 debug messages>
+<suppressed ~877 debug messages>
 
 3.33.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\top'.
-<suppressed ~285 debug messages>
-Removed a total of 95 cells.
+<suppressed ~723 debug messages>
+Removed a total of 241 cells.
 
 3.33.3. Executing OPT_DFF pass (perform DFF optimizations).
 
 3.33.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \top..
-Removed 10 unused cells and 377 unused wires.
-<suppressed ~11 debug messages>
+Removed 24 unused cells and 636 unused wires.
+<suppressed ~25 debug messages>
 
 3.33.5. Finished fast OPT passes.
 
 3.34. Executing ICE40_OPT pass (performing simple optimizations).
 
 3.34.1. Running ICE40 specific optimizations.
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$664.slice[0].carry: CO=\vga.count_h [7]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$669.slice[0].carry: CO=\vga.count_h [1]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$674.slice[0].carry: CO=\vga.count_v [2]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$679.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$679.BB [0]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$690.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$679.BB [2]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$701.slice[0].carry: CO=\vga.count_v [0]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$706.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$706.BB [0]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$717.slice[0].carry: CO=\vga.count_v [5]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$722.slice[0].carry: CO=\vga.count_h [4]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$727.slice[0].carry: CO=\vga.count_h [4]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$732.slice[0].carry: CO=\vga.count_h [4]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$743.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$706.BB [0]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$748.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$679.BB [0]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$753.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$679.BB [1]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$758.slice[0].carry: CO=\vga.count_v [1]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$769.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$679.BB [5]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$782.slice[0].carry: CO=\vga.count_h [0]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$785.slice[0].carry: CO=\vga.count_v [0]
-Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$788.slice[0].carry: CO=\rst_counter [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[10].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [10]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[11].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [11]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[12].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [12]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[13].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [13]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[14].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [14]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[15].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [15]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[16].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [16]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[17].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [17]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[18].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [18]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[19].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [19]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[20].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [20]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[21].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [21]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[22].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [22]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[23].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [23]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[24].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [24]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[25].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [25]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[26].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [26]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[27].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [27]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[28].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [28]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[29].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [29]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[30].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [30]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$764.slice[31].carry: CO=$auto$alumacc.cc:485:replace_alu$764.C [31]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$769.slice[0].carry: CO=\vga.count_h [1]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[10].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [10]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[11].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [11]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[12].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [12]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[13].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [13]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[14].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [14]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[15].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [15]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[16].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [16]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[17].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [17]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[18].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [18]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[19].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [19]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[20].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [20]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[21].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [21]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[22].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [22]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[23].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [23]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[24].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [24]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[25].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [25]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[26].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [26]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[27].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [27]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[28].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [28]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[29].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [29]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[30].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [30]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$774.slice[31].carry: CO=$auto$alumacc.cc:485:replace_alu$774.C [31]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$779.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$779.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$790.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$779.BB [2]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$801.slice[0].carry: CO=\vga.pos_r [2]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$806.slice[0].carry: CO=\vga.pos_l [2]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$811.slice[0].carry: CO=\vga.count_v [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$816.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$816.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$827.slice[0].carry: CO=\vga.count_v [5]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$832.slice[0].carry: CO=\vga.count_h [4]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$837.slice[0].carry: CO=\vga.count_h [4]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$842.slice[0].carry: CO=\vga.count_h [7]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$858.slice[0].carry: CO=\vga.count_h [4]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$880.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$779.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$885.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$779.BB [1]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$890.slice[0].carry: CO=\vga.count_v [1]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$901.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$779.BB [5]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$914.slice[0].carry: CO=\vga.count_h [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$917.slice[0].carry: CO=\vga.count_v [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$920.slice[0].carry: CO=\vga.pos_l [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$923.slice[0].carry: CO=\vga.pos_r [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$926.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$774.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$931.slice[0].carry: CO=\vga.pos_l [2]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$931.slice[7].carry: CO=1'0
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$934.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$764.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$939.slice[0].carry: CO=\vga.pos_r [2]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$939.slice[7].carry: CO=1'0
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$942.slice[0].carry: CO=\vga.pos_l [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$945.slice[0].carry: CO=\vga.pos_r [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$948.slice[0].carry: CO=\vga.pos_l [2]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$948.slice[7].carry: CO=$auto$alumacc.cc:485:replace_alu$948.C [7]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$951.slice[0].carry: CO=\vga.pos_r [2]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$951.slice[7].carry: CO=$auto$alumacc.cc:485:replace_alu$951.C [7]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$954.slice[0].carry: CO=\rst_counter [0]
 
 3.34.2. Executing OPT_EXPR pass (perform const folding).
 Optimizing module top.
+<suppressed ~8 debug messages>
 
 3.34.3. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\top'.
-<suppressed ~12 debug messages>
-Removed a total of 4 cells.
+<suppressed ~141 debug messages>
+Removed a total of 47 cells.
 
 3.34.4. Executing OPT_DFF pass (perform DFF optimizations).
 
 3.34.5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \top..
-Removed 12 unused cells and 0 unused wires.
-<suppressed ~12 debug messages>
+Removed 15 unused cells and 6 unused wires.
+<suppressed ~16 debug messages>
 
 3.34.6. Rerunning OPT passes. (Removed registers in this run.)
 
@@ -1124,19 +1234,31 @@ Successfully finished Verilog frontend.
 Using template \$_SDFF_PP0_ for cells of type $_SDFF_PP0_.
 Using template \$_DFF_P_ for cells of type $_DFF_P_.
 Using template \$_DFFE_PP_ for cells of type $_DFFE_PP_.
-Using template \$_SDFF_PP1_ for cells of type $_SDFF_PP1_.
 Using template \$_SDFFCE_PP1P_ for cells of type $_SDFFCE_PP1P_.
 Using template \$_SDFFCE_PP0P_ for cells of type $_SDFFCE_PP0P_.
+Using template \$_SDFF_PP1_ for cells of type $_SDFF_PP1_.
 No more expansions possible.
-<suppressed ~57 debug messages>
+<suppressed ~79 debug messages>
 
 3.37. Executing OPT_EXPR pass (perform const folding).
 Optimizing module top.
 
 3.38. Executing SIMPLEMAP pass (map simple cells to gate primitives).
-Mapping top.$auto$alumacc.cc:485:replace_alu$782.slice[0].carry ($lut).
-Mapping top.$auto$alumacc.cc:485:replace_alu$785.slice[0].carry ($lut).
-Mapping top.$auto$alumacc.cc:485:replace_alu$788.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$801.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$806.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$914.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$917.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$920.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$923.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$931.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$931.slice[7].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$939.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$939.slice[7].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$942.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$945.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$948.slice[7].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$951.slice[7].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$954.slice[0].carry ($lut).
 
 3.39. Executing ICE40_OPT pass (performing simple optimizations).
 
@@ -1144,19 +1266,19 @@ Mapping top.$auto$alumacc.cc:485:replace_alu$788.slice[0].carry ($lut).
 
 3.39.2. Executing OPT_EXPR pass (perform const folding).
 Optimizing module top.
-<suppressed ~49 debug messages>
+<suppressed ~221 debug messages>
 
 3.39.3. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\top'.
-<suppressed ~39 debug messages>
-Removed a total of 13 cells.
+<suppressed ~132 debug messages>
+Removed a total of 44 cells.
 
 3.39.4. Executing OPT_DFF pass (perform DFF optimizations).
 
 3.39.5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \top..
-Removed 0 unused cells and 208 unused wires.
-<suppressed ~1 debug messages>
+Removed 2 unused cells and 403 unused wires.
+<suppressed ~3 debug messages>
 
 3.39.6. Rerunning OPT passes. (Removed registers in this run.)
 
@@ -1164,6 +1286,7 @@ Removed 0 unused cells and 208 unused wires.
 
 3.39.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module top.
+<suppressed ~2 debug messages>
 
 3.39.9. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\top'.
@@ -1174,7 +1297,23 @@ Removed a total of 0 cells.
 3.39.11. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \top..
 
-3.39.12. Finished OPT passes. (There is nothing left to do.)
+3.39.12. Rerunning OPT passes. (Removed registers in this run.)
+
+3.39.13. Running ICE40 specific optimizations.
+
+3.39.14. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.39.15. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.39.16. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.39.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.39.18. Finished OPT passes. (There is nothing left to do.)
 
 3.40. Executing TECHMAP pass (map to technology primitives).
 
@@ -1191,7 +1330,7 @@ No more expansions possible.
 3.41. Executing ABC pass (technology mapping using ABC).
 
 3.41.1. Extracting gate netlist of module `\top' to `<abc-temp-dir>/input.blif'..
-Extracted 209 gates and 287 wires to a netlist network with 77 inputs and 73 outputs.
+Extracted 346 gates and 516 wires to a netlist network with 169 inputs and 136 outputs.
 
 3.41.1.1. Executing ABC.
 Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
@@ -1213,20 +1352,20 @@ ABC: + if
 ABC: + mfs2 
 ABC: + lutpack -S 1 
 ABC: + dress <abc-temp-dir>/input.blif 
-ABC: Total number of equiv classes                =      83.
-ABC: Participating nodes from both networks       =     168.
-ABC: Participating nodes from the first network   =      82. (  85.42 % of nodes)
-ABC: Participating nodes from the second network  =      86. (  89.58 % of nodes)
-ABC: Node pairs (any polarity)                    =      82. (  85.42 % of names can be moved)
-ABC: Node pairs (same polarity)                   =      81. (  84.38 % of names can be moved)
+ABC: Total number of equiv classes                =     155.
+ABC: Participating nodes from both networks       =     314.
+ABC: Participating nodes from the first network   =     154. (  83.24 % of nodes)
+ABC: Participating nodes from the second network  =     160. (  86.49 % of nodes)
+ABC: Node pairs (any polarity)                    =     154. (  83.24 % of names can be moved)
+ABC: Node pairs (same polarity)                   =     150. (  81.08 % of names can be moved)
 ABC: Total runtime =     0.01 sec
 ABC: + write_blif <abc-temp-dir>/output.blif 
 
 3.41.1.2. Re-integrating ABC results.
-ABC RESULTS:              $lut cells:       95
-ABC RESULTS:        internal signals:      137
-ABC RESULTS:           input signals:       77
-ABC RESULTS:          output signals:       73
+ABC RESULTS:              $lut cells:      184
+ABC RESULTS:        internal signals:      211
+ABC RESULTS:           input signals:      169
+ABC RESULTS:          output signals:      136
 Removing temp directory.
 
 3.42. Executing ICE40_WRAPCARRY pass (wrap carries).
@@ -1260,39 +1399,39 @@ Successfully finished Verilog frontend.
 3.43.2. Continuing TECHMAP pass.
 No more expansions possible.
 <suppressed ~22 debug messages>
-Removed 105 unused cells and 224 unused wires.
+Removed 207 unused cells and 425 unused wires.
 
 3.44. Executing OPT_LUT pass (optimize LUTs).
 Discovering LUTs.
-Number of LUTs:      121
-  1-LUT               42
-  2-LUT               21
-  3-LUT               39
-  4-LUT               19
-  with \SB_CARRY    (#0)   23
-  with \SB_CARRY    (#1)   30
+Number of LUTs:      266
+  1-LUT               87
+  2-LUT               32
+  3-LUT               93
+  4-LUT               54
+  with \SB_CARRY    (#0)   75
+  with \SB_CARRY    (#1)   77
 
 Eliminating LUTs.
-Number of LUTs:      121
-  1-LUT               42
-  2-LUT               21
-  3-LUT               39
-  4-LUT               19
-  with \SB_CARRY    (#0)   23
-  with \SB_CARRY    (#1)   30
+Number of LUTs:      266
+  1-LUT               87
+  2-LUT               32
+  3-LUT               93
+  4-LUT               54
+  with \SB_CARRY    (#0)   75
+  with \SB_CARRY    (#1)   77
 
 Combining LUTs.
-Number of LUTs:      101
-  1-LUT               32
-  2-LUT               10
-  3-LUT               31
-  4-LUT               28
-  with \SB_CARRY    (#0)   23
-  with \SB_CARRY    (#1)   30
+Number of LUTs:      235
+  1-LUT               65
+  2-LUT               22
+  3-LUT               86
+  4-LUT               62
+  with \SB_CARRY    (#0)   75
+  with \SB_CARRY    (#1)   77
 
 Eliminated 0 LUTs.
-Combined 20 LUTs.
-<suppressed ~800 debug messages>
+Combined 31 LUTs.
+<suppressed ~2062 debug messages>
 
 3.45. Executing TECHMAP pass (map to technology primitives).
 
@@ -1302,43 +1441,55 @@ Generating RTLIL representation for module `\$lut'.
 Successfully finished Verilog frontend.
 
 3.45.2. Continuing TECHMAP pass.
-Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9\$lut for cells of type $lut.
-Using template $paramod$6d6beead1425af15cf78b27fd9b11b41b5d4bce8\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
-Using template $paramod$6b0849254d6c87461fb93e37cc18f089f61eb912\$lut for cells of type $lut.
-Using template $paramod$e5759512db67494ff77fbdfc66dff4006376568f\$lut for cells of type $lut.
-Using template $paramod$332a399730bfc61adea04021a76b1c4e4030f37d\$lut for cells of type $lut.
 Using template $paramod$fd904e9e35cfd343a9df248824bd3f1408724879\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11010000 for cells of type $lut.
+Using template $paramod$43779580bfffd5d5a9f321249a174febf1dac288\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
+Using template $paramod$ba05b8a1a425003df083aea0e69541f5cbdc68f2\$lut for cells of type $lut.
+Using template $paramod$6d6beead1425af15cf78b27fd9b11b41b5d4bce8\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
+Using template $paramod$310dc7912bb5756ab08137f6868c0abbecf66466\$lut for cells of type $lut.
+Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9\$lut for cells of type $lut.
 Using template $paramod$a15fd389a2f54cb7b94707b25934d226e68d9e2e\$lut for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10111111 for cells of type $lut.
-Using template $paramod$6e238df02989b317f10820a22773676e71120644\$lut for cells of type $lut.
-Using template $paramod$272652f6c6fbe9a75eff76e45cc7e2788835518b\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000001 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
-Using template $paramod$a59507d273cd827eb6c46c37820d50a1b717efdf\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11110100 for cells of type $lut.
+Using template $paramod$6b0849254d6c87461fb93e37cc18f089f61eb912\$lut for cells of type $lut.
+Using template $paramod$332a399730bfc61adea04021a76b1c4e4030f37d\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0110 for cells of type $lut.
+Using template $paramod$fccccf8bb2add7667329c686feec7546eb9a3ae3\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11110001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1011 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01001111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11100000 for cells of type $lut.
-Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
-Using template $paramod$179512a187da069f3b79ef6612a41e494e7d54b6\$lut for cells of type $lut.
-Using template $paramod$fc318a7df7fe07fd6e06d67fcbc358e9823ea389\$lut for cells of type $lut.
-Using template $paramod$4282def8dbd6df3d1248ad282c629bee684502c2\$lut for cells of type $lut.
-Using template $paramod$81222ef5610a5fda47edb055a14a06ce3f531e9d\$lut for cells of type $lut.
+Using template $paramod$4da6fe9957da309dc16b8f31a6b80b19c05c808d\$lut for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1110 for cells of type $lut.
+Using template $paramod$4282def8dbd6df3d1248ad282c629bee684502c2\$lut for cells of type $lut.
+Using template $paramod$272652f6c6fbe9a75eff76e45cc7e2788835518b\$lut for cells of type $lut.
+Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1001 for cells of type $lut.
+Using template $paramod$6e238df02989b317f10820a22773676e71120644\$lut for cells of type $lut.
+Using template $paramod$2d07c1a6c53c7b878509360922c4fa5ebedc3011\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
+Using template $paramod$4972722c284f07fee673f7cb99e6a36ce4a244f0\$lut for cells of type $lut.
+Using template $paramod$ca1d48527df516f209cb40a6149324209c84bc69\$lut for cells of type $lut.
+Using template $paramod$df196ed0a1da5c4a58c5e08a1dac304fd3fccaab\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01110000 for cells of type $lut.
+Using template $paramod$f6dd01673f8f9c9ecbbfa50d05e704565b0d6345\$lut for cells of type $lut.
+Using template $paramod$90edf8d4fe439b92725b09f66e94b5afc9f35376\$lut for cells of type $lut.
+Using template $paramod$722bfd9af0ae56ca9d1d12a221cb5ede16461f26\$lut for cells of type $lut.
+Using template $paramod$a59507d273cd827eb6c46c37820d50a1b717efdf\$lut for cells of type $lut.
+Using template $paramod$ff10621ff350133ce54c2c9c3516ef034e8cfe58\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11110100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11100000 for cells of type $lut.
+Using template $paramod$e5759512db67494ff77fbdfc66dff4006376568f\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11001010 for cells of type $lut.
 No more expansions possible.
-<suppressed ~494 debug messages>
-Removed 0 unused cells and 217 unused wires.
+<suppressed ~784 debug messages>
+Removed 0 unused cells and 502 unused wires.
 
 3.46. Executing AUTONAME pass.
-Renamed 3865 objects in module top (36 iterations).
-<suppressed ~362 debug messages>
+Renamed 10080 objects in module top (40 iterations).
+<suppressed ~728 debug messages>
 
 3.47. Executing HIERARCHY pass (managing design hierarchy).
 
@@ -1353,22 +1504,22 @@ Removed 0 unused modules.
 
 === top ===
 
-   Number of wires:                149
-   Number of wire bits:            530
-   Number of public wires:         149
-   Number of public wire bits:     530
+   Number of wires:                221
+   Number of wire bits:           1193
+   Number of public wires:         221
+   Number of public wire bits:    1193
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                262
-     SB_CARRY                      125
+   Number of cells:                568
+     SB_CARRY                      275
      SB_DFF                          1
-     SB_DFFE                        10
-     SB_DFFESR                       1
-     SB_DFFESS                      11
+     SB_DFFE                        14
+     SB_DFFESR                      11
+     SB_DFFESS                      19
      SB_DFFSR                        2
      SB_DFFSS                       10
-     SB_LUT4                       101
+     SB_LUT4                       235
      SB_PLL40_PAD                    1
 
 3.49. Executing CHECK pass (checking for obvious problems).
@@ -1377,6 +1528,6 @@ Found and reported 0 problems.
 
 3.50. Executing JSON backend.
 
-End of script. Logfile hash: 52428d7065, CPU: user 0.62s system 0.01s, MEM: 25.20 MB peak
+End of script. Logfile hash: 561eb8f735, CPU: user 0.80s system 0.00s, MEM: 29.31 MB peak
 Yosys 0.27+22 (git sha1 53c0a6b78, clang 10.0.0-4ubuntu1 -fPIC -Os)
-Time spent: 45% 15x read_verilog (0 sec), 16% 1x abc (0 sec), ...
+Time spent: 37% 15x read_verilog (0 sec), 13% 1x abc (0 sec), ...

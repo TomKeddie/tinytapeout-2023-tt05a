@@ -1,6 +1,10 @@
 module top
   (
    input  CLK,
+   input  P2_1,
+   input  P2_2,
+   input  P2_3,
+   input  P2_4,
    output P1A1,
    output P1A2,
    output P1A3,
@@ -67,6 +71,10 @@ module top
 
   vga vga(.clk(clk_25_125), 
 	      .rst(rst),
+          .left_up(P2_1),
+          .left_down(P2_2),
+          .right_up(P2_3),
+          .right_down(P2_4),
 	      .r0(P1A1),
 	      .r1(P1A2),
 	      .r2(P1A3),
