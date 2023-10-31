@@ -77,7 +77,9 @@ module vga(
 
   assign blu = (blank) ? 1'b0 : 1'b1;
 
-  assign wht = (blank) ? 1'b0 : 1'b1;
+  assign wht = (blank) ? 1'b0 :
+               (count_h > 317 && count_h < 323 && count_v[4] == 1'b0) ? 1'b1 :
+               1'b0;
 
   always @ (posedge clk) begin
     hs_out <= 1'b0;
