@@ -146,7 +146,7 @@ module vga(
   // Vertical
   always @ (posedge clk) begin
     if (rst) begin
-      count_v              <= 9'b111_1111_1111_1111;
+      count_v              <= 9'b1_1111_1111;
       blank_v              <= 1'b1;
       vs_out               <= 1'b0;
     end else if (count_h >= h_backporch) begin
