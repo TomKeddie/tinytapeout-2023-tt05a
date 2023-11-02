@@ -12,6 +12,12 @@ module tt_um_tomkeddie_a
    input wire        rst_n
    );
 
+  wire               _unused_ok = &{1'b0,
+                                    ena,
+                                    uio_in,
+                                    ui_in[6:4],
+                                    1'b0};
+  
   wire               r0;
   wire               r1;
   wire               r2;

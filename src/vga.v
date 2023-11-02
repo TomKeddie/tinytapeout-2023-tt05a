@@ -42,7 +42,7 @@ module vga(
   
   localparam      ball_size_v = 4;
   localparam      ball_size_h = 4;
-
+  
   wire            blank;
   reg             blank_h;
   reg             blank_v;
