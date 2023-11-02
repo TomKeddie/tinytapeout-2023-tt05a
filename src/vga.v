@@ -34,7 +34,10 @@ module vga(
   localparam	  v_sync       = 480 + 22 + 3;
   localparam	  v_backporch = 480 + 22 + 3 + 1;
 
-  localparam      paddle_size = 40;
+  localparam      paddle_size_v = 40;
+  localparam      paddle_size_h = 6;
+  localparam      ball_size_v = 4;
+  localparam      ball_size_h = 4;
 
   wire            blank;
   reg             blank_h;
@@ -47,9 +50,12 @@ module vga(
   // 2^9 = 512
   reg [8:0]       count_v;
 
-  reg [8:0]       pos_l;
-  reg [8:0]       pos_r;
+  reg [8:0]       paddle_pos_l;
+  reg [8:0]       paddle_pos_r;
 
+  reg [9:0]       ball_pos_v;
+  reg [8:0]       ball_pos_h;
+  
   reg             red;
   reg             grn;
   wire            blu;
@@ -101,9 +107,11 @@ module vga(
                // dashed net down the centre
                (count_h > 317 && count_h < 323 && count_v[4] == 1'b0) ? 1'b1 :
                // left paddle
-               (count_h > 10 && count_h < 16 && count_v > (pos_l-paddle_size/2) && count_v < (pos_l+paddle_size/2)) ? 1'b1 :
+               (count_h > 10 && count_h <= 10+paddle_size_h && count_v > (paddle_pos_l-paddle_size_v/2) && count_v < (paddle_pos_l+paddle_size_v/2)) ? 1'b1 :
                // right paddle
-               (count_h > 624 && count_h < 630 && count_v > (pos_r-paddle_size/2) && count_v < (pos_r+paddle_size/2)) ? 1'b1 :
+               (count_h > 624 && count_h <= 624+paddle_size_h && count_v > (paddle_pos_r-paddle_size_v/2) && count_v < (paddle_pos_r+paddle_size_v/2)) ? 1'b1 :
+               // ball
+               (count_h > (ball_pos_h-ball_size_h/2) && count_h < (ball_pos_h+ball_size_h/2) && count_v > (ball_pos_v-ball_size_v/2) && count_v < (ball_pos_v+ball_size_v/2)) ? 1'b1 :
                1'b0;
 
   // Horizontal
@@ -156,7 +164,7 @@ module vga(
     end
   end
 
-  // debounce
+  // paddle debounce
   always @ (posedge clk) begin
     if (rst) begin
       debounce_counter <= 0;
@@ -190,24 +198,31 @@ module vga(
     end
   end
 
-  // Paddles
+  // paddle logic
   always @ (posedge clk) begin
     if (rst) begin
-      pos_l <= v_visible/2;
-      pos_r <= v_visible/2;
+      paddle_pos_l <= v_visible/2;
+      paddle_pos_r <= v_visible/2;
     end else begin
-      if (left_up_pressed && pos_l > paddle_size/2) begin
-          pos_l <= pos_l - 1;
+      if (left_up_pressed && paddle_pos_l > paddle_size_v/2) begin
+          paddle_pos_l <= paddle_pos_l - 1;
       end
-      if (left_down_pressed && pos_l < v_visible - paddle_size/2) begin
-          pos_l <= pos_l + 1;
+      if (left_down_pressed && paddle_pos_l < v_visible - paddle_size_v/2) begin
+          paddle_pos_l <= paddle_pos_l + 1;
       end
-      if (right_up_pressed && pos_r > paddle_size/2) begin
-          pos_r <= pos_r - 1;
+      if (right_up_pressed && paddle_pos_r > paddle_size_v/2) begin
+          paddle_pos_r <= paddle_pos_r - 1;
       end
-      if (right_down_pressed && pos_r < v_visible - paddle_size/2) begin
-          pos_r <= pos_r + 1;
+      if (right_down_pressed && paddle_pos_r < v_visible - paddle_size_v/2) begin
+          paddle_pos_r <= paddle_pos_r + 1;
       end
+    end
+  end
+  always @ (posedge clk) begin
+    if (rst) begin
+      ball_pos_v <= v_visible/2;
+      ball_pos_h <= h_visible/3;
+    end else begin
     end
   end
 endmodule
