@@ -249,6 +249,7 @@ module vga(
             end else begin
               // right side serves
               ball_pos_h <= paddle_r_pos_h-1;
+              ball_pos_v <= paddle_r_pos_v;
             end
           end else begin
             // ball is moving left
@@ -264,6 +265,7 @@ module vga(
             end else begin
               // left side serves
               ball_pos_h <= paddle_l_pos_h-1;
+              ball_pos_v <= paddle_l_pos_v;
             end
           end else begin
             // ball is moving right
