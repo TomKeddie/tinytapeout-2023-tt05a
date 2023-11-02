@@ -234,22 +234,39 @@ module vga(
   always @ (posedge clk) begin
     if (rst) begin
       ball_pos_v <= v_visible/2;
-      ball_pos_h <= h_visible/3;
-      ball_motion_l <= 1'b0;
+      ball_pos_h <= paddle_r_pos_h-1;
+      ball_motion_l <= 1'b1;
     end else begin
       if (interval_counter == 0) begin
+        // is the ball moving left
         if (ball_motion_l == 1'b1) begin
+          // is the ball in the left paddle column
           if (ball_pos_h == paddle_l_pos_h-1) begin
-            // bounce off left paddle
-            ball_motion_l <= 1'b0;
+            // did the ball hit the left paddle
+            if (ball_pos_v >= paddle_l_pos_v-paddle_size_v/2 && ball_pos_v <= paddle_l_pos_v+paddle_size_v/2) begin
+              // bounce off left paddle
+              ball_motion_l <= 1'b0;
+            end else begin
+              // right side serves
+              ball_pos_h <= paddle_r_pos_h-1;
+            end
           end else begin
+            // ball is moving left
             ball_pos_h <= ball_pos_h-1;
           end
-        end else begin
+        end else begin // if (ball_motion_l == 1'b1)
+          // ball is moving right, is the ball in the right paddle columnx
           if (ball_pos_h == paddle_r_pos_h-1) begin
-            // bounce off right paddle
-            ball_motion_l <= 1'b1;
+            // did the ball hit the right paddle
+            if (ball_pos_v >= paddle_r_pos_v-paddle_size_v/2 && ball_pos_v <= paddle_r_pos_v+paddle_size_v/2) begin
+              // bounce off right paddle
+              ball_motion_l <= 1'b1;
+            end else begin
+              // left side serves
+              ball_pos_h <= paddle_l_pos_h-1;
+            end
           end else begin
+            // ball is moving right
             ball_pos_h <= ball_pos_h+1;
           end
         end
