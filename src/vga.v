@@ -77,10 +77,8 @@ module vga(
   reg             left_down_pressed;
   reg             right_up_pressed;
   reg             right_down_pressed;
-  reg [23:0]      interval_counter;
+  reg [24:0]      interval_counter;
 
-  reg             debug;
-  
   assign r0 = red;
   assign r1 = red;
   assign r2 = red;
@@ -148,7 +146,7 @@ module vga(
   // Vertical
   always @ (posedge clk) begin
     if (rst) begin
-      count_v              <= 15'b111_1111_1111_1111;
+      count_v              <= 9'b111_1111_1111_1111;
       blank_v              <= 1'b1;
       vs_out               <= 1'b0;
     end else if (count_h >= h_backporch) begin
