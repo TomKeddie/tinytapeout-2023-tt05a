@@ -63,6 +63,9 @@ module vga(
   reg             ball_motion_l;
   reg             ball_motion_d;
   reg [2:0]       ball_ratio;
+
+  reg [2:0]       score_l;
+  reg [2:0]       score_r;
   
   reg             red;
   reg             grn;
@@ -241,6 +244,8 @@ module vga(
       ball_motion_l <= 1'b1;
       ball_motion_d <= 1'b1;
       ball_ratio    <= 0;
+      score_l <= 3'b0;
+      score_r <= 3'b0;
     end else begin
       if (interval_counter == 0) begin
         // is the ball moving left
@@ -250,11 +255,12 @@ module vga(
             // did the ball hit the left paddle
             if (ball_pos_v >= paddle_l_pos_v-paddle_size_v/2 && ball_pos_v <= paddle_l_pos_v+paddle_size_v/2) begin
               // bounce off left paddle
-              ball_motion_l <= 1'b0;
-            end else begin
+              ball_motion_l        <= 1'b0;
+            end else if (score_r != 3'b111) begin
               // right side serves
               ball_pos_h <= paddle_r_pos_h-1;
               ball_pos_v <= paddle_r_pos_v;
+              score_r    <= score_r + 1;
             end
           end else begin
             // ball is moving left
@@ -291,11 +297,12 @@ module vga(
             // did the ball hit the right paddle
             if (ball_pos_v >= paddle_r_pos_v-paddle_size_v/2 && ball_pos_v <= paddle_r_pos_v+paddle_size_v/2) begin
               // bounce off right paddle
-              ball_motion_l <= 1'b1;
-            end else begin
+              ball_motion_l        <= 1'b1;
+            end else if (score_l != 3'b111) begin
               // left side serves
               ball_pos_h <= paddle_l_pos_h-1;
               ball_pos_v <= paddle_l_pos_v;
+              score_l    <= score_l + 1;
             end
           end else begin
             // ball is moving right
