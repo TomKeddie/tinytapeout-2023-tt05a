@@ -5,6 +5,9 @@ module top
    input  P2_2,
    input  P2_3,
    input  P2_4,
+   input  P2_7,
+   input  P2_8,
+   input  P2_9,
    output P1A1,
    output P1A2,
    output P1A3,
@@ -27,10 +30,15 @@ module top
 
   reg       rst;
 
-  wire      locked;
-  wire      clk_25_125;
+  wire       locked;
+  wire       clk_25_125;
+  wire [2:0] ball_angle;
+  
   assign    P1B9 = clk_25_125;
   assign    P1B10 = locked;
+  assign    ball_angle[0] = !P2_7;
+  assign    ball_angle[1] = !P2_8;
+  assign    ball_angle[2] = !P2_9;
 
   // icepll -o 25.175 -m -p
   /*
@@ -75,6 +83,7 @@ module top
           .left_down(!P2_2),
           .right_up(!P2_3),
           .right_down(!P2_4),
+          .ball_angle(ball_angle),
 	      .r0(P1A1),
 	      .r1(P1A2),
 	      .r2(P1A3),

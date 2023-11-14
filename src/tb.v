@@ -37,8 +37,11 @@ module tb (
     $dumpvars (0, tb.vga.blank_h);
     $dumpvars (0, tb.vga.count_v);
     $dumpvars (0, tb.vga.blank_v);
-    $dumpvars (0, tb.vga.pos_l);
-    $dumpvars (0, tb.vga.pos_r);
+    $dumpvars (0, tb.vga.paddle_l_pos_h);
+    $dumpvars (0, tb.vga.paddle_r_pos_h);
+    $dumpvars (0, tb.vga.ball_pos_v);
+    $dumpvars (0, tb.vga.ball_pos_h);
+    
     #1;
   end
 

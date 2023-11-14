@@ -6,6 +6,7 @@ module vga(
            input  left_down,
            input  right_up,
            input  right_down,
+           input  [2:0] ball_angle,
 	       output r0,
 	       output r1,
 	       output r2,
@@ -60,6 +61,8 @@ module vga(
   reg [9:0]       ball_pos_h;
   reg [8:0]       ball_pos_v;
   reg             ball_motion_l;
+  reg             ball_motion_d;
+  reg [2:0]       ball_ratio;
   
   reg             red;
   reg             grn;
@@ -233,9 +236,11 @@ module vga(
   // ball logic
   always @ (posedge clk) begin
     if (rst) begin
-      ball_pos_v <= v_visible/2;
-      ball_pos_h <= paddle_r_pos_h-1;
+      ball_pos_v    <= v_visible/2;
+      ball_pos_h    <= paddle_r_pos_h-1;
       ball_motion_l <= 1'b1;
+      ball_motion_d <= 1'b1;
+      ball_ratio    <= 0;
     end else begin
       if (interval_counter == 0) begin
         // is the ball moving left
@@ -254,6 +259,31 @@ module vga(
           end else begin
             // ball is moving left
             ball_pos_h <= ball_pos_h-1;
+            // vertical motion
+            if (ball_angle != 0) begin
+              if (ball_ratio == ball_angle) begin
+                if (ball_motion_d == 1'b1) begin
+                  if (ball_pos_v < v_visible-1) begin
+                    // moving down
+                    ball_pos_v <= ball_pos_v+1;
+                  end else begin
+                    // bounce up
+                    ball_motion_d <= 1'b0;
+                  end
+                end else begin
+                  // moving up
+                  if (ball_pos_v != 0) begin
+                    ball_pos_v <= ball_pos_v-1;
+                  end else begin
+                    // bounce down
+                    ball_motion_d <= 1'b1;
+                  end
+                end
+                ball_ratio <= 0;
+              end else begin
+                ball_ratio <= ball_ratio+1;
+              end;
+            end;
           end
         end else begin // if (ball_motion_l == 1'b1)
           // ball is moving right, is the ball in the right paddle columnx
@@ -270,6 +300,31 @@ module vga(
           end else begin
             // ball is moving right
             ball_pos_h <= ball_pos_h+1;
+            // vertical motion
+            if (ball_angle != 0) begin
+              if (ball_ratio == ball_angle) begin
+                if (ball_motion_d == 1'b1) begin
+                  if (ball_pos_v < v_visible-1) begin
+                    // moving down
+                    ball_pos_v <= ball_pos_v+1;
+                  end else begin
+                    // bounce up
+                    ball_motion_d <= 1'b0;
+                  end
+                end else begin
+                  // moving up
+                  if (ball_pos_v != 0) begin
+                    ball_pos_v <= ball_pos_v-1;
+                  end else begin
+                    // bounce down
+                    ball_motion_d <= 1'b1;
+                  end
+                end
+                ball_ratio <= 0;
+              end else begin
+                ball_ratio <= ball_ratio+1;
+              end;
+            end;
           end
         end
       end

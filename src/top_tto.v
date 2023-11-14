@@ -37,6 +37,7 @@ module tt_um_tomkeddie_a
   wire               left_down;
   wire               right_up;
   wire               right_down;
+  wire [2:0]         ball_angle;
   wire               vga_sel;
 
   // input pmod
@@ -44,6 +45,9 @@ module tt_um_tomkeddie_a
   assign left_down  = ui_in[1];
   assign right_up   = ui_in[2];
   assign right_down = ui_in[3];
+  assign ball_angle[0] = ui_in[4];
+  assign ball_angle[1] = ui_in[5];
+  assign ball_angle[2] = ui_in[6];
 
   assign vga_sel = ui_in[7];
 
@@ -98,6 +102,7 @@ module tt_um_tomkeddie_a
           .left_down(left_down),
           .right_up(right_up),
           .right_down(right_down),
+          .ball_angle(ball_angle),
           .r0(r0),
           .r1(r1),
           .r2(r2),
