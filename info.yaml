@@ -40,7 +40,7 @@ documentation:
     - left paddle down
     - right paddle up
     - right paddle down
-    - none
+    - score reset
     - none
     - none
     - pmod sel (high=mole99, low=digilent)
