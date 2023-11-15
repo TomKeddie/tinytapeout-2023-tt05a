@@ -6,7 +6,7 @@ module vga(
            input  left_down,
            input  right_up,
            input  right_down,
-           input  [2:0] ball_angle,
+           input  score_reset,
 	       output r0,
 	       output r1,
 	       output r2,
@@ -61,8 +61,8 @@ module vga(
   reg [9:0]       ball_pos_h;
   reg [8:0]       ball_pos_v;
   reg             ball_motion_l;
-  reg             ball_motion_d;
   reg [2:0]       ball_ratio;
+  reg [3:0]       ball_angle; // msb is up(1)/down(0)
 
   reg [2:0]       score_l;
   reg [2:0]       score_r;
@@ -222,16 +222,16 @@ module vga(
       paddle_r_pos_v <= v_visible/2;
     end else begin
       if (left_up_pressed && paddle_l_pos_v > paddle_size_v/2) begin
-          paddle_l_pos_v <= paddle_l_pos_v - 1;
+        paddle_l_pos_v <= paddle_l_pos_v - 1;
       end
       if (left_down_pressed && paddle_l_pos_v < v_visible - paddle_size_v/2) begin
-          paddle_l_pos_v <= paddle_l_pos_v + 1;
+        paddle_l_pos_v <= paddle_l_pos_v + 1;
       end
       if (right_up_pressed && paddle_r_pos_v > paddle_size_v/2) begin
-          paddle_r_pos_v <= paddle_r_pos_v - 1;
+        paddle_r_pos_v <= paddle_r_pos_v - 1;
       end
       if (right_down_pressed && paddle_r_pos_v < v_visible - paddle_size_v/2) begin
-          paddle_r_pos_v <= paddle_r_pos_v + 1;
+        paddle_r_pos_v <= paddle_r_pos_v + 1;
       end
     end
   end
@@ -242,11 +242,15 @@ module vga(
       ball_pos_v    <= v_visible/2;
       ball_pos_h    <= paddle_r_pos_h-1;
       ball_motion_l <= 1'b1;
-      ball_motion_d <= 1'b1;
+      ball_angle    <= 4'b1001;
       ball_ratio    <= 0;
       score_l <= 3'b0;
       score_r <= 3'b0;
     end else begin
+      if (score_reset == 1'b1) begin
+        score_l <= 3'b0;
+        score_r <= 3'b0;
+      end
       if (interval_counter == 0) begin
         // is the ball moving left
         if (ball_motion_l == 1'b1) begin
@@ -258,23 +262,24 @@ module vga(
               ball_motion_l        <= 1'b0;
             end else if (score_r != 3'b111) begin
               // right side serves
-              ball_pos_h <= paddle_r_pos_h-1;
-              ball_pos_v <= paddle_r_pos_v;
-              score_r    <= score_r + 1;
+              ball_pos_h         <= paddle_r_pos_h-1;
+              ball_pos_v         <= paddle_r_pos_v;
+              score_r            <= score_r + 1;
+              ball_angle         <= ball_angle + 3;  // "random"
             end
           end else begin
             // ball is moving left
             ball_pos_h <= ball_pos_h-1;
             // vertical motion
-            if (ball_angle != 0) begin
-              if (ball_ratio == ball_angle) begin
-                if (ball_motion_d == 1'b1) begin
+            if (ball_angle[2:0] != 3'b000) begin
+              if (ball_ratio == ball_angle[2:0]) begin
+                if (ball_angle[3] == 1'b1) begin
                   if (ball_pos_v < v_visible-1) begin
                     // moving down
                     ball_pos_v <= ball_pos_v+1;
                   end else begin
                     // bounce up
-                    ball_motion_d <= 1'b0;
+                    ball_angle[3] <= 1'b0;
                   end
                 end else begin
                   // moving up
@@ -282,7 +287,7 @@ module vga(
                     ball_pos_v <= ball_pos_v-1;
                   end else begin
                     // bounce down
-                    ball_motion_d <= 1'b1;
+                    ball_angle[3] <= 1'b1;
                   end
                 end
                 ball_ratio <= 0;
@@ -303,20 +308,21 @@ module vga(
               ball_pos_h <= paddle_l_pos_h-1;
               ball_pos_v <= paddle_l_pos_v;
               score_l    <= score_l + 1;
+              ball_angle <= ball_angle + 3;  // "random"
             end
           end else begin
             // ball is moving right
             ball_pos_h <= ball_pos_h+1;
             // vertical motion
-            if (ball_angle != 0) begin
-              if (ball_ratio == ball_angle) begin
-                if (ball_motion_d == 1'b1) begin
+            if (ball_angle[2:0] != 3'b000) begin
+              if (ball_ratio == ball_angle[2:0]) begin
+                if (ball_angle[3] == 1'b1) begin
                   if (ball_pos_v < v_visible-1) begin
                     // moving down
                     ball_pos_v <= ball_pos_v+1;
                   end else begin
                     // bounce up
-                    ball_motion_d <= 1'b0;
+                    ball_angle[3] <= 1'b0;
                   end
                 end else begin
                   // moving up
@@ -324,7 +330,7 @@ module vga(
                     ball_pos_v <= ball_pos_v-1;
                   end else begin
                     // bounce down
-                    ball_motion_d <= 1'b1;
+                    ball_angle[3] <= 1'b1;
                   end
                 end
                 ball_ratio <= 0;
