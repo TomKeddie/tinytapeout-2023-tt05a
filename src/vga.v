@@ -57,6 +57,11 @@ module vga(
 
   // 2^10  = 1024
   reg [9:0]       count_h;
+  reg             count_h_ball;
+  reg             count_h_paddle_l;
+  reg             count_h_paddle_r;
+  reg             count_v_paddle_l;
+  reg             count_v_paddle_r;
   // 2^9 = 512
   reg [8:0]       count_v;
 
@@ -70,7 +75,9 @@ module vga(
   reg [3:0]       ball_angle; // msb is up(1)/down(0)
 
   reg [2:0]       score_l;
+  reg [2:0]       score_l_pixels;
   reg [2:0]       score_r;
+  reg [2:0]       score_r_pixels;
   
   reg             red;
   reg             grn;
@@ -121,27 +128,47 @@ module vga(
                // dashed net down the centre
                (count_h > 317 && count_h < 323 && count_v[4] == 1'b0) ? 1'b1 :
                // left paddle
-               (count_h > paddle_l_pos_h-paddle_size_h && count_h <= paddle_l_pos_h && count_v > (paddle_l_pos_v-paddle_size_v/2) && count_v < (paddle_l_pos_v+paddle_size_v/2)) ? 1'b1 :
+               (count_h_paddle_l && count_v_paddle_l) ? 1'b1 :
                // right paddle
-               (count_h > paddle_r_pos_h && count_h <= paddle_r_pos_h+paddle_size_h && count_v > (paddle_r_pos_v-paddle_size_v/2) && count_v < (paddle_r_pos_v+paddle_size_v/2)) ? 1'b1 :
+               (count_h_paddle_r && count_v_paddle_r) ? 1'b1 :
                // ball
-               (count_h > (ball_pos_h-ball_size_h/2) && count_h < (ball_pos_h+ball_size_h/2) && count_v > (ball_pos_v-ball_size_v/2) && count_v < (ball_pos_v+ball_size_v/2)) ? 1'b1 :
-               // left score first row
-               (count_h > score_l_pos_h && count_h < score_l_pos_h+3*score_unit && count_v > score_pos_v+0*score_unit && count_v < score_pos_v+1*score_unit) ? 1'b1 :
-               // right score first row
-               (count_h > score_r_pos_h && count_h < score_r_pos_h+3*score_unit && count_v > score_pos_v+0*score_unit && count_v < score_pos_v+1*score_unit) ? 1'b1 :
+               (count_h_ball && count_v > (ball_pos_v-ball_size_v/2) && count_v < (ball_pos_v+ball_size_v/2)) ? 1'b1 :
+               // left score
+               (count_h >= score_l_pos_h+0*score_unit && count_h < score_l_pos_h+1*score_unit && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_l_pixels[2] :
+               (count_h >= score_l_pos_h+1*score_unit && count_h < score_l_pos_h+2*score_unit && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_l_pixels[1] :
+               (count_h >= score_l_pos_h+2*score_unit && count_h < score_l_pos_h+3*score_unit && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_l_pixels[0] :
+               // right score
+               (count_h >= score_r_pos_h+0*score_unit && count_h < score_r_pos_h+1*score_unit && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_r_pixels[2] :
+               (count_h >= score_r_pos_h+1*score_unit && count_h < score_r_pos_h+2*score_unit && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_r_pixels[1] :
+               (count_h >= score_r_pos_h+2*score_unit && count_h < score_r_pos_h+3*score_unit && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_r_pixels[0] :
+               (count_h > score_r_pos_h+0*score_unit && count_h < score_r_pos_h+1*score_unit && count_v > score_pos_v+0*score_unit && count_v < score_pos_v+1*score_unit) ? 1'b1 :
                // background
                1'b0;
 
   // Horizontal
   always @ (posedge clk) begin
-    hs_out <= 1'b0;
+    hs_out       <= 1'b0;
+    count_h_ball <= 1'b0;
+    count_h_paddle_l <= 1'b0;
+    count_h_paddle_r <= 1'b0;
     if (rst) begin
       count_h <= 10'b11_1111_1111;
       blank_h <= 1'b1;
     end else if (count_h < h_visible) begin
 	  // horizontal visible
       count_h <= count_h + 1;
+      // pipelined ball horizontal
+      if (count_h >= (ball_pos_h-ball_size_h/2) && count_h < (ball_pos_h+ball_size_h/2)-1) begin
+        count_h_ball <= 1'b1;
+      end
+      // pipelined left paddle horizontal
+      if (count_h >= paddle_l_pos_h-paddle_size_h && count_h < paddle_l_pos_h) begin
+        count_h_paddle_l <= 1'b1;
+      end
+      // pipelined right paddle horizontal
+      if (count_h >= paddle_r_pos_h && count_h < paddle_r_pos_h+paddle_size_h) begin
+        count_h_paddle_r <= 1'b1;
+      end
     end else if (count_h < h_frontporch) begin
 	  // horizontal front porch
       count_h <= count_h + 1;
@@ -167,7 +194,19 @@ module vga(
       vs_out               <= 1'b0;
     end else if (count_h >= h_backporch) begin
       if (count_v < v_visible) begin
+        // vertical visible
         count_v <= count_v + 1;
+        // pipelined left paddle vertical
+        if (count_v >= (paddle_l_pos_v-paddle_size_v/2) && count_v < (paddle_l_pos_v+paddle_size_v/2)-1) begin
+          count_v_paddle_l <= 1'b1;
+        end else begin
+          count_v_paddle_l <= 1'b0;
+        end
+        if (count_v >= (paddle_r_pos_v-paddle_size_v/2) && count_v < (paddle_r_pos_v+paddle_size_v/2)-1) begin
+          count_v_paddle_r <= 1'b1;
+        end else begin
+          count_v_paddle_r <= 1'b0;
+        end
       end else if (count_v < v_backporch) begin
         count_v <= count_v + 1;
         blank_v <= 1'b1;
@@ -246,6 +285,18 @@ module vga(
     end
   end
 
+  // score pixels
+  always @ (posedge clk) begin
+    if (count_v < score_pos_v+0*score_unit) begin
+      // first row
+      score_l_pixels <= 3'b111;
+      score_r_pixels <= 3'b111;
+    end else if (count_v >= score_pos_v+1*score_unit) begin
+      score_l_pixels <= 3'b101;
+      score_r_pixels <= 3'b010;
+    end
+  end // score pixels
+  
   // ball logic
   always @ (posedge clk) begin
     if (rst) begin
@@ -303,8 +354,8 @@ module vga(
                 ball_ratio <= 0;
               end else begin
                 ball_ratio <= ball_ratio+1;
-              end;
-            end;
+              end
+            end
           end
         end else begin // if (ball_motion_l == 1'b1)
           // ball is moving right, is the ball in the right paddle columnx
@@ -346,8 +397,8 @@ module vga(
                 ball_ratio <= 0;
               end else begin
                 ball_ratio <= ball_ratio+1;
-              end;
-            end;
+              end
+            end
           end
         end
       end
