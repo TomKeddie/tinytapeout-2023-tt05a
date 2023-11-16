@@ -100,7 +100,6 @@ module tt_um_tomkeddie_a
           .left_down(left_down),
           .right_up(right_up),
           .right_down(right_down),
-          .ball_angle(ball_angle),
           .score_reset(score_reset),
           .r0(r0),
           .r1(r1),

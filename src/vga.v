@@ -43,6 +43,11 @@ module vga(
   
   localparam      ball_size_v = 4;
   localparam      ball_size_h = 4;
+
+  localparam      score_pos_v       = 20;  // 20-69
+  localparam      score_l_pos_h     = 275; // 275-304
+  localparam      score_r_pos_h     = 335; // 335-364
+  localparam      score_unit        = 10;
   
   wire            blank;
   reg             blank_h;
@@ -121,6 +126,11 @@ module vga(
                (count_h > paddle_r_pos_h && count_h <= paddle_r_pos_h+paddle_size_h && count_v > (paddle_r_pos_v-paddle_size_v/2) && count_v < (paddle_r_pos_v+paddle_size_v/2)) ? 1'b1 :
                // ball
                (count_h > (ball_pos_h-ball_size_h/2) && count_h < (ball_pos_h+ball_size_h/2) && count_v > (ball_pos_v-ball_size_v/2) && count_v < (ball_pos_v+ball_size_v/2)) ? 1'b1 :
+               // left score first row
+               (count_h > score_l_pos_h && count_h < score_l_pos_h+3*score_unit && count_v > score_pos_v+0*score_unit && count_v < score_pos_v+1*score_unit) ? 1'b1 :
+               // right score first row
+               (count_h > score_r_pos_h && count_h < score_r_pos_h+3*score_unit && count_v > score_pos_v+0*score_unit && count_v < score_pos_v+1*score_unit) ? 1'b1 :
+               // background
                1'b0;
 
   // Horizontal
