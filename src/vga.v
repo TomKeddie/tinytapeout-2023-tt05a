@@ -62,6 +62,12 @@ module vga(
   reg             count_h_paddle_r;
   reg             count_v_paddle_l;
   reg             count_v_paddle_r;
+  reg             count_h_score_l_0;
+  reg             count_h_score_l_1;
+  reg             count_h_score_l_2;
+  reg             count_h_score_r_0;
+  reg             count_h_score_r_1;
+  reg             count_h_score_r_2;
   // 2^9 = 512
   reg [8:0]       count_v;
 
@@ -134,23 +140,28 @@ module vga(
                // ball
                (count_h_ball && count_v > (ball_pos_v-ball_size_v/2) && count_v < (ball_pos_v+ball_size_v/2)) ? 1'b1 :
                // left score
-               (count_h >= score_l_pos_h+0*score_unit && count_h < score_l_pos_h+1*score_unit && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_l_pixels[2] :
-               (count_h >= score_l_pos_h+1*score_unit && count_h < score_l_pos_h+2*score_unit && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_l_pixels[1] :
-               (count_h >= score_l_pos_h+2*score_unit && count_h < score_l_pos_h+3*score_unit && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_l_pixels[0] :
+               (count_h_score_l_0 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_l_pixels[2] :
+               (count_h_score_l_1 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_l_pixels[1] :
+               (count_h_score_l_2 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_l_pixels[0] :
                // right score
-               (count_h >= score_r_pos_h+0*score_unit && count_h < score_r_pos_h+1*score_unit && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_r_pixels[2] :
-               (count_h >= score_r_pos_h+1*score_unit && count_h < score_r_pos_h+2*score_unit && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_r_pixels[1] :
-               (count_h >= score_r_pos_h+2*score_unit && count_h < score_r_pos_h+3*score_unit && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_r_pixels[0] :
-               (count_h > score_r_pos_h+0*score_unit && count_h < score_r_pos_h+1*score_unit && count_v > score_pos_v+0*score_unit && count_v < score_pos_v+1*score_unit) ? 1'b1 :
+               (count_h_score_r_0 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_r_pixels[2] :
+               (count_h_score_r_1 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_r_pixels[1] :
+               (count_h_score_r_2 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_r_pixels[0] :
                // background
                1'b0;
 
   // Horizontal
   always @ (posedge clk) begin
-    hs_out       <= 1'b0;
-    count_h_ball <= 1'b0;
+    hs_out           <= 1'b0;
+    count_h_ball     <= 1'b0;
     count_h_paddle_l <= 1'b0;
     count_h_paddle_r <= 1'b0;
+    count_h_score_l_0 <= 1'b0;
+    count_h_score_l_1 <= 1'b0;
+    count_h_score_l_2 <= 1'b0;
+    count_h_score_r_0 <= 1'b0;
+    count_h_score_r_1 <= 1'b0;
+    count_h_score_r_2 <= 1'b0;
     if (rst) begin
       count_h <= 10'b11_1111_1111;
       blank_h <= 1'b1;
@@ -160,14 +171,34 @@ module vga(
       // pipelined ball horizontal
       if (count_h >= (ball_pos_h-ball_size_h/2) && count_h < (ball_pos_h+ball_size_h/2)-1) begin
         count_h_ball <= 1'b1;
-      end
+      end // (no else here as the ball can be active with any of the other elements)
       // pipelined left paddle horizontal
       if (count_h >= paddle_l_pos_h-paddle_size_h && count_h < paddle_l_pos_h) begin
         count_h_paddle_l <= 1'b1;
-      end
+      end else
       // pipelined right paddle horizontal
       if (count_h >= paddle_r_pos_h && count_h < paddle_r_pos_h+paddle_size_h) begin
         count_h_paddle_r <= 1'b1;
+      end else
+      // pipelined left score horizontal
+      if (count_h >= score_l_pos_h+0*score_unit && count_h < score_l_pos_h+1*score_unit) begin
+        count_h_score_l_0 <= 1'b1;
+      end else
+      if (count_h >= score_l_pos_h+1*score_unit && count_h < score_l_pos_h+2*score_unit) begin
+        count_h_score_l_1 <= 1'b1;
+      end else
+      if (count_h >= score_l_pos_h+2*score_unit && count_h < score_l_pos_h+3*score_unit) begin
+        count_h_score_l_2 <= 1'b1;
+      end else
+      // pipelined right score horizontal
+      if (count_h >= score_r_pos_h+0*score_unit && count_h < score_r_pos_h+1*score_unit) begin
+        count_h_score_r_0 <= 1'b1;
+      end else
+      if (count_h >= score_r_pos_h+1*score_unit && count_h < score_r_pos_h+2*score_unit) begin
+        count_h_score_r_1 <= 1'b1;
+      end else
+      if (count_h >= score_r_pos_h+2*score_unit && count_h < score_r_pos_h+3*score_unit) begin
+        count_h_score_r_2 <= 1'b1;
       end
     end else if (count_h < h_frontporch) begin
 	  // horizontal front porch
