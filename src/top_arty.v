@@ -49,6 +49,8 @@ module top
           .right_up(!ja[2]),
           .right_down(!ja[3]),
           .score_reset(!ja[7]),
+          .speed_lsb(!ja[5]),
+          .speed_msb(!ja[6]),
 	      .r0(jb[0]),
 	      .r1(jb[1]),
 	      .r2(jb[2]),

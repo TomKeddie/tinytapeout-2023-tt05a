@@ -39,6 +39,8 @@ module tt_um_tomkeddie_a
   wire               right_down;
   wire               vga_sel;
   wire               score_reset;
+  wire               speed_msb;
+  wire               speed_lsb;
 
   // input pmod
   assign left_up    = ui_in[0];
@@ -47,7 +49,9 @@ module tt_um_tomkeddie_a
   assign right_down = ui_in[3];
   assign score_reset = ui_in[4];
 
-  assign vga_sel = ui_in[7];
+  assign speed_lsb = ui_in[5];
+  assign speed_msb = ui_in[6];
+  assign vga_sel   = ui_in[7];
 
   // vga_sel = 0 (mole99)
   // Pin   Signal     Pin     Signal
@@ -101,6 +105,8 @@ module tt_um_tomkeddie_a
           .right_up(right_up),
           .right_down(right_down),
           .score_reset(score_reset),
+          .speed_lsb(speed_lsb),
+          .speed_msb(speed_msb),
           .r0(r0),
           .r1(r1),
           .r2(r2),

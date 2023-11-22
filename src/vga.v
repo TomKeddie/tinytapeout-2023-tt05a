@@ -7,6 +7,8 @@ module vga(
            input  right_up,
            input  right_down,
            input  score_reset,
+           input  speed_lsb,
+           input  speed_msb,
 	       output r0,
 	       output r1,
 	       output r2,
@@ -291,7 +293,10 @@ module vga(
     if (rst) begin
       interval_counter <= 0;
     end else begin
-      if (interval_counter != 25175000/100) begin
+      if (speed_lsb == 1'b0 && speed_msb == 1'b0 && interval_counter != 251750 ||
+          speed_lsb == 1'b1 && speed_msb == 1'b0 && interval_counter != 251750*7/9 ||
+          speed_lsb == 1'b0 && speed_msb == 1'b1 &&  interval_counter != 251750*6/9 ||
+          speed_lsb == 1'b1 && speed_msb == 1'b1 &&  interval_counter != 251750*4/9) begin
         interval_counter <= interval_counter + 1;
       end else begin
         interval_counter <= 0;
