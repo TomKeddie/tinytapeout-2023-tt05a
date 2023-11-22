@@ -87,8 +87,10 @@ module vga(
 
   reg [2:0]       score_l;
   reg [2:0]       score_l_pixels;
+  reg             hide_l;
   reg [2:0]       score_r;
   reg [2:0]       score_r_pixels;
+  reg             hide_r;
   
   reg             red;
   reg             grn;
@@ -145,13 +147,13 @@ module vga(
                // ball
                (count_h_ball && count_v > (ball_pos_v-ball_size_v/2) && count_v < (ball_pos_v+ball_size_v/2)) ? 1'b1 :
                // left score
-               (count_h_score_l_0 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_l_pixels[2] :
-               (count_h_score_l_1 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_l_pixels[1] :
-               (count_h_score_l_2 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_l_pixels[0] :
+               (hide_l == 1'b0 && count_h_score_l_0 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_l_pixels[2] :
+               (hide_l == 1'b0 && count_h_score_l_1 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_l_pixels[1] :
+               (hide_l == 1'b0 && count_h_score_l_2 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_l_pixels[0] :
                // right score
-               (count_h_score_r_0 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_r_pixels[2] :
-               (count_h_score_r_1 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_r_pixels[1] :
-               (count_h_score_r_2 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_r_pixels[0] :
+               (hide_r == 1'b0 && count_h_score_r_0 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_r_pixels[2] :
+               (hide_r == 1'b0 && count_h_score_r_1 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_r_pixels[1] :
+               (hide_r == 1'b0 && count_h_score_r_2 && count_v >= score_pos_v+0*score_unit && count_v < score_pos_v+5*score_unit) ? score_r_pixels[0] :
                // background
                1'b0;
 
@@ -466,12 +468,16 @@ module vga(
       ball_motion_l <= 1'b1;
       ball_angle    <= 4'b1001;
       ball_ratio    <= 0;
-      score_l <= 3'b0;
-      score_r <= 3'b0;
+      score_l       <= 3'b0;
+      score_r       <= 3'b0;
+      hide_l <= 1'b0;
+      hide_r <= 1'b0;
     end else begin
       if (score_reset == 1'b1) begin
         score_l <= 3'b0;
         score_r <= 3'b0;
+        hide_l <= 1'b0;
+        hide_r <= 1'b0;
       end
       if (interval_counter == 0) begin
         // is the ball moving left
@@ -488,6 +494,9 @@ module vga(
               ball_pos_v         <= paddle_r_pos_v;
               score_r            <= score_r + 1;
               ball_angle         <= ball_angle + 3;  // "random"
+            end else begin
+              // right wins
+              hide_l <= 1'b1;
             end
           end else begin
             // ball is moving left
@@ -531,6 +540,9 @@ module vga(
               ball_pos_v <= paddle_l_pos_v;
               score_l    <= score_l + 1;
               ball_angle <= ball_angle + 3;  // "random"
+            end else begin
+              // left wins
+              hide_r <= 1'b1;
             end
           end else begin
             // ball is moving right
