@@ -28,7 +28,7 @@ module vga(
   localparam	  h_visible    = 640;
   localparam	  h_frontporch = 640 + 16;
   localparam	  h_sync       = 640 + 16 + 96;
-  localparam	  h_backporch  = 640 + 16 + 96 + 47;
+  localparam	  h_backporch  = 640 + 16 + 96 + 48;
 
   // while h_sync is being sent, vertical counts h_sync pulses, for
   // porch and sync, it counts clocks

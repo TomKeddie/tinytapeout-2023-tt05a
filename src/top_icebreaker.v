@@ -6,6 +6,7 @@ module top
    input  P2_3,
    input  P2_4,
    input  P2_7,
+   input  P2_8,
    input  P2_9,
    input  P2_10,
    output P1A1,
@@ -32,9 +33,43 @@ module top
 
   wire       locked;
   wire       clk_25_125;
+  wire       vga_sel;
+
+  wire               r0;
+  wire               r1;
+  wire               r2;
+  wire               r3;
+  wire               b0;
+  wire               b1;
+  wire               b2;
+  wire               b3;
+  wire               g0;
+  wire               g1;
+  wire               g2;
+  wire               g3;
+  wire               hs;
+  wire               vs;
   
-  assign    P1B9 = clk_25_125;
-  assign    P1B10 = locked;
+  assign    vga_sel = P2_10;
+
+  // P1A is pmod the right
+  assign P1A1   = (vga_sel == 1'b0) ? r1 : r0;
+  assign P1A2   = (vga_sel == 1'b0) ? g1 : r1;
+  assign P1A3   = (vga_sel == 1'b0) ? b1 : r2;
+  assign P1A4   = (vga_sel == 1'b0) ? vs : r3;
+  assign P1A7   = (vga_sel == 1'b0) ? r0 : b0;
+  assign P1A8   = (vga_sel == 1'b0) ? g0 : b1;
+  assign P1A9   = (vga_sel == 1'b0) ? b0 : b2;
+  assign P1A10  = (vga_sel == 1'b0) ? hs : b3;
+  // P1B is pmod on left
+  assign P1B1  =  g0;
+  assign P1B2  =  g1;
+  assign P1B3  =  g2;
+  assign P1B4  =  g3;
+  assign P1B7  =  hs;
+  assign P1B8  =  vs;
+  assign P1B9  =  1'b0;
+  assign P1B10 =  1'b0;
 
   // icepll -o 25.175 -m -p
   /*
@@ -80,20 +115,20 @@ module top
           .right_up(!P2_3),
           .right_down(!P2_4),
           .score_reset(!P2_7),
-          .speed_lsb(!P2_9),
-          .speed_msb(!P2_10),
-	      .r0(P1A1),
-	      .r1(P1A2),
-	      .r2(P1A3),
-	      .r3(P1A4),
-	      .b0(P1A7),
-	      .b1(P1A8),
-	      .b2(P1A9),
-	      .b3(P1A10),
-	      .g0(P1B1),
-	      .g1(P1B2),
-	      .g2(P1B3),
-	      .g3(P1B4),
-	      .hs(P1B7),
-	      .vs(P1B8));
+          .speed_lsb(!P2_8),
+          .speed_msb(!P2_9),
+          .r0(r0),
+          .r1(r1),
+          .r2(r2),
+          .r3(r3),
+          .b0(b0),
+          .b1(b1),
+          .b2(b2),
+          .b3(b3),
+          .g0(g0),
+          .g1(g1),
+          .g2(g2),
+          .g3(g3),
+          .hs(hs),
+          .vs(vs));
 endmodule
