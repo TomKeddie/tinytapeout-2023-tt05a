@@ -13,18 +13,6 @@ module top
   wire       locked;
   wire       clk_25_125;
   
-  // icepll -o 25.175 -m -p
-  /*
-   * PLL configuration
-   *
-   * This Verilog module was generated automatically
-   * using the icepll tool from the IceStorm project.
-   * Use at your own risk.
-   *
-   * Given input frequency:        12.000 MHz
-   * Requested output frequency:   25.175 MHz
-   * Achieved output frequency:    25.125 MHz
-   */
   clk_wiz_0 pll ( .locked(locked),
 			      .reset(1'b0),
 			      .clk_in1(CLK100MHZ),
