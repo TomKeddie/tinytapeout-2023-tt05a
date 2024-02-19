@@ -53,14 +53,14 @@ module top
   assign    vga_sel = P2_10;
 
   // P1A is pmod the right
-  assign P1A1   = (vga_sel == 1'b0) ? r1 : r0;
-  assign P1A2   = (vga_sel == 1'b0) ? g1 : r1;
-  assign P1A3   = (vga_sel == 1'b0) ? b1 : r2;
-  assign P1A4   = (vga_sel == 1'b0) ? vs : r3;
-  assign P1A7   = (vga_sel == 1'b0) ? r0 : b0;
-  assign P1A8   = (vga_sel == 1'b0) ? g0 : b1;
-  assign P1A9   = (vga_sel == 1'b0) ? b0 : b2;
-  assign P1A10  = (vga_sel == 1'b0) ? hs : b3;
+  assign P1A1   = (vga_sel == 1'b1) ? r1 : r0;
+  assign P1A2   = (vga_sel == 1'b1) ? g1 : r1;
+  assign P1A3   = (vga_sel == 1'b1) ? b1 : r2;
+  assign P1A4   = (vga_sel == 1'b1) ? vs : r3;
+  assign P1A7   = (vga_sel == 1'b1) ? r0 : b0;
+  assign P1A8   = (vga_sel == 1'b1) ? g0 : b1;
+  assign P1A9   = (vga_sel == 1'b1) ? b0 : b2;
+  assign P1A10  = (vga_sel == 1'b1) ? hs : b3;
   // P1B is pmod on left
   assign P1B1  =  g0;
   assign P1B2  =  g1;

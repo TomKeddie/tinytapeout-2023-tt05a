@@ -25,30 +25,30 @@ module vga(
 	   output vs
 	   );
 
-   localparam	  h_visible    = 640;
-   localparam	  h_frontporch = 640 + 16;
-   localparam	  h_sync       = 640 + 16 + 96;
-   localparam	  h_backporch  = 640 + 16 + 96 + 48;
+   localparam	  h_visible    = 640 - 1;
+   localparam	  h_frontporch = 640 + 16 - 1;
+   localparam	  h_sync       = 640 + 16 + 96 - 1;
+   localparam	  h_backporch  = 640 + 16 + 96 + 48 - 1;
 
    // while h_sync is being sent, vertical counts h_sync pulses, for
    // porch and sync, it counts clocks
-   localparam	  v_visible    = 480;
-   localparam	  v_frontporch = 480 + 14;
-   localparam	  v_sync       = 480 + 14 + 3;
-   localparam	  v_backporch  = 480 + 14 + 3 + 31;
+   localparam	  v_visible    = 480 - 1;
+   localparam	  v_frontporch = 480 + 14 - 1;
+   localparam	  v_sync       = 480 + 14 + 3 - 1;
+   localparam	  v_backporch  = 480 + 14 + 3 + 31 - 1;
 
    localparam	  paddle_size_v = 40;
    localparam	  paddle_size_h = 6;
 
-   localparam	  paddle_l_pos_h    = 15;
-   localparam	  paddle_r_pos_h    = 625;
+   localparam	  paddle_l_pos_h    = 15 - 1;
+   localparam	  paddle_r_pos_h    = 625 - 1;
    
    localparam	  ball_size_v = 4;
    localparam	  ball_size_h = 4;
 
-   localparam	  score_pos_v       = 20;  // 20-69
-   localparam	  score_l_pos_h     = 275; // 275-304
-   localparam	  score_r_pos_h     = 335; // 335-364
+   localparam	  score_pos_v       = 20 - 1;  // 20-69
+   localparam	  score_l_pos_h     = 275 - 1; // 275-304
+   localparam	  score_r_pos_h     = 335 - 1; // 335-364
    localparam	  score_unit        = 10;
    
    wire		  blank;
@@ -160,7 +160,7 @@ module vga(
    //               // background
    //               1'b0;
 
-   assign wht = (blank) ? 1'b0 : (count_h == 1 || count_h == 640 || count_v == 1 | count_v == 480) ? 1'b1 : 1'b0;
+   assign wht = (blank) ? 1'b0 : (count_h == 0 || count_h == 639 || count_v == 0 | count_v == 479) ? 1'b1 : 1'b0;
 
    // Horizontal
    always @ (posedge clk) begin
@@ -224,7 +224,7 @@ module vga(
 	 // horizontal back porch
 	 count_h <= count_h + 1;
       end else begin
-	 count_h <= 1;
+	 count_h <= 0;
 	 blank_h <= 1'b0;
       end
    end
@@ -232,7 +232,7 @@ module vga(
    // Vertical
    always @ (posedge clk) begin
       if (rst) begin
-	 count_v              <= 9'b1_1111_1111;
+	 count_v              <= 10'b1_1111_1111;
 	 blank_v              <= 1'b1;
 	 vs_out               <= 1'b0;
       end else if (count_h >= h_backporch) begin
@@ -290,7 +290,7 @@ module vga(
                vs_out <= 1'b0;
             end
 	 end else begin
-            count_v <= 1;
+            count_v <= 0;
             blank_v <= 1'b0;
 	 end
       end

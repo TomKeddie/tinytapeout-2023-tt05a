@@ -26,19 +26,8 @@ module tb (
     $dumpfile ("tb.vcd");
     $dumpvars (0, tb.clk);
     $dumpvars (0, tb.rst);
-    $dumpvars (0, tb.r0);
-    $dumpvars (0, tb.g0);
-    $dumpvars (0, tb.b0);
-    $dumpvars (0, tb.vga.wht);
-    $dumpvars (0, tb.hs);
-    $dumpvars (0, tb.vs);
-    $dumpvars (0, tb.vga.blank);
     $dumpvars (0, tb.vga.count_h);
-    $dumpvars (0, tb.vga.blank_h);
     $dumpvars (0, tb.vga.count_v);
-    $dumpvars (0, tb.vga.blank_v);
-    $dumpvars (0, tb.vga.ball_pos_v);
-    $dumpvars (0, tb.vga.ball_pos_h);
     
     #1;
   end
