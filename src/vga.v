@@ -140,27 +140,27 @@ module vga(
 
    assign blu = (blank) ? 1'b0 : 1'b1;
 
-   //  assign wht = (blank) ? 1'b0 :
-   //               // dashed net down the centre
-   //               (count_h > 317 && count_h < 323 && count_v[4] == 1'b0) ? 1'b1 :
-   //               // left paddle
-   //               (count_h_paddle_l && count_v_paddle_l) ? 1'b1 :
-   //               // right paddle
-   //               (count_h_paddle_r && count_v_paddle_r) ? 1'b1 :
-   //               // ball
-   //               (count_h_ball && count_v > (ball_pos_v-ball_size_v/2) && count_v < (ball_pos_v+ball_size_v/2)) ? 1'b1 :
-   //               // left score
-   //               (hide_l == 1'b0 && count_h_score_l_0 && count_v_score) ? score_l_pixels[2] :
-   //               (hide_l == 1'b0 && count_h_score_l_1 && count_v_score) ? score_l_pixels[1] :
-   //               (hide_l == 1'b0 && count_h_score_l_2 && count_v_score) ? score_l_pixels[0] :
-   //               // right score
-   //               (hide_r == 1'b0 && count_h_score_r_0 && count_v_score) ? score_r_pixels[2] :
-   //               (hide_r == 1'b0 && count_h_score_r_1 && count_v_score) ? score_r_pixels[1] :
-   //               (hide_r == 1'b0 && count_h_score_r_2 && count_v_score) ? score_r_pixels[0] :
-   //               // background
-   //               1'b0;
-
-   assign wht = (blank) ? 1'b0 : (count_h == 0 || count_h == 639 || count_v == 0 | count_v == 479) ? 1'b1 : 1'b0;
+   assign wht = (blank) ? 1'b0 :
+		// outline (DEBUG)
+		// (count_h == 0 || count_h == 639 || count_v == 0 | count_v == 479) ? 1'b1 :
+                // dashed net down the centre
+                (count_h > 317-1 && count_h < 323-1 && count_v[4] == 1'b0) ? 1'b1 :
+                // left paddle
+                (count_h_paddle_l && count_v_paddle_l) ? 1'b1 :
+                // right paddle
+                (count_h_paddle_r && count_v_paddle_r) ? 1'b1 :
+                // ball
+                (count_h_ball && count_v > (ball_pos_v-ball_size_v/2) && count_v < (ball_pos_v+ball_size_v/2)) ? 1'b1 :
+                // left score
+                (hide_l == 1'b0 && count_h_score_l_0 && count_v_score) ? score_l_pixels[2] :
+                (hide_l == 1'b0 && count_h_score_l_1 && count_v_score) ? score_l_pixels[1] :
+                (hide_l == 1'b0 && count_h_score_l_2 && count_v_score) ? score_l_pixels[0] :
+                // right score
+                (hide_r == 1'b0 && count_h_score_r_0 && count_v_score) ? score_r_pixels[2] :
+                (hide_r == 1'b0 && count_h_score_r_1 && count_v_score) ? score_r_pixels[1] :
+                (hide_r == 1'b0 && count_h_score_r_2 && count_v_score) ? score_r_pixels[0] :
+                // background
+                1'b0;
 
    // Horizontal
    always @ (posedge clk) begin
