@@ -33,9 +33,9 @@ module vga(
    // while h_sync is being sent, vertical counts h_sync pulses, for
    // porch and sync, it counts clocks
    localparam	  v_visible    = 480;
-   localparam	  v_frontporch = 480 + 22;
-   localparam	  v_sync       = 480 + 22 + 3;
-   localparam	  v_backporch = 480 + 22 + 3 + 1;
+   localparam	  v_frontporch = 480 + 14;
+   localparam	  v_sync       = 480 + 14 + 3;
+   localparam	  v_backporch  = 480 + 14 + 3 + 31;
 
    localparam	  paddle_size_v = 40;
    localparam	  paddle_size_h = 6;
@@ -68,8 +68,8 @@ module vga(
    reg		  count_h_score_r_0;
    reg		  count_h_score_r_1;
    reg		  count_h_score_r_2;
-   // 2^9 = 512
-   reg [8:0]	  count_v;
+   // 2^10 = 1024
+   reg [9:0]	  count_v;
    reg		  count_v_paddle_l;
    reg		  count_v_paddle_r;
    reg		  count_v_score_update_0;
@@ -160,7 +160,7 @@ module vga(
    //               // background
    //               1'b0;
 
-   assign wht = (blank) ? 1'b0 : (count_h == 0 || count_h == 639 || count_v == 0 | count_v == 479) ? 1'b1 : 1'b0;
+   assign wht = (blank) ? 1'b0 : (count_h == 1 || count_h == 640 || count_v == 1 | count_v == 480) ? 1'b1 : 1'b0;
 
    // Horizontal
    always @ (posedge clk) begin
