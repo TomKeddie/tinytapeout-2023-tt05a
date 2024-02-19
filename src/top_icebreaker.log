@@ -19,7 +19,7 @@
  |                                                                            |
  \----------------------------------------------------------------------------/
 
- Yosys 0.27+22 (git sha1 53c0a6b78, clang 10.0.0-4ubuntu1 -fPIC -Os)
+ Yosys 0.38+4 (git sha1 ac0fb2e30, clang 14.0.0-1ubuntu1.1 -fPIC -Os)
 
 
 -- Parsing `top_icebreaker.v' using frontend ` -vlog2k' --
@@ -40,8 +40,8 @@ Successfully finished Verilog frontend.
 
 3. Executing SYNTH_ICE40 pass.
 
-3.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v
-Parsing Verilog input from `/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v' to AST representation.
+3.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v
+Parsing Verilog input from `/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v' to AST representation.
 Generating RTLIL representation for module `\SB_IO'.
 Generating RTLIL representation for module `\SB_GB_IO'.
 Generating RTLIL representation for module `\SB_GB'.
@@ -122,22 +122,22 @@ Removed 2 unused modules.
 Cleaned up 0 empty switches.
 
 3.4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$241 in module SB_DFFNES.
-Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$234 in module SB_DFFNESS.
-Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$230 in module SB_DFFNER.
-Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$223 in module SB_DFFNESR.
-Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$220 in module SB_DFFNS.
-Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$217 in module SB_DFFNSS.
-Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$214 in module SB_DFFNR.
-Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$211 in module SB_DFFNSR.
-Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$203 in module SB_DFFES.
-Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$196 in module SB_DFFESS.
-Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$192 in module SB_DFFER.
-Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$185 in module SB_DFFESR.
-Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$182 in module SB_DFFS.
-Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$179 in module SB_DFFSS.
-Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$176 in module SB_DFFR.
-Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$173 in module SB_DFFSR.
+Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1414$241 in module SB_DFFNES.
+Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1353$234 in module SB_DFFNESS.
+Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1273$230 in module SB_DFFNER.
+Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1212$223 in module SB_DFFNESR.
+Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1138$220 in module SB_DFFNS.
+Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1088$217 in module SB_DFFNSS.
+Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1017$214 in module SB_DFFNR.
+Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:967$211 in module SB_DFFNSR.
+Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:803$203 in module SB_DFFES.
+Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:742$196 in module SB_DFFESS.
+Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:662$192 in module SB_DFFER.
+Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:601$185 in module SB_DFFESR.
+Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:527$182 in module SB_DFFS.
+Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:477$179 in module SB_DFFSS.
+Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:406$176 in module SB_DFFR.
+Marked 1 switch rules as full_case in process $proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:356$173 in module SB_DFFSR.
 Marked 16 switch rules as full_case in process $proc$vga.v:477$535 in module vga.
 Marked 14 switch rules as full_case in process $proc$vga.v:366$534 in module vga.
 Marked 1 switch rules as full_case in process $proc$vga.v:345$521 in module vga.
@@ -153,122 +153,122 @@ Removed 13 redundant assignments.
 Promoted 23 assignments to connections.
 
 3.4.4. Executing PROC_INIT pass (extract init attributes).
-Found init rule in `\SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$244'.
+Found init rule in `\SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$244'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFNESS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$240'.
+Found init rule in `\SB_DFFNESS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$240'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFNER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$233'.
+Found init rule in `\SB_DFFNER.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$233'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFNESR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$229'.
+Found init rule in `\SB_DFFNESR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$229'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFNS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$222'.
+Found init rule in `\SB_DFFNS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$222'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFNSS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$219'.
+Found init rule in `\SB_DFFNSS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$219'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFNR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$216'.
+Found init rule in `\SB_DFFNR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$216'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFNSR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$213'.
+Found init rule in `\SB_DFFNSR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$213'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFNE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$210'.
+Found init rule in `\SB_DFFNE.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$210'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFN.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$208'.
+Found init rule in `\SB_DFFN.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$208'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$206'.
+Found init rule in `\SB_DFFES.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$206'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFESS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$202'.
+Found init rule in `\SB_DFFESS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$202'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$195'.
+Found init rule in `\SB_DFFER.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$195'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFESR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$191'.
+Found init rule in `\SB_DFFESR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$191'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$184'.
+Found init rule in `\SB_DFFS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$184'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFSS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$181'.
+Found init rule in `\SB_DFFSS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$181'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$178'.
+Found init rule in `\SB_DFFR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$178'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFSR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$175'.
+Found init rule in `\SB_DFFSR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$175'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFFE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$172'.
+Found init rule in `\SB_DFFE.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$172'.
   Set init value: \Q = 1'0
-Found init rule in `\SB_DFF.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$170'.
+Found init rule in `\SB_DFF.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$170'.
   Set init value: \Q = 1'0
 Found init rule in `\top.$proc$top_icebreaker.v:30$407'.
   Set init value: \rst_counter = 10'1111111111
 
 3.4.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \S in `\SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$241'.
-Found async reset \R in `\SB_DFFNER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$230'.
-Found async reset \S in `\SB_DFFNS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$220'.
-Found async reset \R in `\SB_DFFNR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$214'.
-Found async reset \S in `\SB_DFFES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$203'.
-Found async reset \R in `\SB_DFFER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$192'.
-Found async reset \S in `\SB_DFFS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$182'.
-Found async reset \R in `\SB_DFFR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$176'.
+Found async reset \S in `\SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1414$241'.
+Found async reset \R in `\SB_DFFNER.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1273$230'.
+Found async reset \S in `\SB_DFFNS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1138$220'.
+Found async reset \R in `\SB_DFFNR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1017$214'.
+Found async reset \S in `\SB_DFFES.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:803$203'.
+Found async reset \R in `\SB_DFFER.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:662$192'.
+Found async reset \S in `\SB_DFFS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:527$182'.
+Found async reset \R in `\SB_DFFR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:406$176'.
 
 3.4.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
 <suppressed ~95 debug messages>
 
 3.4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$244'.
-Creating decoders for process `\SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$241'.
+Creating decoders for process `\SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$244'.
+Creating decoders for process `\SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1414$241'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFFNESS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$240'.
-Creating decoders for process `\SB_DFFNESS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$234'.
+Creating decoders for process `\SB_DFFNESS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$240'.
+Creating decoders for process `\SB_DFFNESS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1353$234'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFFNER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$233'.
-Creating decoders for process `\SB_DFFNER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$230'.
+Creating decoders for process `\SB_DFFNER.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$233'.
+Creating decoders for process `\SB_DFFNER.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1273$230'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFFNESR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$229'.
-Creating decoders for process `\SB_DFFNESR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$223'.
+Creating decoders for process `\SB_DFFNESR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$229'.
+Creating decoders for process `\SB_DFFNESR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1212$223'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFFNS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$222'.
-Creating decoders for process `\SB_DFFNS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$220'.
+Creating decoders for process `\SB_DFFNS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$222'.
+Creating decoders for process `\SB_DFFNS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1138$220'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFFNSS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$219'.
-Creating decoders for process `\SB_DFFNSS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$217'.
+Creating decoders for process `\SB_DFFNSS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$219'.
+Creating decoders for process `\SB_DFFNSS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1088$217'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFFNR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$216'.
-Creating decoders for process `\SB_DFFNR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$214'.
+Creating decoders for process `\SB_DFFNR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$216'.
+Creating decoders for process `\SB_DFFNR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1017$214'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFFNSR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$213'.
-Creating decoders for process `\SB_DFFNSR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$211'.
+Creating decoders for process `\SB_DFFNSR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$213'.
+Creating decoders for process `\SB_DFFNSR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:967$211'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFFNE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$210'.
-Creating decoders for process `\SB_DFFNE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:922$209'.
+Creating decoders for process `\SB_DFFNE.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$210'.
+Creating decoders for process `\SB_DFFNE.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:922$209'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFFN.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$208'.
-Creating decoders for process `\SB_DFFN.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:882$207'.
-Creating decoders for process `\SB_DFFES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$206'.
-Creating decoders for process `\SB_DFFES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$203'.
+Creating decoders for process `\SB_DFFN.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$208'.
+Creating decoders for process `\SB_DFFN.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:882$207'.
+Creating decoders for process `\SB_DFFES.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$206'.
+Creating decoders for process `\SB_DFFES.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:803$203'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFFESS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$202'.
-Creating decoders for process `\SB_DFFESS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$196'.
+Creating decoders for process `\SB_DFFESS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$202'.
+Creating decoders for process `\SB_DFFESS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:742$196'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFFER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$195'.
-Creating decoders for process `\SB_DFFER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$192'.
+Creating decoders for process `\SB_DFFER.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$195'.
+Creating decoders for process `\SB_DFFER.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:662$192'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFFESR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$191'.
-Creating decoders for process `\SB_DFFESR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$185'.
+Creating decoders for process `\SB_DFFESR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$191'.
+Creating decoders for process `\SB_DFFESR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:601$185'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFFS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$184'.
-Creating decoders for process `\SB_DFFS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$182'.
+Creating decoders for process `\SB_DFFS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$184'.
+Creating decoders for process `\SB_DFFS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:527$182'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFFSS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$181'.
-Creating decoders for process `\SB_DFFSS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$179'.
+Creating decoders for process `\SB_DFFSS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$181'.
+Creating decoders for process `\SB_DFFSS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:477$179'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFFR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$178'.
-Creating decoders for process `\SB_DFFR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$176'.
+Creating decoders for process `\SB_DFFR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$178'.
+Creating decoders for process `\SB_DFFR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:406$176'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFFSR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$175'.
-Creating decoders for process `\SB_DFFSR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$173'.
+Creating decoders for process `\SB_DFFSR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$175'.
+Creating decoders for process `\SB_DFFSR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:356$173'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFFE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$172'.
-Creating decoders for process `\SB_DFFE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$171'.
+Creating decoders for process `\SB_DFFE.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$172'.
+Creating decoders for process `\SB_DFFE.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:311$171'.
      1/1: $0\Q[0:0]
-Creating decoders for process `\SB_DFF.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$170'.
-Creating decoders for process `\SB_DFF.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:271$169'.
+Creating decoders for process `\SB_DFF.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$170'.
+Creating decoders for process `\SB_DFF.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:271$169'.
 Creating decoders for process `\vga.$proc$vga.v:477$535'.
      1/10: $0\ball_angle[3:0] [3]
      2/10: $0\ball_angle[3:0] [2:0]
@@ -333,45 +333,45 @@ Creating decoders for process `\top.$proc$top_icebreaker.v:100$397'.
 3.4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 3.4.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\SB_DFFNES.\Q' using process `\SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$241'.
+Creating register for signal `\SB_DFFNES.\Q' using process `\SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1414$241'.
   created $adff cell `$procdff$1386' with negative edge clock and positive level reset.
-Creating register for signal `\SB_DFFNESS.\Q' using process `\SB_DFFNESS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$234'.
+Creating register for signal `\SB_DFFNESS.\Q' using process `\SB_DFFNESS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1353$234'.
   created $dff cell `$procdff$1387' with negative edge clock.
-Creating register for signal `\SB_DFFNER.\Q' using process `\SB_DFFNER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$230'.
+Creating register for signal `\SB_DFFNER.\Q' using process `\SB_DFFNER.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1273$230'.
   created $adff cell `$procdff$1388' with negative edge clock and positive level reset.
-Creating register for signal `\SB_DFFNESR.\Q' using process `\SB_DFFNESR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$223'.
+Creating register for signal `\SB_DFFNESR.\Q' using process `\SB_DFFNESR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1212$223'.
   created $dff cell `$procdff$1389' with negative edge clock.
-Creating register for signal `\SB_DFFNS.\Q' using process `\SB_DFFNS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$220'.
+Creating register for signal `\SB_DFFNS.\Q' using process `\SB_DFFNS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1138$220'.
   created $adff cell `$procdff$1390' with negative edge clock and positive level reset.
-Creating register for signal `\SB_DFFNSS.\Q' using process `\SB_DFFNSS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$217'.
+Creating register for signal `\SB_DFFNSS.\Q' using process `\SB_DFFNSS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1088$217'.
   created $dff cell `$procdff$1391' with negative edge clock.
-Creating register for signal `\SB_DFFNR.\Q' using process `\SB_DFFNR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$214'.
+Creating register for signal `\SB_DFFNR.\Q' using process `\SB_DFFNR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1017$214'.
   created $adff cell `$procdff$1392' with negative edge clock and positive level reset.
-Creating register for signal `\SB_DFFNSR.\Q' using process `\SB_DFFNSR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$211'.
+Creating register for signal `\SB_DFFNSR.\Q' using process `\SB_DFFNSR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:967$211'.
   created $dff cell `$procdff$1393' with negative edge clock.
-Creating register for signal `\SB_DFFNE.\Q' using process `\SB_DFFNE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:922$209'.
+Creating register for signal `\SB_DFFNE.\Q' using process `\SB_DFFNE.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:922$209'.
   created $dff cell `$procdff$1394' with negative edge clock.
-Creating register for signal `\SB_DFFN.\Q' using process `\SB_DFFN.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:882$207'.
+Creating register for signal `\SB_DFFN.\Q' using process `\SB_DFFN.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:882$207'.
   created $dff cell `$procdff$1395' with negative edge clock.
-Creating register for signal `\SB_DFFES.\Q' using process `\SB_DFFES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$203'.
+Creating register for signal `\SB_DFFES.\Q' using process `\SB_DFFES.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:803$203'.
   created $adff cell `$procdff$1396' with positive edge clock and positive level reset.
-Creating register for signal `\SB_DFFESS.\Q' using process `\SB_DFFESS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$196'.
+Creating register for signal `\SB_DFFESS.\Q' using process `\SB_DFFESS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:742$196'.
   created $dff cell `$procdff$1397' with positive edge clock.
-Creating register for signal `\SB_DFFER.\Q' using process `\SB_DFFER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$192'.
+Creating register for signal `\SB_DFFER.\Q' using process `\SB_DFFER.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:662$192'.
   created $adff cell `$procdff$1398' with positive edge clock and positive level reset.
-Creating register for signal `\SB_DFFESR.\Q' using process `\SB_DFFESR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$185'.
+Creating register for signal `\SB_DFFESR.\Q' using process `\SB_DFFESR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:601$185'.
   created $dff cell `$procdff$1399' with positive edge clock.
-Creating register for signal `\SB_DFFS.\Q' using process `\SB_DFFS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$182'.
+Creating register for signal `\SB_DFFS.\Q' using process `\SB_DFFS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:527$182'.
   created $adff cell `$procdff$1400' with positive edge clock and positive level reset.
-Creating register for signal `\SB_DFFSS.\Q' using process `\SB_DFFSS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$179'.
+Creating register for signal `\SB_DFFSS.\Q' using process `\SB_DFFSS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:477$179'.
   created $dff cell `$procdff$1401' with positive edge clock.
-Creating register for signal `\SB_DFFR.\Q' using process `\SB_DFFR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$176'.
+Creating register for signal `\SB_DFFR.\Q' using process `\SB_DFFR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:406$176'.
   created $adff cell `$procdff$1402' with positive edge clock and positive level reset.
-Creating register for signal `\SB_DFFSR.\Q' using process `\SB_DFFSR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$173'.
+Creating register for signal `\SB_DFFSR.\Q' using process `\SB_DFFSR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:356$173'.
   created $dff cell `$procdff$1403' with positive edge clock.
-Creating register for signal `\SB_DFFE.\Q' using process `\SB_DFFE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$171'.
+Creating register for signal `\SB_DFFE.\Q' using process `\SB_DFFE.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:311$171'.
   created $dff cell `$procdff$1404' with positive edge clock.
-Creating register for signal `\SB_DFF.\Q' using process `\SB_DFF.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:271$169'.
+Creating register for signal `\SB_DFF.\Q' using process `\SB_DFF.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:271$169'.
   created $dff cell `$procdff$1405' with positive edge clock.
 Creating register for signal `\vga.\ball_pos_h' using process `\vga.$proc$vga.v:477$535'.
   created $dff cell `$procdff$1406' with positive edge clock.
@@ -475,60 +475,60 @@ Creating register for signal `\top.\rst' using process `\top.$proc$top_icebreake
 3.4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 3.4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$244'.
-Found and cleaned up 1 empty switch in `\SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$241'.
-Removing empty process `SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$241'.
-Removing empty process `SB_DFFNESS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$240'.
-Found and cleaned up 2 empty switches in `\SB_DFFNESS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$234'.
-Removing empty process `SB_DFFNESS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$234'.
-Removing empty process `SB_DFFNER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$233'.
-Found and cleaned up 1 empty switch in `\SB_DFFNER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$230'.
-Removing empty process `SB_DFFNER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$230'.
-Removing empty process `SB_DFFNESR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$229'.
-Found and cleaned up 2 empty switches in `\SB_DFFNESR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$223'.
-Removing empty process `SB_DFFNESR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$223'.
-Removing empty process `SB_DFFNS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$222'.
-Removing empty process `SB_DFFNS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$220'.
-Removing empty process `SB_DFFNSS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$219'.
-Found and cleaned up 1 empty switch in `\SB_DFFNSS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$217'.
-Removing empty process `SB_DFFNSS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$217'.
-Removing empty process `SB_DFFNR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$216'.
-Removing empty process `SB_DFFNR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$214'.
-Removing empty process `SB_DFFNSR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$213'.
-Found and cleaned up 1 empty switch in `\SB_DFFNSR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$211'.
-Removing empty process `SB_DFFNSR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$211'.
-Removing empty process `SB_DFFNE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$210'.
-Found and cleaned up 1 empty switch in `\SB_DFFNE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:922$209'.
-Removing empty process `SB_DFFNE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:922$209'.
-Removing empty process `SB_DFFN.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$208'.
-Removing empty process `SB_DFFN.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:882$207'.
-Removing empty process `SB_DFFES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$206'.
-Found and cleaned up 1 empty switch in `\SB_DFFES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$203'.
-Removing empty process `SB_DFFES.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$203'.
-Removing empty process `SB_DFFESS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$202'.
-Found and cleaned up 2 empty switches in `\SB_DFFESS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$196'.
-Removing empty process `SB_DFFESS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$196'.
-Removing empty process `SB_DFFER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$195'.
-Found and cleaned up 1 empty switch in `\SB_DFFER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$192'.
-Removing empty process `SB_DFFER.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$192'.
-Removing empty process `SB_DFFESR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$191'.
-Found and cleaned up 2 empty switches in `\SB_DFFESR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$185'.
-Removing empty process `SB_DFFESR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$185'.
-Removing empty process `SB_DFFS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$184'.
-Removing empty process `SB_DFFS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$182'.
-Removing empty process `SB_DFFSS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$181'.
-Found and cleaned up 1 empty switch in `\SB_DFFSS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$179'.
-Removing empty process `SB_DFFSS.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$179'.
-Removing empty process `SB_DFFR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$178'.
-Removing empty process `SB_DFFR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$176'.
-Removing empty process `SB_DFFSR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$175'.
-Found and cleaned up 1 empty switch in `\SB_DFFSR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$173'.
-Removing empty process `SB_DFFSR.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$173'.
-Removing empty process `SB_DFFE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$172'.
-Found and cleaned up 1 empty switch in `\SB_DFFE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$171'.
-Removing empty process `SB_DFFE.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$171'.
-Removing empty process `SB_DFF.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$170'.
-Removing empty process `SB_DFF.$proc$/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:271$169'.
+Removing empty process `SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$244'.
+Found and cleaned up 1 empty switch in `\SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1414$241'.
+Removing empty process `SB_DFFNES.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1414$241'.
+Removing empty process `SB_DFFNESS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$240'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1353$234'.
+Removing empty process `SB_DFFNESS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1353$234'.
+Removing empty process `SB_DFFNER.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$233'.
+Found and cleaned up 1 empty switch in `\SB_DFFNER.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1273$230'.
+Removing empty process `SB_DFFNER.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1273$230'.
+Removing empty process `SB_DFFNESR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$229'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1212$223'.
+Removing empty process `SB_DFFNESR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1212$223'.
+Removing empty process `SB_DFFNS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$222'.
+Removing empty process `SB_DFFNS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1138$220'.
+Removing empty process `SB_DFFNSS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$219'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1088$217'.
+Removing empty process `SB_DFFNSS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1088$217'.
+Removing empty process `SB_DFFNR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$216'.
+Removing empty process `SB_DFFNR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:1017$214'.
+Removing empty process `SB_DFFNSR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$213'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:967$211'.
+Removing empty process `SB_DFFNSR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:967$211'.
+Removing empty process `SB_DFFNE.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$210'.
+Found and cleaned up 1 empty switch in `\SB_DFFNE.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:922$209'.
+Removing empty process `SB_DFFNE.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:922$209'.
+Removing empty process `SB_DFFN.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$208'.
+Removing empty process `SB_DFFN.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:882$207'.
+Removing empty process `SB_DFFES.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$206'.
+Found and cleaned up 1 empty switch in `\SB_DFFES.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:803$203'.
+Removing empty process `SB_DFFES.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:803$203'.
+Removing empty process `SB_DFFESS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$202'.
+Found and cleaned up 2 empty switches in `\SB_DFFESS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:742$196'.
+Removing empty process `SB_DFFESS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:742$196'.
+Removing empty process `SB_DFFER.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$195'.
+Found and cleaned up 1 empty switch in `\SB_DFFER.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:662$192'.
+Removing empty process `SB_DFFER.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:662$192'.
+Removing empty process `SB_DFFESR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$191'.
+Found and cleaned up 2 empty switches in `\SB_DFFESR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:601$185'.
+Removing empty process `SB_DFFESR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:601$185'.
+Removing empty process `SB_DFFS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$184'.
+Removing empty process `SB_DFFS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:527$182'.
+Removing empty process `SB_DFFSS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$181'.
+Found and cleaned up 1 empty switch in `\SB_DFFSS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:477$179'.
+Removing empty process `SB_DFFSS.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:477$179'.
+Removing empty process `SB_DFFR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$178'.
+Removing empty process `SB_DFFR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:406$176'.
+Removing empty process `SB_DFFSR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$175'.
+Found and cleaned up 1 empty switch in `\SB_DFFSR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:356$173'.
+Removing empty process `SB_DFFSR.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:356$173'.
+Removing empty process `SB_DFFE.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$172'.
+Found and cleaned up 1 empty switch in `\SB_DFFE.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:311$171'.
+Removing empty process `SB_DFFE.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:311$171'.
+Removing empty process `SB_DFF.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:0$170'.
+Removing empty process `SB_DFF.$proc$/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_sim.v:271$169'.
 Found and cleaned up 20 empty switches in `\vga.$proc$vga.v:477$535'.
 Removing empty process `vga.$proc$vga.v:477$535'.
 Found and cleaned up 15 empty switches in `\vga.$proc$vga.v:366$534'.
@@ -799,8 +799,8 @@ Removed 0 unused cells and 3 unused wires.
 
 3.18. Executing TECHMAP pass (map to technology primitives).
 
-3.18.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite/lib/../share/yosys/cmp2lut.v
-Parsing Verilog input from `/home/tom/bin/oss-cad-suite/lib/../share/yosys/cmp2lut.v' to AST representation.
+3.18.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/cmp2lut.v' to AST representation.
 Generating RTLIL representation for module `\_90_lut_cmp_'.
 Successfully finished Verilog frontend.
 
@@ -942,13 +942,13 @@ Finding unused cells or wires in module \top..
 
 3.26. Executing TECHMAP pass (map to technology primitives).
 
-3.26.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/brams_map.v
-Parsing Verilog input from `/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/brams_map.v' to AST representation.
+3.26.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/brams_map.v
+Parsing Verilog input from `/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/brams_map.v' to AST representation.
 Generating RTLIL representation for module `\$__ICE40_RAM4K_'.
 Successfully finished Verilog frontend.
 
-3.26.2. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/spram_map.v
-Parsing Verilog input from `/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/spram_map.v' to AST representation.
+3.26.2. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/spram_map.v
+Parsing Verilog input from `/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/spram_map.v' to AST representation.
 Generating RTLIL representation for module `\$__ICE40_SPRAM_'.
 Successfully finished Verilog frontend.
 
@@ -1019,8 +1019,8 @@ Optimizing module top.
 
 3.32. Executing TECHMAP pass (map to technology primitives).
 
-3.32.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite/lib/../share/yosys/techmap.v
-Parsing Verilog input from `/home/tom/bin/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+3.32.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
 Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
@@ -1047,8 +1047,8 @@ Generating RTLIL representation for module `\_90_demux'.
 Generating RTLIL representation for module `\_90_lut'.
 Successfully finished Verilog frontend.
 
-3.32.2. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v
-Parsing Verilog input from `/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v' to AST representation.
+3.32.2. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/arith_map.v
+Parsing Verilog input from `/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/arith_map.v' to AST representation.
 Generating RTLIL representation for module `\_80_ice40_alu'.
 Successfully finished Verilog frontend.
 
@@ -1154,8 +1154,8 @@ Finding unused cells or wires in module \top..
 
 3.36. Executing TECHMAP pass (map to technology primitives).
 
-3.36.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/ff_map.v
-Parsing Verilog input from `/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/ff_map.v' to AST representation.
+3.36.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/ff_map.v' to AST representation.
 Generating RTLIL representation for module `\$_DFF_N_'.
 Generating RTLIL representation for module `\$_DFF_P_'.
 Generating RTLIL representation for module `\$_DFFE_NP_'.
@@ -1236,8 +1236,8 @@ Finding unused cells or wires in module \top..
 
 3.40. Executing TECHMAP pass (map to technology primitives).
 
-3.40.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/latches_map.v
-Parsing Verilog input from `/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/latches_map.v' to AST representation.
+3.40.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/latches_map.v
+Parsing Verilog input from `/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/latches_map.v' to AST representation.
 Generating RTLIL representation for module `\$_DLATCH_N_'.
 Generating RTLIL representation for module `\$_DLATCH_P_'.
 Successfully finished Verilog frontend.
@@ -1246,53 +1246,348 @@ Successfully finished Verilog frontend.
 No more expansions possible.
 <suppressed ~4 debug messages>
 
-3.41. Executing ABC pass (technology mapping using ABC).
+3.41. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/abc9_model.v
+Parsing Verilog input from `/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/abc9_model.v' to AST representation.
+Generating RTLIL representation for module `$__ICE40_CARRY_WRAPPER'.
+Successfully finished Verilog frontend.
 
-3.41.1. Extracting gate netlist of module `\top' to `<abc-temp-dir>/input.blif'..
-Extracted 208 gates and 280 wires to a netlist network with 71 inputs and 67 outputs.
+3.42. Executing ABC9 pass.
 
-3.41.1.1. Executing ABC.
+3.42.1. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.42.2. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.42.3. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module top.
+Found 0 SCCs.
+
+3.42.4. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.42.5. Executing PROC pass (convert processes to netlists).
+
+3.42.5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.42.5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+3.42.5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.42.5.4. Executing PROC_INIT pass (extract init attributes).
+
+3.42.5.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.42.5.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+3.42.5.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+3.42.5.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.42.5.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+3.42.5.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.42.5.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.42.5.12. Executing OPT_EXPR pass (perform const folding).
+
+3.42.6. Executing TECHMAP pass (map to technology primitives).
+
+3.42.6.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+3.42.6.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~126 debug messages>
+
+3.42.7. Executing OPT pass (performing simple optimizations).
+
+3.42.7.1. Executing OPT_EXPR pass (perform const folding).
+
+3.42.7.2. Executing OPT_MERGE pass (detect identical cells).
+Removed a total of 0 cells.
+
+3.42.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Removed 0 multiplexer ports.
+
+3.42.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+Performed a total of 0 changes.
+
+3.42.7.5. Executing OPT_MERGE pass (detect identical cells).
+Removed a total of 0 cells.
+
+3.42.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.42.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+
+3.42.7.8. Executing OPT_EXPR pass (perform const folding).
+
+3.42.7.9. Finished OPT passes. (There is nothing left to do.)
+
+3.42.8. Executing TECHMAP pass (map to technology primitives).
+
+3.42.8.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/abc9_map.v
+Parsing Verilog input from `/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/abc9_map.v' to AST representation.
+Successfully finished Verilog frontend.
+
+3.42.8.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~2 debug messages>
+
+3.42.9. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/abc9_model.v
+Parsing Verilog input from `/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/abc9_model.v' to AST representation.
+Generating RTLIL representation for module `$__ABC9_DELAY'.
+Generating RTLIL representation for module `$__ABC9_SCC_BREAKER'.
+Generating RTLIL representation for module `$__DFF_N__$abc9_flop'.
+Generating RTLIL representation for module `$__DFF_P__$abc9_flop'.
+Successfully finished Verilog frontend.
+
+3.42.10. Executing ABC9_OPS pass (helper functions for ABC9).
+<suppressed ~61 debug messages>
+
+3.42.11. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.42.12. Executing ABC9_OPS pass (helper functions for ABC9).
+<suppressed ~2 debug messages>
+
+3.42.13. Executing TECHMAP pass (map to technology primitives).
+
+3.42.13.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+3.42.13.2. Continuing TECHMAP pass.
+Using template $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1 for cells of type $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1.
+Using template $paramod\SB_LUT4\LUT_INIT=16'0110100110010110 for cells of type SB_LUT4.
+Using template SB_CARRY for cells of type SB_CARRY.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $mux.
+No more expansions possible.
+<suppressed ~147 debug messages>
+
+3.42.14. Executing OPT pass (performing simple optimizations).
+
+3.42.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~4 debug messages>
+
+3.42.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~29 debug messages>
+Removed a total of 12 cells.
+
+3.42.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.42.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.42.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.42.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.42.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 24 unused wires.
+<suppressed ~1 debug messages>
+
+3.42.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.42.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.42.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.42.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+3.42.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+3.42.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.42.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+3.42.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+3.42.14.16. Finished OPT passes. (There is nothing left to do.)
+
+3.42.15. Executing AIGMAP pass (map logic to AIG).
+Module top: replaced 7 cells with 43 new cells, skipped 11 cells.
+  replaced 2 cell types:
+       2 $_OR_
+       5 $_MUX_
+  not replaced 3 cell types:
+       8 $specify2
+       1 $_NOT_
+       2 $_AND_
+
+3.42.16. Executing AIGMAP pass (map logic to AIG).
+Module top: replaced 123 cells with 672 new cells, skipped 248 cells.
+  replaced 2 cell types:
+      63 $_OR_
+      60 $_MUX_
+  not replaced 12 cell types:
+      54 $_NOT_
+      31 $_AND_
+       1 SB_DFF
+      10 SB_DFFE
+       2 SB_DFFSR
+      10 SB_DFFSS
+       1 SB_DFFESR
+      11 SB_DFFESS
+       1 SB_PLL40_PAD
+      68 $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1
+      24 $paramod$__ABC9_DELAY\DELAY=32'00000000000000000000000011001011
+      35 $paramod$__ABC9_DELAY\DELAY=32'00000000000000000000000000010101
+
+3.42.16.1. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.42.16.2. Executing ABC9_OPS pass (helper functions for ABC9).
+
+3.42.16.3. Executing XAIGER backend.
+<suppressed ~46 debug messages>
+Extracted 274 AND gates and 1040 wires from module `top' to a netlist network with 46 inputs and 81 outputs.
+
+3.42.16.4. Executing ABC9_EXE pass (technology mapping using ABC9).
+
+3.42.16.5. Executing ABC9.
 Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
 ABC: ABC command line: "source <abc-temp-dir>/abc.script".
 ABC: 
-ABC: + read_blif <abc-temp-dir>/input.blif 
-ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
-ABC: + strash 
-ABC: + &get -n 
-ABC: + &fraig -x 
-ABC: + &put 
-ABC: + scorr 
-ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
-ABC: + dc2 
-ABC: + dretime 
-ABC: + strash 
-ABC: + dch -f 
-ABC: + if 
-ABC: + mfs2 
-ABC: + lutpack -S 1 
-ABC: + dress <abc-temp-dir>/input.blif 
-ABC: Total number of equiv classes                =      73.
-ABC: Participating nodes from both networks       =     147.
-ABC: Participating nodes from the first network   =      72. (  80.90 % of nodes)
-ABC: Participating nodes from the second network  =      75. (  84.27 % of nodes)
-ABC: Node pairs (any polarity)                    =      72. (  80.90 % of names can be moved)
-ABC: Node pairs (same polarity)                   =      69. (  77.53 % of names can be moved)
-ABC: Total runtime =     0.01 sec
-ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: + read_lut <abc-temp-dir>/input.lut 
+ABC: + read_box <abc-temp-dir>/input.box 
+ABC: + &read <abc-temp-dir>/input.xaig 
+ABC: + &ps 
+ABC: <abc-temp-dir>/input : i/o =     46/     81  and =     235  lev =    9 (0.45)  mem = 0.01 MB  box = 127  bb = 59
+ABC: Warning: AIG with boxes has internal fanout in 0 complex flops and 2 carries.
+ABC: + &scorr 
+ABC: Warning: The network is combinational.
+ABC: + &sweep 
+ABC: + &dc2 
+ABC: + &dch -f 
+ABC: + &ps 
+ABC: <abc-temp-dir>/input : i/o =     46/     81  and =     150  lev =    7 (0.27)  mem = 0.01 MB  ch =   18  box = 124  bb = 59
+ABC: Warning: AIG with boxes has internal fanout in 0 complex flops and 2 carries.
+ABC: + &if -W 250 -v 
+ABC: K = 4. Memory (bytes): Truth =    0. Cut =   48. Obj =  128. Set =  528. CutMin = no
+ABC: Node =     150.  Ch =    16.  Total mem =    0.12 MB. Peak cut mem =    0.01 MB.
+ABC: P:  Del = 3101.00.  Ar =      63.0.  Edge =      199.  Cut =      505.  T =     0.00 sec
+ABC: P:  Del = 3101.00.  Ar =      62.0.  Edge =      199.  Cut =      501.  T =     0.00 sec
+ABC: P:  Del = 3101.00.  Ar =      55.0.  Edge =      159.  Cut =      518.  T =     0.00 sec
+ABC: F:  Del = 3101.00.  Ar =      53.0.  Edge =      157.  Cut =      414.  T =     0.00 sec
+ABC: A:  Del = 3101.00.  Ar =      53.0.  Edge =      152.  Cut =      442.  T =     0.00 sec
+ABC: A:  Del = 3101.00.  Ar =      53.0.  Edge =      152.  Cut =      442.  T =     0.00 sec
+ABC: Total time =     0.00 sec
+ABC: + &write -n <abc-temp-dir>/output.aig 
+ABC: + &mfs 
+ABC: + &ps -l 
+ABC: <abc-temp-dir>/input : i/o =     46/     81  and =      98  lev =    7 (0.24)  mem = 0.01 MB  box = 124  bb = 59
+ABC: Mapping (K=4)  :  lut =     53  edge =     147  lev =    4 (0.18)  levB =   11  mem = 0.00 MB
+ABC: LUT = 53 : 2=27 50.9 %  3=11 20.8 %  4=15 28.3 %  Ave = 2.77
+ABC: Warning: AIG with boxes has internal fanout in 0 complex flops and 2 carries.
+ABC: + &write -n <abc-temp-dir>/output.aig 
+ABC: + time 
+ABC: elapse: 0.01 seconds, total: 0.01 seconds
 
-3.41.1.2. Re-integrating ABC results.
-ABC RESULTS:              $lut cells:       88
-ABC RESULTS:        internal signals:      142
-ABC RESULTS:           input signals:       71
-ABC RESULTS:          output signals:       67
+3.42.16.6. Executing AIGER frontend.
+<suppressed ~269 debug messages>
+Removed 88 unused cells and 780 unused wires.
+
+3.42.16.7. Executing ABC9_OPS pass (helper functions for ABC9).
+ABC RESULTS:              $lut cells:       85
+ABC RESULTS:   $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1 cells:       65
+ABC RESULTS:           input signals:       28
+ABC RESULTS:          output signals:       81
 Removing temp directory.
 
-3.42. Executing ICE40_WRAPCARRY pass (wrap carries).
+3.42.17. Executing TECHMAP pass (map to technology primitives).
 
-3.43. Executing TECHMAP pass (map to technology primitives).
+3.42.17.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/abc9_unmap.v
+Parsing Verilog input from `/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/abc9_unmap.v' to AST representation.
+Generating RTLIL representation for module `\$__DFF_x__$abc9_flop'.
+Generating RTLIL representation for module `\$__ABC9_SCC_BREAKER'.
+Successfully finished Verilog frontend.
 
-3.43.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/ff_map.v
-Parsing Verilog input from `/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/ff_map.v' to AST representation.
+3.42.17.2. Continuing TECHMAP pass.
+Using template $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1 for cells of type $paramod$__ICE40_CARRY_WRAPPER\LUT=16'0110100110010110\I3_IS_CI=1'1.
+No more expansions possible.
+<suppressed ~71 debug messages>
+
+3.43. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+3.44. Executing TECHMAP pass (map to technology primitives).
+
+3.44.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/ff_map.v' to AST representation.
 Generating RTLIL representation for module `\$_DFF_N_'.
 Generating RTLIL representation for module `\$_DFF_P_'.
 Generating RTLIL representation for module `\$_DFFE_NP_'.
@@ -1315,125 +1610,126 @@ Generating RTLIL representation for module `\$_SDFFCE_PP0P_'.
 Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
 Successfully finished Verilog frontend.
 
-3.43.2. Continuing TECHMAP pass.
+3.44.2. Continuing TECHMAP pass.
 No more expansions possible.
 <suppressed ~22 debug messages>
-Removed 45 unused cells and 199 unused wires.
+Removed 51 unused cells and 1488 unused wires.
 
-3.44. Executing OPT_LUT pass (optimize LUTs).
+3.45. Executing OPT_LUT pass (optimize LUTs).
 Discovering LUTs.
-Number of LUTs:      114
+Number of LUTs:      111
   1-LUT               32
   2-LUT               30
   3-LUT               34
-  4-LUT               18
+  4-LUT               15
   with \SB_CARRY    (#0)   23
-  with \SB_CARRY    (#1)   26
+  with \SB_CARRY    (#1)   23
 
 Eliminating LUTs.
-Number of LUTs:      114
+Number of LUTs:      111
   1-LUT               32
   2-LUT               30
   3-LUT               34
-  4-LUT               18
+  4-LUT               15
   with \SB_CARRY    (#0)   23
-  with \SB_CARRY    (#1)   26
+  with \SB_CARRY    (#1)   23
 
 Combining LUTs.
-Number of LUTs:       87
+Number of LUTs:       84
   1-LUT               22
   2-LUT               11
   3-LUT               21
-  4-LUT               33
+  4-LUT               30
   with \SB_CARRY    (#0)   23
-  with \SB_CARRY    (#1)   26
+  with \SB_CARRY    (#1)   23
 
 Eliminated 0 LUTs.
 Combined 27 LUTs.
-<suppressed ~834 debug messages>
+<suppressed ~818 debug messages>
 
-3.45. Executing TECHMAP pass (map to technology primitives).
+3.46. Executing TECHMAP pass (map to technology primitives).
 
-3.45.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v
-Parsing Verilog input from `/home/tom/bin/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v' to AST representation.
+3.46.1. Executing Verilog-2005 frontend: /home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/home/tom/bin/oss-cad-suite-linux-x64-20240211/lib/../share/yosys/ice40/cells_map.v' to AST representation.
 Generating RTLIL representation for module `\$lut'.
 Successfully finished Verilog frontend.
 
-3.45.2. Continuing TECHMAP pass.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
-Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9\$lut for cells of type $lut.
-Using template $paramod$a59507d273cd827eb6c46c37820d50a1b717efdf\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000000 for cells of type $lut.
-Using template $paramod$6d6beead1425af15cf78b27fd9b11b41b5d4bce8\$lut for cells of type $lut.
+3.46.2. Continuing TECHMAP pass.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
-Using template $paramod$6b0849254d6c87461fb93e37cc18f089f61eb912\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
-Using template $paramod$0a14d5e896aa3d4771d458c7bcc847abb47d8244\$lut for cells of type $lut.
-Using template $paramod$90edf8d4fe439b92725b09f66e94b5afc9f35376\$lut for cells of type $lut.
-Using template $paramod$052ca015f1400ebf950f85d5f181f7a5865c336c\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01111111 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00011111 for cells of type $lut.
-Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
+Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0010 for cells of type $lut.
+Using template $paramod$9d707d218adbd63b6f9a0c79d7ee037306fb6296\$lut for cells of type $lut.
+Using template $paramod$a59507d273cd827eb6c46c37820d50a1b717efdf\$lut for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
-Using template $paramod$c5f3c57a6d466a2f42208bafb8985b96ce884440\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11100000 for cells of type $lut.
-Using template $paramod$4b2297966ddb718657b80566604f97685ffc0120\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11100100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10001101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11011000 for cells of type $lut.
+Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
+Using template $paramod$608f40069c27841a5b3bdf03643a34bdc8974072\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000001 for cells of type $lut.
+Using template $paramod$10b7b810a6a6f18bc62789393bbe16e6a166c87b\$lut for cells of type $lut.
+Using template $paramod$9fc14cb0ba5120a1da0c687a9fb19472f206fdfe\$lut for cells of type $lut.
 Using template $paramod$a15fd389a2f54cb7b94707b25934d226e68d9e2e\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10100011 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10111111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000010 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11101010 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11001000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1101 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1011 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10101100 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11000101 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11001010 for cells of type $lut.
-Using template $paramod$fd904e9e35cfd343a9df248824bd3f1408724879\$lut for cells of type $lut.
+Using template $paramod$7295da7c5b19f528a428229f2570e0a23ad372af\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10001010 for cells of type $lut.
+Using template $paramod$34a7d7df018811f082518cdd165bf90d0af0cf12\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10110001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
 Using template $paramod$4282def8dbd6df3d1248ad282c629bee684502c2\$lut for cells of type $lut.
+Using template $paramod$fd904e9e35cfd343a9df248824bd3f1408724879\$lut for cells of type $lut.
 No more expansions possible.
-<suppressed ~467 debug messages>
-Removed 0 unused cells and 186 unused wires.
+<suppressed ~477 debug messages>
+Removed 0 unused cells and 212 unused wires.
 
-3.46. Executing AUTONAME pass.
-Renamed 1473 objects in module top (19 iterations).
-<suppressed ~270 debug messages>
+3.47. Executing AUTONAME pass.
+Renamed 1734 objects in module top (40 iterations).
+<suppressed ~313 debug messages>
 
-3.47. Executing HIERARCHY pass (managing design hierarchy).
+3.48. Executing HIERARCHY pass (managing design hierarchy).
 
-3.47.1. Analyzing design hierarchy..
+3.48.1. Analyzing design hierarchy..
 Top module:  \top
 
-3.47.2. Analyzing design hierarchy..
+3.48.2. Analyzing design hierarchy..
 Top module:  \top
 Removed 0 unused modules.
 
-3.48. Printing statistics.
+3.49. Printing statistics.
 
 === top ===
 
-   Number of wires:                152
-   Number of wire bits:            353
-   Number of public wires:         152
-   Number of public wire bits:     353
+   Number of wires:                200
+   Number of wire bits:            288
+   Number of public wires:         200
+   Number of public wire bits:     288
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                188
-     SB_CARRY                       65
+   Number of cells:                182
+     SB_CARRY                       62
      SB_DFF                          1
      SB_DFFE                        10
      SB_DFFESR                       1
      SB_DFFESS                      11
      SB_DFFSR                        2
      SB_DFFSS                       10
-     SB_LUT4                        87
+     SB_LUT4                        84
      SB_PLL40_PAD                    1
 
-3.49. Executing CHECK pass (checking for obvious problems).
+3.50. Executing CHECK pass (checking for obvious problems).
 Checking module top...
 Found and reported 0 problems.
 
-3.50. Executing JSON backend.
+3.51. Executing JSON backend.
 
-End of script. Logfile hash: a9f78c29c7, CPU: user 0.63s system 0.02s, MEM: 23.44 MB peak
-Yosys 0.27+22 (git sha1 53c0a6b78, clang 10.0.0-4ubuntu1 -fPIC -Os)
-Time spent: 46% 15x read_verilog (0 sec), 15% 1x abc (0 sec), ...
+End of script. Logfile hash: a3946014ab, CPU: user 0.66s system 0.01s, MEM: 30.61 MB peak
+Yosys 0.38+4 (git sha1 ac0fb2e30, clang 14.0.0-1ubuntu1.1 -fPIC -Os)
+Time spent: 49% 23x read_verilog (0 sec), 9% 28x opt_expr (0 sec), ...
